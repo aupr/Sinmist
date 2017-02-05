@@ -10,4 +10,13 @@ An ultimate electronic automation project based on javascript. Where javascript 
   - Logical operation: javascript
   - Data sharing process: CORS
   - Data communication type: json
+  - Front end language: HTML5
+  - CSS preprocessor: SASS
+  
+  ### Dependencies:
+  - Bootstrap
+  - Font Awesome
+  - jQuery
+  - jQuery UI
+  - iTonic
   
