@@ -1,0 +1,156 @@
+@import "common";
+
+$top_down: 100px;
+$reportlist-panel-bg: #8579bb;
+.options  {
+  position: absolute;
+  top: $top_down - 20px;
+  left: 20px;
+  width: 1810px;
+  //border: 1px solid red;
+  > .search {
+    width: 400px;
+    float: left;
+    > input {
+      width: 250px;
+      display: inline-block;
+      float: left;
+      border-left: 0;
+      border-right: 0;
+    }
+    > button{
+      float: left;
+    }
+    .configWindow{
+      position: absolute;
+      top: 34px;
+      display: none;
+      //height: 260px;
+      width: 271px;
+      border: 1px solid gray;
+      background-color: #f9f8a2;
+      z-index: 1;
+      padding: 20px;
+      color: #444;
+      &:hover{
+        display: block;
+      }
+      hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #99a6ff;
+        margin: 1em 0;
+        padding: 0;
+      }
+    }
+    #find-btn-config {
+      padding-left: 5px;
+      padding-right: 5px;
+      &:focus {
+        ~ .configWindow {
+          display: block;
+        }
+      }
+    }
+  }
+  > button {
+    width: 400px;
+    text-transform: capitalize;
+  }
+}
+.actionGroup {
+  position: absolute;
+  top: $top_down + 40px;
+  left: 20px;
+  //border: 1px solid red;
+  //width: 500px;
+  button {
+    width: 362.9px; //290px ;
+  }
+}
+.reportList {
+  position: absolute;
+  top: $top_down + 80px;
+  left: 20px;//380px;
+  height: 730px;
+  width: 1810px;//1450px;
+  border: 1px solid $reportlist-panel-bg;
+  > .header {
+    background-color: $reportlist-panel-bg;
+    height: 40px;
+    > .page-manage {
+      float: right;
+      height: 40px;
+      line-height: 40px;
+      vertical-align: middle;
+      margin: -10px 10px 0 0;
+      padding: 0 20px;
+      background-color: rgba(0, 0, 0, 0.28);
+    }
+  }
+  .reportContents {
+    height: calc(100% - 45px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    //border: 1px solid #b1b1b1;
+    tbody {
+      tr {
+        &:hover {
+          background-color: gray !important;
+          color: white !important;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.createReport{
+  width: 100%;
+  height: auto;
+  background-color: inherit;
+  tr {
+    td {
+      padding: 2px 8px;
+      line-height: 30px;
+      vertical-align: middle;
+    }
+    td:nth-child(1){
+      color: #464646;
+    }
+    td:nth-child(2){
+      font-weight: bold;
+    }
+    td:nth-child(3){
+      input {
+        height: 30px;
+      }
+      select {
+        height: 30px;
+        option{
+          &:hover{
+            background-color: red !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dateGroup{
+  #yy{
+    width: 60px;
+  }
+  #mm{
+    width: 40px;
+  }
+  #dd{
+    width: 40px;
+  }
+  input, label{
+    padding: 6px;
+  }
+}
+
+

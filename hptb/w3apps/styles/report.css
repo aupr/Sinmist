@@ -1,0 +1,236 @@
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+#service {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 35px;
+  margin: auto;
+  font-family: 'Lato', sans-serif;
+  height: 970px;
+  width: 1850px;
+  background-color: #fff; }
+
+#loading-scr {
+  display: block;
+  width: 700px;
+  margin: 100px auto; }
+
+#no-service {
+  display: none;
+  width: 700px;
+  margin: 100px auto; }
+
+.no-radius {
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important; }
+
+.box-shadow-2 {
+  box-shadow: 5px 5px 5px gray; }
+
+body {
+  background-color: black; }
+
+.fixedFooter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: dodgerblue; }
+  .fixedFooter p {
+    padding: 0 20px;
+    margin: 0 20px;
+    float: right;
+    height: 40px;
+    line-height: 40px;
+    color: #ffffff;
+    background-color: #313131; }
+
+nav {
+  width: 100%;
+  height: 70px;
+  background-color: dodgerblue;
+  border-bottom: 1px solid yellow; }
+  nav * {
+    list-style-type: none; }
+  nav .bsps_1, nav .bsps_2 {
+    height: 69px;
+    width: 20px;
+    background-color: #5fa2ff;
+    float: left; }
+  nav .bsps_2 {
+    float: right; }
+  nav .logo {
+    height: 62px;
+    width: 70px;
+    background-color: #5fa2ff;
+    background-size: 100%;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    float: left;
+    margin: 0 20px 0 20px;
+    border-bottom: 1px solid black; }
+  nav h3 {
+    float: left;
+    height: 70px;
+    line-height: 70px;
+    margin: 0 10px 0 10px;
+    color: white;
+    text-transform: uppercase; }
+  nav .corner_ul {
+    right: 20px; }
+  nav > ul {
+    float: right; }
+    nav > ul li:hover > ul {
+      display: block; }
+    nav > ul li:hover > button {
+      background-color: rgba(0, 0, 0, 0.31); }
+    nav > ul > li {
+      float: left; }
+      nav > ul > li > button {
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        height: 70px;
+        padding: 15px 20px;
+        line-height: 40px;
+        color: white;
+        font-size: 1.2em;
+        background-color: transparent;
+        outline: none;
+        border: 0;
+        cursor: pointer; }
+      nav > ul > li > ul {
+        display: none;
+        position: absolute;
+        background-color: dodgerblue;
+        z-index: 100000; }
+        nav > ul > li > ul > li > button {
+          width: 100%;
+          text-align: left;
+          display: block;
+          text-decoration: none;
+          text-transform: uppercase;
+          height: 40px;
+          padding: 0 20px;
+          line-height: 40px;
+          color: white;
+          font-size: 1.2em;
+          background-color: transparent;
+          outline: none;
+          border: 0;
+          cursor: pointer; }
+
+.options {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  width: 1810px; }
+  .options > .search {
+    width: 400px;
+    float: left; }
+    .options > .search > input {
+      width: 250px;
+      display: inline-block;
+      float: left;
+      border-left: 0;
+      border-right: 0; }
+    .options > .search > button {
+      float: left; }
+    .options > .search .configWindow {
+      position: absolute;
+      top: 34px;
+      display: none;
+      width: 271px;
+      border: 1px solid gray;
+      background-color: #f9f8a2;
+      z-index: 1;
+      padding: 20px;
+      color: #444; }
+      .options > .search .configWindow:hover {
+        display: block; }
+      .options > .search .configWindow hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #99a6ff;
+        margin: 1em 0;
+        padding: 0; }
+    .options > .search #find-btn-config {
+      padding-left: 5px;
+      padding-right: 5px; }
+      .options > .search #find-btn-config:focus ~ .configWindow {
+        display: block; }
+  .options > button {
+    width: 400px;
+    text-transform: capitalize; }
+
+.actionGroup {
+  position: absolute;
+  top: 140px;
+  left: 20px; }
+  .actionGroup button {
+    width: 362.9px; }
+
+.reportList {
+  position: absolute;
+  top: 180px;
+  left: 20px;
+  height: 730px;
+  width: 1810px;
+  border: 1px solid #8579bb; }
+  .reportList > .header {
+    background-color: #8579bb;
+    height: 40px; }
+    .reportList > .header > .page-manage {
+      float: right;
+      height: 40px;
+      line-height: 40px;
+      vertical-align: middle;
+      margin: -10px 10px 0 0;
+      padding: 0 20px;
+      background-color: rgba(0, 0, 0, 0.28); }
+  .reportList .reportContents {
+    height: calc(100% - 45px);
+    overflow-x: hidden;
+    overflow-y: scroll; }
+    .reportList .reportContents tbody tr:hover {
+      background-color: gray !important;
+      color: white !important;
+      cursor: pointer; }
+
+.createReport {
+  width: 100%;
+  height: auto;
+  background-color: inherit; }
+  .createReport tr td {
+    padding: 2px 8px;
+    line-height: 30px;
+    vertical-align: middle; }
+  .createReport tr td:nth-child(1) {
+    color: #464646; }
+  .createReport tr td:nth-child(2) {
+    font-weight: bold; }
+  .createReport tr td:nth-child(3) input {
+    height: 30px; }
+  .createReport tr td:nth-child(3) select {
+    height: 30px; }
+    .createReport tr td:nth-child(3) select option:hover {
+      background-color: red !important; }
+
+.dateGroup #yy {
+  width: 60px; }
+.dateGroup #mm {
+  width: 40px; }
+.dateGroup #dd {
+  width: 40px; }
+.dateGroup input, .dateGroup label {
+  padding: 6px; }
+
+/*# sourceMappingURL=report.css.map */

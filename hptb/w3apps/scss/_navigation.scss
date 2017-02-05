@@ -1,0 +1,119 @@
+$nav_height: 70px;
+$nav_bg_color: dodgerblue;
+$nav_text_color: white;
+$logo_bg_color: #5fa2ff;
+$bsps_width: 20px;
+$bspsbg_ub_color: #5fa2ff;
+$footer_height: 40px;
+$footer_text_color: black;
+
+.fixedFooter{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $footer_height;
+  background-color: $nav_bg_color;
+  p {
+    padding: 0 20px;
+    margin: 0 20px;
+    float: right;
+    height: $footer_height;
+    line-height: $footer_height;
+    color: #ffffff;
+    background-color: #313131;
+  }
+}
+
+nav {
+  width: 100%;
+  height: $nav_height;
+  background-color: $nav_bg_color;
+  border-bottom: 1px solid yellow;
+  & * {
+    list-style-type: none;
+  }
+  .bsps_1{
+    height: $nav_height - 1px;
+    width: $bsps_width;
+    background-color: $bspsbg_ub_color;
+    float: left;
+  }
+  .bsps_2{
+    @extend .bsps_1;
+    float: right;
+  }
+  .logo{
+    height: 62px;
+    width: 70px;
+    background-color: $logo_bg_color;
+    background-size: 100%;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    float: left;
+    margin: 0 20px 0 20px;
+    border-bottom: 1px solid black;
+  }
+  h3{
+    float: left;
+    height: $nav_height;
+    line-height: $nav_height;
+    margin: 0 10px 0 10px;
+    color: $nav_text_color;
+    text-transform: uppercase;
+  }
+  .corner_ul{
+    right: $bsps_width;
+  }
+  > ul {
+    float: right;
+    li:hover > ul{
+      display: block;
+    }
+    li:hover > button{
+      background-color: rgba(0, 0, 0, 0.31);
+    }
+    > li {
+      float: left;
+      > button{
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        height: $nav_height;
+        padding: 15px 20px;
+        line-height: 40px;
+        color: $nav_text_color;
+        font-size: 1.2em;
+        background-color: transparent;
+        outline: none;
+        border: 0;
+        cursor: pointer;
+
+      }
+      > ul {
+        display: none;
+        position: absolute;
+        background-color: dodgerblue;
+        z-index: 100000;
+        > li {
+          > button {
+            width: 100%;
+            text-align: left;
+            display: block;
+            text-decoration: none;
+            text-transform: uppercase;
+            height: 40px;
+            padding: 0 20px;
+            line-height: 40px;
+            color: $nav_text_color;
+            font-size: 1.2em;
+            background-color: transparent;
+            outline: none;
+            border: 0;
+            cursor: pointer;
+
+          }
+        }
+      }
+    }
+  }
+}

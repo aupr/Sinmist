@@ -1,0 +1,47 @@
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#service{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 35px;
+  margin: auto;
+  font-family: 'Lato', sans-serif;
+  height: 970px;
+  width: 1850px;
+  background-color: #fff;
+}
+
+#loading-scr{
+  display: block;
+  width: 700px;
+  margin: 100px auto;
+}
+
+#no-service{
+  display: none;
+  width: 700px;
+  margin: 100px auto;
+}
+
+.no-radius{
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+}
+
+.box-shadow-2{
+  box-shadow: 5px 5px 5px gray;
+}
+
+body {
+  background-color: black;
+}
+
+@import "navigation";

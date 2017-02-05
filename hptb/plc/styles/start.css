@@ -1,0 +1,46 @@
+/*For Start*/
+.cont{
+    font-family: sans-serif;
+    width: 600px;
+    margin: 200px auto;
+    color: darkslategray;
+    text-align: center;
+}
+.prog{
+    margin: auto;
+    width: 300px;
+    border: 1px solid black;
+    height: 20px;
+}
+#progin{
+    background-color: darkslateblue;
+    height: 20px;
+}
+.box{
+    width: 500px;
+    margin: 100px auto;
+    border: 1px solid gray;
+    text-align: center;
+    font-family: sans-serif;
+    color: darkred;
+}
+a:link, a:visited {
+    background-color: darkred;
+    border: 1px solid darkred;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+a:hover, a:active {
+    background-color: #bc0000;
+}
+#container_2{
+    display: none;
+}
+#serverLink{
+    border: 1px solid gray;
+    margin: 20px;
+    color: #1c1717;
+}
