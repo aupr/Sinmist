@@ -13,7 +13,8 @@ An ultimate electronic automation project based on javascript. Where javascript 
   - Front end language: HTML5
   - CSS preprocessor: SASS
   
-  ### Dependencies:
+
+### Dependencies:
   - Bootstrap
   - Font Awesome
   - jQuery
