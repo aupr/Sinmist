@@ -106,51 +106,21 @@ $reportlist-panel-bg: #8579bb;
   }
 }
 
-.createReport{
+.reportInfo{
   width: 100%;
   height: auto;
   background-color: inherit;
   tr {
-    td {
-      padding: 2px 8px;
-      line-height: 30px;
-      vertical-align: middle;
-    }
     td:nth-child(1){
       color: #464646;
+      line-height: 34px;
+      vertical-align: middle;
     }
     td:nth-child(2){
       font-weight: bold;
-    }
-    td:nth-child(3){
-      input {
-        height: 30px;
-      }
-      select {
-        height: 30px;
-        option{
-          &:hover{
-            background-color: red !important;
-          }
-        }
-      }
+      line-height: 34px;
+      vertical-align: middle;
     }
   }
 }
-
-.dateGroup{
-  #yy{
-    width: 60px;
-  }
-  #mm{
-    width: 40px;
-  }
-  #dd{
-    width: 40px;
-  }
-  input, label{
-    padding: 6px;
-  }
-}
-
 

@@ -46,7 +46,7 @@ class dbwrite
      */
     public function deleteReport($id){
         global $conn;
-        $sql = "DELETE FROM report WHERE id=$id";
+        $sql = "DELETE FROM report WHERE id = '$id'";
         return $conn->query($sql);
     }
 }

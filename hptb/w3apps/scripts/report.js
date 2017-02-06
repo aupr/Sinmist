@@ -23,7 +23,7 @@ $(document).ready(function () {
         // Create New modal Button
         $("#btn-create-model").click(function () {
             $.post("reportmodules/ui/createreport.php",{},function (res) {
-                it_modal_open('<i class="fa fa-plus-square-o" aria-hidden="true"></i> Create a new report...',res,"blueviolet","500px","Create, Cancel", function (cr) {
+                it_modal_open('<i class="fa fa-plus-square-o" aria-hidden="true"></i> Create a new report...',res,"blueviolet","1000px","Create, Cancel", function (cr) {
                     if (cr == 'Create'){
                         it_modal_loading();
                         makeNewReport(function () {
@@ -35,6 +35,8 @@ $(document).ready(function () {
                         it_modal_close();
                     }
                 });
+            }).fail(function () {
+                alert("Failed to load ui!!");
             });
         });
 
@@ -75,7 +77,15 @@ $(document).ready(function () {
             if(isSelected()){
                 it_modal_open("Confirm !","Do you want to delete this?","#d9534f",0,"Yes, No",function (res) {
                     if(res == 'Yes'){
-                        alert("delete successful");
+                        it_modal_loading();
+                        $.post("reportmodules/action.php",{"command":"delete","for":"report","id":selected.objectId}, function (res) {
+                            it_modal_close();
+                            if (selected.type == "model"){
+                                $("#btn-view-models").click();
+                            } else if (selected.type == "report"){
+                                $("#btn-view-reports").click();
+                            }
+                        });
                     } else if (res == 'No'){
                         it_modal_close();
                     }
@@ -85,12 +95,16 @@ $(document).ready(function () {
         // Edit report button
         $("#ac-btn-edit-report").click(function () {
             if(isSelected()){
-                it_modal_open("Report Edit Window ...","Code is here","#FF8800",0,"Save, Cancel",function (res) {
-                    if(res == 'Save'){
-                        alert("data saved successful");
-                    } else if (res == 'Cancel'){
-                        it_modal_close();
-                    }
+                $.post("reportmodules/ui/editreport.php",{},function (res) {
+                    it_modal_open("Report Edit Window ...",res,"#FF8800","1100px","Save, Cancel",function (ret) {
+                        if(ret == 'Save'){
+                            alert("data saved successful");
+                        } else if (ret == 'Cancel'){
+                            it_modal_close();
+                        }
+                    });
+                }).fail(function () {
+                    alert("failed to load edit report ui")
                 });
             }
         });
@@ -311,8 +325,18 @@ function makeKeywords(key) {
 }
 function makeNewReport(cb) {
     var data={
-        "rDt":"12-12-2015",
-        "discharge":"200"
+        "rDt": $("#nm-rcvd-dt").val(),
+        "client": $("#nm-client").val(),
+        "clientRef": $("#nm-clients-ref").val(),
+        "crDt": $("#nm-clients-ref-date").val(),
+        "supplier": $("#nm-supplier").val(),
+        "meRef": $("#nm-me-ref").val(),
+        "mrDt": $("#nm-me-ref-date").val(),
+        "pumpType": $("#nm-pump-type").val(),
+        "discharge": $("#nm-pump-discharge").val(),
+        "head": $("#nm-pump-head").val(),
+        "pumpSn": $("#nm-pump-sn").val(),
+        "motorSn": $("#nm-motor-sn").val()
     };
     $.post("reportmodules/action.php",{"command":"insert","for":"report","data":data}, function (res) {
         cb();

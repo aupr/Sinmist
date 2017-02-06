@@ -205,32 +205,17 @@ nav {
       color: white !important;
       cursor: pointer; }
 
-.createReport {
+.reportInfo {
   width: 100%;
   height: auto;
   background-color: inherit; }
-  .createReport tr td {
-    padding: 2px 8px;
-    line-height: 30px;
+  .reportInfo tr td:nth-child(1) {
+    color: #464646;
+    line-height: 34px;
     vertical-align: middle; }
-  .createReport tr td:nth-child(1) {
-    color: #464646; }
-  .createReport tr td:nth-child(2) {
-    font-weight: bold; }
-  .createReport tr td:nth-child(3) input {
-    height: 30px; }
-  .createReport tr td:nth-child(3) select {
-    height: 30px; }
-    .createReport tr td:nth-child(3) select option:hover {
-      background-color: red !important; }
-
-.dateGroup #yy {
-  width: 60px; }
-.dateGroup #mm {
-  width: 40px; }
-.dateGroup #dd {
-  width: 40px; }
-.dateGroup input, .dateGroup label {
-  padding: 6px; }
+  .reportInfo tr td:nth-child(2) {
+    font-weight: bold;
+    line-height: 34px;
+    vertical-align: middle; }
 
 /*# sourceMappingURL=report.css.map */
