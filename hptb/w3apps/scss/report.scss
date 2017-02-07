@@ -124,3 +124,26 @@ $reportlist-panel-bg: #8579bb;
   }
 }
 
+#edit_tabs{
+  #etabs-data{
+    //background-color: red;
+    .add-new-field-bar{
+      width: 100%;
+      height: 40px;
+      background-color: gray;
+      .add-new-field-button{
+        height: 40px;
+        padding: 0 20px;
+        line-height: 40px;
+        vertical-align: middle;
+        color: white;
+        float: right;
+        cursor: pointer;
+        &:hover{
+          background-color: #464646;
+      }
+      }
+    }
+  }
+}
+

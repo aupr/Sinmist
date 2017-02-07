@@ -20,3 +20,8 @@ elseif ($type == "find"){
 }
 
 
+elseif ($type == "areport"){
+    $id = $_POST['id'];
+    echo json_encode($dbdata->getReport($id));
+}
+

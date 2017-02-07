@@ -87,6 +87,18 @@ class dbread
         $finalData = array("totalData"=>$this->countFindReportList($keywords),"data"=>$data_stuck);
         return $finalData;
     }
+
+    public function getReport($id){
+        global $conn;
+        $sql = "SELECT * FROM report WHERE id=$id";
+        $result = $conn->query($sql);
+        $data = array();
+        if ($result->num_rows > 0){
+            $data = $result->fetch_assoc();
+        }
+        $finalData = array("totalData"=>1,"data"=>$data);
+        return $finalData;
+    }
 }
 
 

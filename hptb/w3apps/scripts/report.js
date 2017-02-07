@@ -95,7 +95,7 @@ $(document).ready(function () {
         // Edit report button
         $("#ac-btn-edit-report").click(function () {
             if(isSelected()){
-                $.post("reportmodules/ui/editreport.php",{},function (res) {
+                $.post("reportmodules/ui/editreport.php",{"id":selected.objectId}, function (res) {
                     it_modal_open("Report Edit Window ...",res,"#FF8800","1100px","Save, Cancel",function (ret) {
                         if(ret == 'Save'){
                             alert("data saved successful");
@@ -333,6 +333,7 @@ function makeNewReport(cb) {
         "meRef": $("#nm-me-ref").val(),
         "mrDt": $("#nm-me-ref-date").val(),
         "pumpType": $("#nm-pump-type").val(),
+        "pipeDia": $("#nm-pipe-dia").val(),
         "discharge": $("#nm-pump-discharge").val(),
         "head": $("#nm-pump-head").val(),
         "pumpSn": $("#nm-pump-sn").val(),
@@ -344,8 +345,11 @@ function makeNewReport(cb) {
 
 }
 
-
-
+/*function getReport(id, callback) {
+    $.post("reportmodules/contents.php",{'type':'areport', 'id':id}, function (ret) {
+        callback(ret);
+    });
+}*/
 
 
 

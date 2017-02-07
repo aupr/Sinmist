@@ -218,4 +218,19 @@ nav {
     line-height: 34px;
     vertical-align: middle; }
 
+#edit_tabs #etabs-data .add-new-field-bar {
+  width: 100%;
+  height: 40px;
+  background-color: gray; }
+  #edit_tabs #etabs-data .add-new-field-bar .add-new-field-button {
+    height: 40px;
+    padding: 0 20px;
+    line-height: 40px;
+    vertical-align: middle;
+    color: white;
+    float: right;
+    cursor: pointer; }
+    #edit_tabs #etabs-data .add-new-field-bar .add-new-field-button:hover {
+      background-color: #464646; }
+
 /*# sourceMappingURL=report.css.map */
