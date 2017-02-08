@@ -26,7 +26,7 @@ $(document).ready(function () {
                 it_modal_open('<i class="fa fa-plus-square-o" aria-hidden="true"></i> Create a new report...',res,"blueviolet","1000px","Create, Cancel", function (cr) {
                     if (cr == 'Create'){
                         it_modal_loading();
-                        makeNewReport(function () {
+                        onClick(function () {
                             it_modal_close();
                             $("#btn-view-models").click();
                         });
@@ -98,7 +98,12 @@ $(document).ready(function () {
                 $.post("reportmodules/ui/editreport.php",{"id":selected.objectId}, function (res) {
                     it_modal_open("Report Edit Window ...",res,"#FF8800","1100px","Save, Cancel",function (ret) {
                         if(ret == 'Save'){
-                            alert("data saved successful");
+                            it_modal_loading();
+                            onSave(selected.objectId,function (ack, stat) {
+                                it_modal_close();
+                                if (stat) $("#btn-view-reports").click();
+                                else $("#btn-view-models").click();
+                            });
                         } else if (ret == 'Cancel'){
                             it_modal_close();
                         }
@@ -323,33 +328,10 @@ function makeKeywords(key) {
 
     return keywords;
 }
-function makeNewReport(cb) {
-    var data={
-        "rDt": $("#nm-rcvd-dt").val(),
-        "client": $("#nm-client").val(),
-        "clientRef": $("#nm-clients-ref").val(),
-        "crDt": $("#nm-clients-ref-date").val(),
-        "supplier": $("#nm-supplier").val(),
-        "meRef": $("#nm-me-ref").val(),
-        "mrDt": $("#nm-me-ref-date").val(),
-        "pumpType": $("#nm-pump-type").val(),
-        "pipeDia": $("#nm-pipe-dia").val(),
-        "discharge": $("#nm-pump-discharge").val(),
-        "head": $("#nm-pump-head").val(),
-        "pumpSn": $("#nm-pump-sn").val(),
-        "motorSn": $("#nm-motor-sn").val()
-    };
-    $.post("reportmodules/action.php",{"command":"insert","for":"report","data":data}, function (res) {
-        cb();
-    });
 
-}
 
-/*function getReport(id, callback) {
-    $.post("reportmodules/contents.php",{'type':'areport', 'id':id}, function (ret) {
-        callback(ret);
-    });
-}*/
+
+
 
 
 

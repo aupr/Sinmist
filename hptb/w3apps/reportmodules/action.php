@@ -14,11 +14,11 @@ if ($for == 'report'){
     if ($command == "update"){
         $id = $_POST['id'];
         $data = $_REQUEST['data'];
-        $dbaction->updateReportData($id, $data);
+        echo $dbaction->updateReportData($id, $data);
     }
     if ($command == "delete"){
         $id = $_POST['id'];
-        $dbaction->deleteReport($id);
+        echo $dbaction->deleteReport($id);
     }
 }
 

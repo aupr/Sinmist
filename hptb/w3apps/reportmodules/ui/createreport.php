@@ -110,6 +110,27 @@
 </div>
 
 <script type="text/javascript">
+    function onClick(cb) {
+        var data={
+            "rDt": $("#nm-rcvd-dt").val(),
+            "client": $("#nm-client").val(),
+            "clientRef": $("#nm-clients-ref").val(),
+            "crDt": $("#nm-clients-ref-date").val(),
+            "supplier": $("#nm-supplier").val(),
+            "meRef": $("#nm-me-ref").val(),
+            "mrDt": $("#nm-me-ref-date").val(),
+            "pumpType": $("#nm-pump-type").val(),
+            "pipeDia": $("#nm-pipe-dia").val(),
+            "discharge": $("#nm-pump-discharge").val(),
+            "head": $("#nm-pump-head").val(),
+            "pumpSn": $("#nm-pump-sn").val(),
+            "motorSn": $("#nm-motor-sn").val()
+        };
+        $.post("reportmodules/action.php",{"command":"insert","for":"report","data":data}, function (res) {
+            cb();
+        });
+
+    }
     $("#nm-rcvd-dt").datepicker({
         dateFormat:"dd-MM-yy",
         showButtonPanel: true,
