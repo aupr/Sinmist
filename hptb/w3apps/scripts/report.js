@@ -96,7 +96,7 @@ $(document).ready(function () {
         $("#ac-btn-edit-report").click(function () {
             if(isSelected()){
                 $.post("reportmodules/ui/editreport.php",{"id":selected.objectId}, function (res) {
-                    it_modal_open("Report Edit Window ...",res,"#FF8800","1100px","Save, Cancel",function (ret) {
+                    it_modal_open("Report Edit Form . . .",res,"#FF8800","1100px","Save, Cancel",function (ret) {
                         if(ret == 'Save'){
                             it_modal_loading();
                             onSave(selected.objectId,function (ack, stat) {
@@ -128,10 +128,21 @@ $(document).ready(function () {
         // View report into Modal
         $("#ac-btn-view-report-modal").click(function () {
             if(isSelected()){
-                it_modal_open("Report Preview Window !","Code is here","#0099CC",0,"Cancel",function (res) {
-                    if (res == 'Cancel'){
-                        it_modal_close();
-                    }
+                $.post("reportmodules/ui/viewreport.php",{"id":selected.objectId}, function (res) {
+                    it_modal_open("Report View Form . . .",res,"#0099CC","1100px","Cancel",function (ret) {
+                        if(ret == 'Save'){
+                            it_modal_loading();
+                            onSave(selected.objectId,function (ack, stat) {
+                                it_modal_close();
+                                if (stat) $("#btn-view-reports").click();
+                                else $("#btn-view-models").click();
+                            });
+                        } else if (ret == 'Cancel'){
+                            it_modal_close();
+                        }
+                    });
+                }).fail(function () {
+                    alert("failed to load view report ui")
                 });
             }
         });
@@ -139,7 +150,8 @@ $(document).ready(function () {
         $("#ac-btn-make-report-page").click(function () {
             if(selected.type === "report"){
                 if(isSelected()){
-                    window.open("");
+                    var win = window.open('reportpage.php?id='+selected.objectId, '_blank');
+                    win.focus();
                 }
             } else {
                 it_modal_error("It's not applicable for uncompleted report !");

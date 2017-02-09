@@ -15,6 +15,7 @@ $userName = "Administrator"
     <script src="../contents/vendors/jquery/3.1.0/jquery-3.1.0.min.js"></script>
     <script src="../contents/vendors/jquery-ui/1.12.1/custom.sq/jquery-ui.min.js"></script>
     <script src="../contents/vendors/itonic/1.0/itonic.min.js"></script>
+    <script src="../contents/vendors/bootstrap-timepicker.js"></script>
     <script src="scripts/report.js"></script>
     <script src="scripts/common.js"></script>
 </head>
@@ -44,10 +45,10 @@ $userName = "Administrator"
         <div class="form-group search">
             <button id="find-btn-config" class="btn btn-default no-radius"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
             <div class="configWindow">
-                <input type="checkbox" id="ckbx-uncompleted-report"><label for="ckbx-uncompleted-report">&nbsp;Only Uncompleted Report</label><br>
-                <input type="checkbox" id="ckbx-completed-report"><label for="ckbx-completed-report">&nbsp;Only Completed Report</label><hr>
+                <input type="checkbox" id="ckbx-uncompleted-report"><label for="ckbx-uncompleted-report">&nbsp;Uncompleted Report</label><br>
+                <input type="checkbox" id="ckbx-completed-report"><label for="ckbx-completed-report">&nbsp;Completed Report</label><hr>
                 <input type="checkbox" id="ckbx-rcvd-date"><label for="ckbx-rcvd-date">&nbsp;Received Date</label><br>
-                <input type="checkbox" id="ckbx-tst-date"><label for="ckbx-tst-date">&nbsp;Test Date</label><br>
+                <input type="checkbox" id="ckbx-tst-date"><label for="ckbx-tst-date">&nbsp;Test Date & Time</label><br>
                 <input type="checkbox" id="ckbx-me-ref"><label for="ckbx-me-ref">&nbsp;ME Reference</label><br>
                 <input type="checkbox" id="ckbx-client"><label for="ckbx-client">&nbsp;Client</label><br>
                 <input type="checkbox" id="ckbx-supplier"><label for="ckbx-supplier">&nbsp;Supplier</label><br>
@@ -56,11 +57,11 @@ $userName = "Administrator"
                 <input type="checkbox" id="ckbx-motor-sn"><label for="ckbx-motor-sn">&nbsp;Motor Serial Number</label><br>
             </div>
             <input id="find-keyword" type="text" class="form-control no-radius" placeholder="Enter keyword here...">
-            <button id="find-btn" class="btn btn-info no-radius">Find</button>
+            <button id="find-btn" class="btn btn-info no-radius">Search</button>
             </div>
-        <button id="btn-create-model" class="btn btn-primary btn-lg no-radius">create a report model</button>
-        <button id="btn-view-models" class="btn btn-primary btn-lg no-radius">view report models</button>
-        <button id="btn-view-reports" class="btn btn-primary btn-lg no-radius">view completed reports</button>
+        <button id="btn-create-model" class="btn btn-primary btn-lg no-radius">create a new report</button>
+        <button id="btn-view-models" class="btn btn-primary btn-lg no-radius">uncompleted reports</button>
+        <button id="btn-view-reports" class="btn btn-primary btn-lg no-radius">completed reports</button>
 
     </div>
 

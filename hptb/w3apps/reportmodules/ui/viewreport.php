@@ -10,6 +10,8 @@ $editReportDnT = explode('@',$res['data']['tDtTm']);
     <ul>
         <li><a href="#etabs-info">Report Information</a></li>
         <li><a href="#etabs-data">Data Record</a></li>
+        <li><a href="#etabs-report">Report Data</a></li>
+        <li><a href="#etabs-graph">Report Graph</a></li>
         <li><a href="#etabs-author">Author</a></li>
     </ul>
     <div id="etabs-info">
@@ -136,45 +138,42 @@ $editReportDnT = explode('@',$res['data']['tDtTm']);
                 <th>Flow Rate U</th>
                 <th>Motor Energy</th>
                 <th>Motor Freq.</th>
-                <th><i class="fa fa-wrench" aria-hidden="true"></i></th>
             </tr>
             </thead>
             <tbody id="dynamic-row-wcontrol">
             <?php
-                $lastIncr = 0;
-                if (is_array($testData)){
-                    foreach ($testData as $dt){
-                        $lastIncr++;
-                        $c_serial_number = '<td>'.$lastIncr.'</td>';
-                        $c_valve_position = '<td><div class="input-group"><input class="form-control no-radius" id="edt-valve-position-'.$lastIncr.'" value="'.$dt->vo.'">
+            $lastIncr = 0;
+            if (is_array($testData)){
+                foreach ($testData as $dt){
+                    $lastIncr++;
+                    $c_serial_number = '<td>'.$lastIncr.'</td>';
+                    $c_valve_position = '<td><div class="input-group"><input class="form-control no-radius" id="edt-valve-position-'.$lastIncr.'" value="'.$dt->vo.'">
                     <label for="edt-valve-position-'.$lastIncr.'" class="input-group-addon no-radius">%</label></div></td>';
-                        $c_suction_pressure = '<td><div class="input-group"><input class="form-control no-radius" id="edt-suction-pressure-'.$lastIncr.'" value="'.$dt->sp.'">
+                    $c_suction_pressure = '<td><div class="input-group"><input class="form-control no-radius" id="edt-suction-pressure-'.$lastIncr.'" value="'.$dt->sp.'">
                     <label for="edt-suction-pressure-'.$lastIncr.'" class="input-group-addon no-radius">Bar</label></div></td>';
-                        $c_discharge_pressure = '<td><div class="input-group"><input class="form-control no-radius" id="edt-discharge-pressure-'.$lastIncr.'" value="'.$dt->dp.'">
+                    $c_discharge_pressure = '<td><div class="input-group"><input class="form-control no-radius" id="edt-discharge-pressure-'.$lastIncr.'" value="'.$dt->dp.'">
                     <label for="edt-discharge-pressure-'.$lastIncr.'" class="input-group-addon no-radius">Bar</label></div></td>';
-                        $c_flow_rate_m = '<td><div class="input-group"><input class="form-control no-radius" id="edt-flow-rate-m-'.$lastIncr.'" value="'.$dt->frm.'">
+                    $c_flow_rate_m = '<td><div class="input-group"><input class="form-control no-radius" id="edt-flow-rate-m-'.$lastIncr.'" value="'.$dt->frm.'">
                     <label for="edt-flow-rate-m-'.$lastIncr.'" class="input-group-addon no-radius">m<sup>3</sup>/hr</label></div></td>';
-                        $c_flow_rate_u = '<td><div class="input-group"><input class="form-control no-radius" id="edt-flow-rate-u-'.$lastIncr.'" value="'.$dt->fru.'">
+                    $c_flow_rate_u = '<td><div class="input-group"><input class="form-control no-radius" id="edt-flow-rate-u-'.$lastIncr.'" value="'.$dt->fru.'">
                     <label for="edt-flow-rate-u-'.$lastIncr.'" class="input-group-addon no-radius">m<sup>3</sup>/hr</label></div></td>';
-                        $c_motor_energy = '<td><div class="input-group"><input class="form-control no-radius" id="edt-motor-energy-'.$lastIncr.'" value="'.$dt->men.'">
+                    $c_motor_energy = '<td><div class="input-group"><input class="form-control no-radius" id="edt-motor-energy-'.$lastIncr.'" value="'.$dt->men.'">
                     <label for="edt-motor-energy-'.$lastIncr.'" class="input-group-addon no-radius">kWh</label></div></td>';
-                        $c_motor_freq = '<td><div class="input-group"><input class="form-control no-radius" id="edt-motor-freq-'.$lastIncr.'" value="'.$dt->mfq.'">
+                    $c_motor_freq = '<td><div class="input-group"><input class="form-control no-radius" id="edt-motor-freq-'.$lastIncr.'" value="'.$dt->mfq.'">
                     <label for="edt-motor-freq-'.$lastIncr.'" class="input-group-addon no-radius">Hz</label></div></td>';
-                        $c_dismiss_button = '<td><button class="btn btn-default no-radius" onclick="deleteThisRow(this)"><i class="fa fa-times" aria-hidden="true"></i></button></td>';
 
-                        $complete_row = '<tr>'. $c_serial_number. $c_valve_position. $c_suction_pressure. $c_discharge_pressure. $c_flow_rate_m. $c_flow_rate_u. $c_motor_energy. $c_motor_freq. $c_dismiss_button.'</tr>';
+                    $complete_row = '<tr>'. $c_serial_number. $c_valve_position. $c_suction_pressure. $c_discharge_pressure. $c_flow_rate_m. $c_flow_rate_u. $c_motor_energy. $c_motor_freq.'</tr>';
 
-                        echo $complete_row;
-                    }
+                    echo $complete_row;
                 }
+            }
             ?>
             </tbody>
         </table>
-        <div class="add-new-field-bar">
-            <div class="add-new-field-button" id="add-new-field">
-                <i class="fa fa-plus" aria-hidden="true"></i> Add New Field
-            </div>
-        </div>
+    </div>
+    <div id="etabs-report"></div>
+    <div id="etabs-graph">
+        Graph is here!
     </div>
     <div id="etabs-author">
         <br>
@@ -192,127 +191,6 @@ $editReportDnT = explode('@',$res['data']['tDtTm']);
         <textarea id="edt-author" rows="10" cols="100" maxlength="300" placeholder="Name, Designation, Contact, etc..."><?=$res['data']['author']?></textarea>
     </div>
 </div>
-
 <script>
-
-    function deleteThisRow(sid) {
-        document.getElementById("dynamic-data-table").deleteRow(sid.parentNode.parentNode.rowIndex);
-    }
-
-    var last_incr = <?=$lastIncr?>;
-    $("#add-new-field").click(function () {
-        last_incr++;
-        var c_serial_number = '<td>'+last_incr+'</td>';
-        var c_valve_position = '<td><div class="input-group"><input class="form-control no-radius" id="edt-valve-position-'+last_incr+'">' +
-            '<label for="edt-valve-position-'+last_incr+'" class="input-group-addon no-radius">%</label></div></td>';
-        var c_suction_pressure = '<td><div class="input-group"><input class="form-control no-radius" id="edt-suction-pressure-'+last_incr+'">' +
-            '<label for="edt-suction-pressure-'+last_incr+'" class="input-group-addon no-radius">Bar</label></div></td>';
-        var c_discharge_pressure = '<td><div class="input-group"><input class="form-control no-radius" id="edt-discharge-pressure-'+last_incr+'">' +
-            '<label for="edt-discharge-pressure-'+last_incr+'" class="input-group-addon no-radius">Bar</label></div></td>';
-        var c_flow_rate_m = '<td><div class="input-group"><input class="form-control no-radius" id="edt-flow-rate-m-'+last_incr+'">' +
-            '<label for="edt-flow-rate-m-'+last_incr+'" class="input-group-addon no-radius">m<sup>3</sup>/hr</label></div></td>';
-        var c_flow_rate_u = '<td><div class="input-group"><input class="form-control no-radius" id="edt-flow-rate-u-'+last_incr+'">' +
-            '<label for="edt-flow-rate-u-'+last_incr+'" class="input-group-addon no-radius">m<sup>3</sup>/hr</label></div></td>';
-        var c_motor_energy = '<td><div class="input-group"><input class="form-control no-radius" id="edt-motor-energy-'+last_incr+'">' +
-            '<label for="edt-motor-energy-'+last_incr+'" class="input-group-addon no-radius">kWh</label></div></td>';
-        var c_motor_freq = '<td><div class="input-group"><input class="form-control no-radius" id="edt-motor-freq-'+last_incr+'">' +
-            '<label for="edt-motor-freq-'+last_incr+'" class="input-group-addon no-radius">Hz</label></div></td>';
-        var c_dismiss_button = '<td><button class="btn btn-default no-radius" onclick="deleteThisRow(this)"><i class="fa fa-times" aria-hidden="true"></i></button></td>';
-
-        var complete_row = '<tr>'+c_serial_number+c_valve_position+c_suction_pressure+c_discharge_pressure+c_flow_rate_m+c_flow_rate_u+c_motor_energy+c_motor_freq+c_dismiss_button+'</tr>';
-        $("#dynamic-row-wcontrol").append(complete_row);
-    });
-
-    function onSave(id, callback) {
-        var reportDataStuck = [];
-        for(var i=1; i<=last_incr; i++){
-            if($("#edt-valve-position-"+i).length){
-                var sRowData = {
-                    "vo": parseFloat($("#edt-valve-position-"+i).val()),
-                    "sp": parseFloat($("#edt-suction-pressure-"+i).val()),
-                    "dp": parseFloat($("#edt-discharge-pressure-"+i).val()),
-                    "frm": parseFloat($("#edt-flow-rate-m-"+i).val()),
-                    "fru": parseFloat($("#edt-flow-rate-u-"+i).val()),
-                    "men": parseFloat($("#edt-motor-energy-"+i).val()),
-                    "mfq": parseFloat($("#edt-motor-freq-"+i).val())
-                };
-                reportDataStuck.push(sRowData);
-            }
-        }
-        var test_data = reportDataStuck.length==0?"":JSON.stringify(reportDataStuck);
-        var reportDataFinal = {
-            "rDt": $("#nm-rcvd-dt").val(),
-            "tDtTm": $("#edt-report-dtntm-dt").val()+'@'+$("#edt-report-dtntm-tm").val(),
-            "client": $("#nm-client").val(),
-            "clientRef": $("#nm-clients-ref").val(),
-            "crDt": $("#nm-clients-ref-date").val(),
-            "supplier": $("#nm-supplier").val(),
-            "meRef": $("#nm-me-ref").val(),
-            "mrDt": $("#nm-me-ref-date").val(),
-            "pumpType": $("#nm-pump-type").val(),
-            "pipeDia": $("#nm-pipe-dia").val(),
-            "discharge": $("#nm-pump-discharge").val(),
-            "head": $("#nm-pump-head").val(),
-            "pumpSn": $("#nm-pump-sn").val(),
-            "motorSn": $("#nm-motor-sn").val(),
-            "testData": test_data,
-            "author": $("#edt-author").val()
-        };
-        $.post("reportmodules/action.php",{"for":"report","command":"update","id":id,"data":reportDataFinal},function (ret) {
-            callback(ret, test_data!="");
-        });
-    }
-
     $( "#edit_tabs" ).tabs();
-
-    $("#edt-report-dtntm-dt").datepicker({
-        dateFormat:"dd-M-yy",
-        showButtonPanel: true,
-        changeMonth: true,
-        changeYear: true,
-        yearRange: "2016:+1",
-        dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-    });
-
-    $("#edt-report-dtntm-tm").timepicker();
-
-    $("#nm-rcvd-dt").datepicker({
-        dateFormat:"dd-M-yy",
-        showButtonPanel: true,
-        changeMonth: true,
-        changeYear: true,
-        yearRange: "2016:+1",
-        dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-    });
-    $("#nm-clients-ref-date").datepicker({
-        dateFormat:"dd-M-yy",
-        showButtonPanel: true,
-        changeMonth: true,
-        changeYear: true,
-        yearRange: "2016:+1",
-        dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-    });
-    $("#nm-me-ref-date").datepicker({
-        dateFormat:"dd-M-yy",
-        showButtonPanel: true,
-        changeMonth: true,
-        changeYear: true,
-        yearRange: "2016:+1",
-        dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-    });
-    $("#nm-pump-type").on("change", function () {
-        var opt_1 = '<option value="3">3 Inch</option>';
-        var opt_2 = '<option value="4" selected>4 Inch</option>';
-        var opt_3 = '<option value="6">6 Inch</option>';
-        var opt_4 = '<option value="8">8 Inch</option>';
-
-        if ($(this).val() == "Centrifugal Pump"){
-            $("#nm-pipe-dia").html(opt_1+opt_2+opt_3+opt_4);
-        }
-        else {
-            $("#nm-pipe-dia").html(opt_2+opt_3);
-        }
-    });
 </script>
-<?php
-$conn->close();

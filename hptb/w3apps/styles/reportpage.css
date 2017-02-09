@@ -1,0 +1,21 @@
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  width: 100%;
+  background-color: darkgray; }
+
+.wrapper {
+  width: 670px;
+  margin: 0 auto; }
+  .wrapper .masterClass {
+    width: 100%;
+    margin: 5px 0; }
+  .wrapper .singlePage {
+    background-color: white;
+    height: 974px;
+    page-break-before: always; }
+
+/*# sourceMappingURL=reportpage.css.map */

@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98f59330-82ae-4847-83af-73ca3370f64a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/viewreport.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hptb/w3apps/reportpage.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hptb/w3apps/scss/reportpage.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/w3apps/reportmodules/action.php" afterPath="$PROJECT_DIR$/hptb/w3apps/reportmodules/action.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/createreport.php" afterPath="$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/createreport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/w3apps/report.php" afterPath="$PROJECT_DIR$/hptb/w3apps/report.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/editreport.php" afterPath="$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/editreport.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/w3apps/scripts/report.js" afterPath="$PROJECT_DIR$/hptb/w3apps/scripts/report.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/w3apps/scss/report.scss" afterPath="$PROJECT_DIR$/hptb/w3apps/scss/report.scss" />
@@ -56,43 +58,30 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="report.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hptb/w3apps/report.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="report.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hptb/w3apps/scripts/report.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="336" column="0" lean-forward="true" selection-start-line="336" selection-start-column="0" selection-end-line="336" selection-end-column="0" />
+            <state relative-caret-position="374">
+              <caret line="152" column="92" lean-forward="true" selection-start-line="152" selection-start-column="92" selection-end-line="152" selection-end-column="92" />
               <folding>
                 <element signature="e#0#46#0" expanded="false" />
-                <element signature="e#99#5958#0" expanded="false" />
                 <element signature="e#140#443#0" expanded="false" />
                 <element signature="e#479#2509#0" expanded="false" />
                 <element signature="e#565#1332#0" expanded="false" />
                 <element signature="e#1419#1548#0" expanded="false" />
                 <element signature="e#1649#1777#0" expanded="false" />
                 <element signature="e#1845#2501#0" expanded="false" />
-                <element signature="e#2544#5763#0" expanded="false" />
                 <element signature="e#2631#3500#0" expanded="false" />
                 <element signature="e#3584#4510#0" expanded="false" />
                 <element signature="e#4613#5025#0" expanded="false" />
-                <element signature="e#5119#5409#0" expanded="false" />
-                <element signature="e#5496#5755#0" expanded="false" />
-                <element signature="e#5848#5954#0" expanded="false" />
-                <element signature="e#5977#6028#0" expanded="false" />
+                <element signature="e#5119#6039#0" expanded="false" />
+                <element signature="e#6567#6673#0" expanded="false" />
+                <element signature="e#6696#6747#0" expanded="false" />
                 <element signature="n#!!block;n#selectThis#0" expanded="false" />
                 <element signature="n#!!block;n#isSelected#0" expanded="false" />
                 <element signature="n#!!block;n#setContentTable#0" expanded="false" />
-                <element signature="e#7613#8618#0" expanded="false" />
-                <element signature="e#8648#9676#0" expanded="false" />
+                <element signature="e#8332#9337#0" expanded="false" />
+                <element signature="e#9367#10395#0" expanded="false" />
                 <element signature="n#!!block;n#pagination#0" expanded="false" />
                 <element signature="n#!!block;n#makeKeywords#0" expanded="false" />
               </folding>
@@ -100,107 +89,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createreport.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/createreport.php">
+      <file leaf-file-name="reportpage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportpage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="173" column="0" lean-forward="true" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="e#5302#6106#0#HTML" expanded="false" />
-                <element signature="e#6139#6362#0#HTML" expanded="false" />
-                <element signature="e#6406#6629#0#HTML" expanded="false" />
-                <element signature="e#6668#6891#0#HTML" expanded="false" />
-                <element signature="e#6974#7414#0#HTML" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editreport.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/editreport.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="245" column="0" lean-forward="true" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
-              <folding>
-                <element signature="e#199#10955#0#HTML" expanded="false" />
-                <element signature="e#224#355#0#HTML" expanded="false" />
-                <element signature="e#360#7261#0#HTML" expanded="false" />
-                <element signature="e#7266#10948#0#HTML" expanded="false" />
-                <element signature="e#7369#7792#0#HTML" expanded="false" />
-                <element signature="e#7805#10704#0#HTML" expanded="false" />
-                <element signature="e#10730#10937#0#HTML" expanded="false" />
-                <element signature="e#10998#11106#0#HTML" expanded="false" />
-                <element signature="e#11186#13520#0#HTML" expanded="false" />
-                <element signature="e#13558#15296#0#HTML" expanded="false" />
-                <element signature="e#13685#14308#0#HTML" expanded="false" />
-                <element signature="e#15360#15582#0#HTML" expanded="false" />
-                <element signature="e#15626#15848#0#HTML" expanded="false" />
-                <element signature="e#15887#16109#0#HTML" expanded="false" />
-                <element signature="e#16160#16600#0#HTML" expanded="false" />
-                <marker date="1486544951901" expanded="true" signature="8132:8376" ph="..." />
-                <marker date="1486544951901" expanded="true" signature="8157:8371" ph="..." />
-                <marker date="1486544951901" expanded="true" signature="8430:8680" ph="..." />
-                <marker date="1486544951901" expanded="true" signature="8455:8675" ph="..." />
-                <marker date="1486544951901" expanded="true" signature="8736:8990" ph="..." />
-                <marker date="1486544951901" expanded="true" signature="8761:8985" ph="..." />
-                <marker date="1486544951901" expanded="true" signature="9039:9293" ph="..." />
-                <marker date="1486544951901" expanded="true" signature="9064:9288" ph="..." />
-                <marker date="1486544951901" expanded="true" signature="9342:9596" ph="..." />
-                <marker date="1486544951901" expanded="true" signature="9367:9591" ph="..." />
-                <marker date="1486544951901" expanded="true" signature="9646:9889" ph="..." />
-                <marker date="1486544951901" expanded="true" signature="9671:9884" ph="..." />
-                <marker date="1486544951901" expanded="true" signature="9937:10175" ph="..." />
-                <marker date="1486544951901" expanded="true" signature="9962:10170" ph="..." />
-                <marker date="1486544951901" expanded="true" signature="10998:11032" ph="{...}" />
-                <marker date="1486544951901" expanded="true" signature="15297:15327" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="action.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportmodules/action.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            <state relative-caret-position="459">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="report.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hptb/w3apps/scss/report.scss">
+      <file leaf-file-name="reportpage.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hptb/w3apps/scss/reportpage.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="134" column="5" lean-forward="true" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
-              <folding>
-                <element signature="e#78#1109#0" expanded="false" />
-                <element signature="e#1123#1277#0" expanded="false" />
-                <element signature="e#1290#2055#0" expanded="false" />
-                <element signature="e#2068#2353#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dbwrite.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hptb/w3apps/dbcom/dbwrite.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="46" column="38" lean-forward="false" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
-              <folding>
-                <element signature="e#27#92#0#PHP" expanded="false" />
-                <element signature="n#insertReport#0;n#dbwrite#0;n#!!top" expanded="false" />
-                <element signature="e#534#617#0#PHP" expanded="false" />
-                <element signature="n#updateReportData#0;n#dbwrite#0;n#!!top" expanded="false" />
-                <element signature="e#1012#1075#0#PHP" expanded="false" />
-                <element signature="n#deleteReport#0;n#dbwrite#0;n#!!top" expanded="false" />
-                <marker date="1486366322621" expanded="true" signature="440:485" ph="INSERT INTO report... " />
-                <marker date="1486366322621" expanded="true" signature="919:960" ph="UPDATE repor... " />
-                <marker date="1486366322621" expanded="true" signature="1153:1188" ph="DELETE FROM " />
-              </folding>
+            <state relative-caret-position="374">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -208,38 +112,9 @@
       <file leaf-file-name="contents.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportmodules/contents.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="4" column="51" lean-forward="true" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dbread.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hptb/w3apps/dbcom/dbread.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="100" column="5" lean-forward="false" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
-              <folding>
-                <element signature="e#26#56#0#PHP" expanded="false" />
-                <element signature="n#countUncompletedReportList#0;n#dbread#0;n#!!top" expanded="false" />
-                <element signature="e#270#300#0#PHP" expanded="false" />
-                <element signature="n#countCompletedReportList#0;n#dbread#0;n#!!top" expanded="false" />
-                <element signature="e#513#567#0#PHP" expanded="false" />
-                <element signature="n#countFindReportList#0;n#dbread#0;n#!!top" expanded="false" />
-                <element signature="e#781#860#0#PHP" expanded="false" />
-                <element signature="e#1470#1549#0#PHP" expanded="false" />
-                <element signature="n#getCompletedReportList#0;n#dbread#0;n#!!top" expanded="false" />
-                <element signature="e#2163#2266#0#PHP" expanded="false" />
-                <element signature="n#searchReportList#0;n#dbread#0;n#!!top" expanded="false" />
-                <marker date="1486454655863" expanded="true" signature="145:184" ph="SELECT id FR... report" />
-                <marker date="1486454655863" expanded="true" signature="387:427" ph="SELECT id FR... report" />
-                <marker date="1486454655863" expanded="true" signature="658:686" ph="SELECT id FR... report" />
-                <marker date="1486454655863" expanded="true" signature="991:1147" ph="SELECT id, r... report" />
-                <marker date="1486454655863" expanded="true" signature="1678:1842" ph="SELECT id, r... report" />
-                <marker date="1486454655863" expanded="true" signature="2400:2561" ph="SELECT id, r... report" />
-                <marker date="1486454655863" expanded="true" signature="2956:2986" ph="SELECT * FRO... report" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -260,6 +135,8 @@
       <find>white</find>
       <find>img</find>
       <find>f</find>
+      <find>showWidgetOnAddonClick</find>
+      <find>radius</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -304,15 +181,21 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f060a264-86d2-46f4-8b37-9913d1f6da95/console.sql" />
         <option value="$PROJECT_DIR$/hptb/w3apps/reportmodules/createreport.php" />
         <option value="$PROJECT_DIR$/hptb/w3apps/scss/_datepicker.scss" />
-        <option value="$PROJECT_DIR$/hptb/w3apps/report.php" />
         <option value="$PROJECT_DIR$/hptb/w3apps/dbcom/dbwrite.php" />
         <option value="$PROJECT_DIR$/hptb/w3apps/dbcom/dbread.php" />
         <option value="$PROJECT_DIR$/hptb/w3apps/reportmodules/contents.php" />
-        <option value="$PROJECT_DIR$/hptb/w3apps/scss/report.scss" />
         <option value="$PROJECT_DIR$/hptb/w3apps/reportmodules/action.php" />
         <option value="$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/createreport.php" />
-        <option value="$PROJECT_DIR$/hptb/w3apps/scripts/report.js" />
+        <option value="$PROJECT_DIR$/hptb/contents/vendors/bootstrap-timepicker.js" />
+        <option value="$PROJECT_DIR$/hptb/w3apps/scss/report.scss" />
+        <option value="$PROJECT_DIR$/hptb/w3apps/report.php" />
+        <option value="$PROJECT_DIR$/hptb/w3apps/scss/makereport.scss" />
+        <option value="$PROJECT_DIR$/hptb/w3apps/makereport.php" />
         <option value="$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/editreport.php" />
+        <option value="$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/viewreport.php" />
+        <option value="$PROJECT_DIR$/hptb/w3apps/scripts/report.js" />
+        <option value="$PROJECT_DIR$/hptb/w3apps/reportpage.php" />
+        <option value="$PROJECT_DIR$/hptb/w3apps/scss/reportpage.scss" />
       </list>
     </option>
   </component>
@@ -363,6 +246,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -390,6 +274,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="w3apps" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mist" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hptb" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w3apps" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="styles" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mist" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hptb" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w3apps" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -477,9 +405,48 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mist" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hptb" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contents" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendors" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mist" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hptb" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contents" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -495,13 +462,13 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\mist\hptb\contents\plc" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Sinmist\hptb\contents\vendors\jquery-ui\1.12.1\custom.sq" />
       <recent name="C:\xampp\htdocs\mist\hptb\w3apps\reportmodules\ui" />
       <recent name="C:\xampp\htdocs\mist\hptb\w3apps\scss" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\mist\hptb\contents\plc" />
     </key>
   </component>
   <component name="RunManager">
@@ -583,20 +550,22 @@
       <workItem from="1486355403736" duration="21668000" />
       <workItem from="1486439961872" duration="19039000" />
       <workItem from="1486526056745" duration="15295000" />
+      <workItem from="1486611637066" duration="24233000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="237926000" />
+    <option name="totallyTimeSpent" value="262159000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1762481" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1785174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -611,7 +580,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -628,41 +596,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hptb/plc/system.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hptb/plc/styles/system.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hptb/contents/plc/scss/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hptb/contents/plc/service.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hptb/contents/plc/scripts/process.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hptb/plc/scripts/ss.js" />
     <entry file="file://$PROJECT_DIR$/hptb/contents/plc/reply.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -714,13 +647,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hptb/contents/plc/styles/main.css.map">
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hptb/contents/plc/scss/_panels.scss">
@@ -785,14 +718,6 @@
           <Categories />
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hptb/w3apps/scss/_common.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="38" column="14" lean-forward="true" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -939,27 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportmodules/contents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hptb/w3apps/scss/report.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="134" column="5" lean-forward="true" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
-          <folding>
-            <element signature="e#78#1109#0" expanded="false" />
-            <element signature="e#1123#1277#0" expanded="false" />
-            <element signature="e#1290#2055#0" expanded="false" />
-            <element signature="e#2068#2353#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hptb/w3apps/dbcom/dbwrite.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -978,54 +882,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hptb/w3apps/report.php">
+    <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportmodules/action.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        <state relative-caret-position="391">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hptb/w3apps/scripts/report.js">
+    <entry file="file://$PROJECT_DIR$/hptb/w3apps/report.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="336" column="0" lean-forward="true" selection-start-line="336" selection-start-column="0" selection-end-line="336" selection-end-column="0" />
+        <state relative-caret-position="184">
+          <caret line="50" column="119" lean-forward="true" selection-start-line="50" selection-start-column="119" selection-end-line="50" selection-end-column="119" />
           <folding>
-            <element signature="e#0#46#0" expanded="false" />
-            <element signature="e#99#5958#0" expanded="false" />
-            <element signature="e#140#443#0" expanded="false" />
-            <element signature="e#479#2509#0" expanded="false" />
-            <element signature="e#565#1332#0" expanded="false" />
-            <element signature="e#1419#1548#0" expanded="false" />
-            <element signature="e#1649#1777#0" expanded="false" />
-            <element signature="e#1845#2501#0" expanded="false" />
-            <element signature="e#2544#5763#0" expanded="false" />
-            <element signature="e#2631#3500#0" expanded="false" />
-            <element signature="e#3584#4510#0" expanded="false" />
-            <element signature="e#4613#5025#0" expanded="false" />
-            <element signature="e#5119#5409#0" expanded="false" />
-            <element signature="e#5496#5755#0" expanded="false" />
-            <element signature="e#5848#5954#0" expanded="false" />
-            <element signature="e#5977#6028#0" expanded="false" />
-            <element signature="n#!!block;n#selectThis#0" expanded="false" />
-            <element signature="n#!!block;n#isSelected#0" expanded="false" />
-            <element signature="n#!!block;n#setContentTable#0" expanded="false" />
-            <element signature="e#7613#8618#0" expanded="false" />
-            <element signature="e#8648#9676#0" expanded="false" />
-            <element signature="n#!!block;n#pagination#0" expanded="false" />
-            <element signature="n#!!block;n#makeKeywords#0" expanded="false" />
+            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hptb/w3apps/scss/_common.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="38" column="14" lean-forward="true" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/createreport.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="173" column="0" lean-forward="true" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="110" column="0" lean-forward="true" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="e#5302#6106#0#HTML" expanded="false" />
+            <element signature="n#script#0;n#!!top" expanded="false" />
+            <element signature="e#5321#5960#0#HTML" expanded="false" />
+            <element signature="e#6068#6097#0#HTML" expanded="false" />
             <element signature="e#6139#6362#0#HTML" expanded="false" />
             <element signature="e#6406#6629#0#HTML" expanded="false" />
             <element signature="e#6668#6891#0#HTML" expanded="false" />
@@ -1034,50 +927,171 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/editreport.php">
+    <entry file="file://$PROJECT_DIR$/hptb/w3apps/styles/report.css.map">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="245" column="0" lean-forward="true" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/viewreport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="174" column="26" lean-forward="true" selection-start-line="174" selection-start-column="26" selection-end-line="174" selection-end-column="26" />
           <folding>
-            <element signature="e#199#10955#0#HTML" expanded="false" />
-            <element signature="e#224#355#0#HTML" expanded="false" />
-            <element signature="e#360#7261#0#HTML" expanded="false" />
-            <element signature="e#7266#10948#0#HTML" expanded="false" />
-            <element signature="e#7369#7792#0#HTML" expanded="false" />
-            <element signature="e#7805#10704#0#HTML" expanded="false" />
-            <element signature="e#10730#10937#0#HTML" expanded="false" />
-            <element signature="e#10998#11106#0#HTML" expanded="false" />
-            <element signature="e#11186#13520#0#HTML" expanded="false" />
-            <element signature="e#13558#15296#0#HTML" expanded="false" />
-            <element signature="e#13685#14308#0#HTML" expanded="false" />
-            <element signature="e#15360#15582#0#HTML" expanded="false" />
-            <element signature="e#15626#15848#0#HTML" expanded="false" />
-            <element signature="e#15887#16109#0#HTML" expanded="false" />
-            <element signature="e#16160#16600#0#HTML" expanded="false" />
-            <marker date="1486544951901" expanded="true" signature="8132:8376" ph="..." />
-            <marker date="1486544951901" expanded="true" signature="8157:8371" ph="..." />
-            <marker date="1486544951901" expanded="true" signature="8430:8680" ph="..." />
-            <marker date="1486544951901" expanded="true" signature="8455:8675" ph="..." />
-            <marker date="1486544951901" expanded="true" signature="8736:8990" ph="..." />
-            <marker date="1486544951901" expanded="true" signature="8761:8985" ph="..." />
-            <marker date="1486544951901" expanded="true" signature="9039:9293" ph="..." />
-            <marker date="1486544951901" expanded="true" signature="9064:9288" ph="..." />
-            <marker date="1486544951901" expanded="true" signature="9342:9596" ph="..." />
-            <marker date="1486544951901" expanded="true" signature="9367:9591" ph="..." />
-            <marker date="1486544951901" expanded="true" signature="9646:9889" ph="..." />
-            <marker date="1486544951901" expanded="true" signature="9671:9884" ph="..." />
-            <marker date="1486544951901" expanded="true" signature="9937:10175" ph="..." />
-            <marker date="1486544951901" expanded="true" signature="9962:10170" ph="..." />
-            <marker date="1486544951901" expanded="true" signature="10998:11032" ph="{...}" />
-            <marker date="1486544951901" expanded="true" signature="15297:15327" ph="{...}" />
+            <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#11019#11025#0#HTML" expanded="true" />
+            <element signature="e#11025#11031#0#HTML" expanded="true" />
+            <element signature="e#11031#11037#0#HTML" expanded="true" />
+            <element signature="e#11037#11043#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#4;n#div#0;n#!!top" expanded="true" />
+            <marker date="1486637116236" expanded="true" signature="8243:8487" ph="..." />
+            <marker date="1486637116236" expanded="true" signature="8268:8482" ph="..." />
+            <marker date="1486637116236" expanded="true" signature="8537:8787" ph="..." />
+            <marker date="1486637116236" expanded="true" signature="8562:8782" ph="..." />
+            <marker date="1486637116236" expanded="true" signature="8839:9093" ph="..." />
+            <marker date="1486637116236" expanded="true" signature="8864:9088" ph="..." />
+            <marker date="1486637116236" expanded="true" signature="9138:9392" ph="..." />
+            <marker date="1486637116236" expanded="true" signature="9163:9387" ph="..." />
+            <marker date="1486637116236" expanded="true" signature="9437:9691" ph="..." />
+            <marker date="1486637116236" expanded="true" signature="9462:9686" ph="..." />
+            <marker date="1486637116236" expanded="true" signature="9737:9980" ph="..." />
+            <marker date="1486637116236" expanded="true" signature="9762:9975" ph="..." />
+            <marker date="1486637116236" expanded="true" signature="10024:10262" ph="..." />
+            <marker date="1486637116236" expanded="true" signature="10049:10257" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportmodules/action.php">
+    <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/editreport.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        <state relative-caret-position="85">
+          <caret line="11" column="54" lean-forward="true" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
+          <folding>
+            <element signature="e#454#7355#0#HTML" expanded="false" />
+            <element signature="e#7360#11042#0#HTML" expanded="false" />
+            <element signature="e#11272#11293#0#HTML" expanded="true" />
+            <element signature="e#11366#11372#0#HTML" expanded="true" />
+            <element signature="e#11372#11378#0#HTML" expanded="true" />
+            <element signature="e#11378#11384#0#HTML" expanded="true" />
+            <element signature="e#11384#11390#0#HTML" expanded="true" />
+            <element signature="e#11609#11629#0#HTML" expanded="true" />
+            <element signature="e#12021#12129#0#HTML" expanded="false" />
+            <element signature="e#12209#14543#0#HTML" expanded="false" />
+            <element signature="e#14656#15341#0#HTML" expanded="false" />
+            <element signature="e#15458#16268#0#HTML" expanded="false" />
+            <element signature="e#16529#16751#0#HTML" expanded="false" />
+            <element signature="e#16832#17054#0#HTML" expanded="false" />
+            <element signature="e#17098#17320#0#HTML" expanded="false" />
+            <element signature="e#17359#17581#0#HTML" expanded="false" />
+            <element signature="e#17632#18072#0#HTML" expanded="false" />
+            <marker date="1486637004065" expanded="true" signature="8226:8470" ph="..." />
+            <marker date="1486637004065" expanded="true" signature="8251:8465" ph="..." />
+            <marker date="1486637004065" expanded="true" signature="8524:8774" ph="..." />
+            <marker date="1486637004065" expanded="true" signature="8549:8769" ph="..." />
+            <marker date="1486637004065" expanded="true" signature="8830:9084" ph="..." />
+            <marker date="1486637004065" expanded="true" signature="8855:9079" ph="..." />
+            <marker date="1486637004065" expanded="true" signature="9133:9387" ph="..." />
+            <marker date="1486637004065" expanded="true" signature="9158:9382" ph="..." />
+            <marker date="1486637004065" expanded="true" signature="9436:9690" ph="..." />
+            <marker date="1486637004065" expanded="true" signature="9461:9685" ph="..." />
+            <marker date="1486637004065" expanded="true" signature="9740:9983" ph="..." />
+            <marker date="1486637004065" expanded="true" signature="9765:9978" ph="..." />
+            <marker date="1486637004065" expanded="true" signature="10031:10269" ph="..." />
+            <marker date="1486637004065" expanded="true" signature="10056:10264" ph="..." />
+            <marker date="1486637004065" expanded="true" signature="12021:12055" ph="{...}" />
+            <marker date="1486637004065" expanded="true" signature="16456:16486" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hptb/w3apps/scss/report.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="171" column="17" lean-forward="true" selection-start-line="171" selection-start-column="17" selection-end-line="171" selection-end-column="17" />
+          <folding>
+            <element signature="e#78#1109#0" expanded="false" />
+            <element signature="e#1123#1277#0" expanded="false" />
+            <element signature="e#1290#2055#0" expanded="false" />
+            <element signature="e#2068#2353#0" expanded="false" />
+            <element signature="e#2380#2921#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hptb/contents/vendors/bootstrap-timepicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1486623277456" expanded="true" signature="9991:9997" ph=" " />
+            <marker date="1486623277456" expanded="true" signature="10183:10189" ph=" " />
+            <marker date="1486623277456" expanded="true" signature="10396:10402" ph=" " />
+            <marker date="1486623277456" expanded="true" signature="10935:10941" ph=" " />
+            <marker date="1486623277456" expanded="true" signature="11381:11387" ph=" " />
+            <marker date="1486623277456" expanded="true" signature="11594:11600" ph=" " />
+            <marker date="1486623277456" expanded="true" signature="12072:12079" ph="×" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportmodules/contents.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="51" lean-forward="true" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hptb/w3apps/scripts/report.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="152" column="92" lean-forward="true" selection-start-line="152" selection-start-column="92" selection-end-line="152" selection-end-column="92" />
+          <folding>
+            <element signature="e#0#46#0" expanded="false" />
+            <element signature="e#140#443#0" expanded="false" />
+            <element signature="e#479#2509#0" expanded="false" />
+            <element signature="e#565#1332#0" expanded="false" />
+            <element signature="e#1419#1548#0" expanded="false" />
+            <element signature="e#1649#1777#0" expanded="false" />
+            <element signature="e#1845#2501#0" expanded="false" />
+            <element signature="e#2631#3500#0" expanded="false" />
+            <element signature="e#3584#4510#0" expanded="false" />
+            <element signature="e#4613#5025#0" expanded="false" />
+            <element signature="e#5119#6039#0" expanded="false" />
+            <element signature="e#6567#6673#0" expanded="false" />
+            <element signature="e#6696#6747#0" expanded="false" />
+            <element signature="n#!!block;n#selectThis#0" expanded="false" />
+            <element signature="n#!!block;n#isSelected#0" expanded="false" />
+            <element signature="n#!!block;n#setContentTable#0" expanded="false" />
+            <element signature="e#8332#9337#0" expanded="false" />
+            <element signature="e#9367#10395#0" expanded="false" />
+            <element signature="n#!!block;n#pagination#0" expanded="false" />
+            <element signature="n#!!block;n#makeKeywords#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportpage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hptb/w3apps/scss/reportpage.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
