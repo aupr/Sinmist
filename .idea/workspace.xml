@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98f59330-82ae-4847-83af-73ca3370f64a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/viewreport.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hptb/w3apps/reportpage.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hptb/w3apps/scss/reportpage.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/w3apps/report.php" afterPath="$PROJECT_DIR$/hptb/w3apps/report.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/editreport.php" afterPath="$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/editreport.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/w3apps/scripts/report.js" afterPath="$PROJECT_DIR$/hptb/w3apps/scripts/report.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/w3apps/scss/report.scss" afterPath="$PROJECT_DIR$/hptb/w3apps/scss/report.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/w3apps/styles/report.css" afterPath="$PROJECT_DIR$/hptb/w3apps/styles/report.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/w3apps/styles/report.css.map" afterPath="$PROJECT_DIR$/hptb/w3apps/styles/report.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/w3apps/reportpage.php" afterPath="$PROJECT_DIR$/hptb/w3apps/reportpage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/w3apps/scss/reportpage.scss" afterPath="$PROJECT_DIR$/hptb/w3apps/scss/reportpage.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/w3apps/styles/reportpage.css" afterPath="$PROJECT_DIR$/hptb/w3apps/styles/reportpage.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/w3apps/styles/reportpage.css.map" afterPath="$PROJECT_DIR$/hptb/w3apps/styles/reportpage.css.map" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,8 +56,8 @@
       <file leaf-file-name="report.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hptb/w3apps/scripts/report.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="152" column="92" lean-forward="true" selection-start-line="152" selection-start-column="92" selection-end-line="152" selection-end-column="92" />
+            <state relative-caret-position="481">
+              <caret line="341" column="1" lean-forward="true" selection-start-line="341" selection-start-column="1" selection-end-line="341" selection-end-column="1" />
               <folding>
                 <element signature="e#0#46#0" expanded="false" />
                 <element signature="e#140#443#0" expanded="false" />
@@ -89,32 +84,58 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reportpage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportpage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="27" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reportpage.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hptb/w3apps/scss/reportpage.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="contents.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportmodules/contents.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="51" lean-forward="true" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
+              <caret line="4" column="51" lean-forward="false" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reportpage.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportpage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1806">
+              <caret line="417" column="117" lean-forward="true" selection-start-line="417" selection-start-column="117" selection-end-line="417" selection-end-column="117" />
+              <folding>
+                <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#table#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#table#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#table#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#table#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#table#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#4477#4483#1#HTML" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#table#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#table#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#table#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#8197#8203#1#HTML" expanded="true" />
+                <element signature="n#table#2;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#table#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#table#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#table#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#table#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#table#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#15221#15227#1#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reportpage.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hptb/w3apps/scss/reportpage.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="122" column="20" lean-forward="true" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
+              <folding>
+                <element signature="e#140#973#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -194,8 +215,8 @@
         <option value="$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/editreport.php" />
         <option value="$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/viewreport.php" />
         <option value="$PROJECT_DIR$/hptb/w3apps/scripts/report.js" />
-        <option value="$PROJECT_DIR$/hptb/w3apps/reportpage.php" />
         <option value="$PROJECT_DIR$/hptb/w3apps/scss/reportpage.scss" />
+        <option value="$PROJECT_DIR$/hptb/w3apps/reportpage.php" />
       </list>
     </option>
   </component>
@@ -247,6 +268,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -447,7 +469,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -551,21 +572,21 @@
       <workItem from="1486439961872" duration="19039000" />
       <workItem from="1486526056745" duration="15295000" />
       <workItem from="1486611637066" duration="24233000" />
+      <workItem from="1486785474745" duration="21880000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="262159000" />
+    <option name="totallyTimeSpent" value="284039000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1785174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18078668" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -580,6 +601,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -647,13 +669,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hptb/contents/plc/styles/main.css.map">
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hptb/contents/plc/scss/_panels.scss">
@@ -799,7 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="95" column="24" lean-forward="true" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -825,7 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -894,10 +914,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="50" column="119" lean-forward="true" selection-start-line="50" selection-start-column="119" selection-end-line="50" selection-end-column="119" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -905,7 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="38" column="14" lean-forward="true" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -914,9 +930,6 @@
         <state relative-caret-position="136">
           <caret line="110" column="0" lean-forward="true" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#script#0;n#!!top" expanded="false" />
             <element signature="e#5321#5960#0#HTML" expanded="false" />
             <element signature="e#6068#6097#0#HTML" expanded="false" />
             <element signature="e#6139#6362#0#HTML" expanded="false" />
@@ -928,14 +941,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hptb/w3apps/styles/report.css.map">
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportmodules/ui/viewreport.php">
@@ -943,15 +955,10 @@
         <state relative-caret-position="323">
           <caret line="174" column="26" lean-forward="true" selection-start-line="174" selection-start-column="26" selection-end-line="174" selection-end-column="26" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#11019#11025#0#HTML" expanded="true" />
-            <element signature="e#11025#11031#0#HTML" expanded="true" />
-            <element signature="e#11031#11037#0#HTML" expanded="true" />
-            <element signature="e#11037#11043#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#4;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#11019#11025#0#HTML" expanded="false" />
+            <element signature="e#11025#11031#0#HTML" expanded="false" />
+            <element signature="e#11031#11037#0#HTML" expanded="false" />
+            <element signature="e#11037#11043#0#HTML" expanded="false" />
             <marker date="1486637116236" expanded="true" signature="8243:8487" ph="..." />
             <marker date="1486637116236" expanded="true" signature="8268:8482" ph="..." />
             <marker date="1486637116236" expanded="true" signature="8537:8787" ph="..." />
@@ -977,12 +984,12 @@
           <folding>
             <element signature="e#454#7355#0#HTML" expanded="false" />
             <element signature="e#7360#11042#0#HTML" expanded="false" />
-            <element signature="e#11272#11293#0#HTML" expanded="true" />
-            <element signature="e#11366#11372#0#HTML" expanded="true" />
-            <element signature="e#11372#11378#0#HTML" expanded="true" />
-            <element signature="e#11378#11384#0#HTML" expanded="true" />
-            <element signature="e#11384#11390#0#HTML" expanded="true" />
-            <element signature="e#11609#11629#0#HTML" expanded="true" />
+            <element signature="e#11272#11293#0#HTML" expanded="false" />
+            <element signature="e#11366#11372#0#HTML" expanded="false" />
+            <element signature="e#11372#11378#0#HTML" expanded="false" />
+            <element signature="e#11378#11384#0#HTML" expanded="false" />
+            <element signature="e#11384#11390#0#HTML" expanded="false" />
+            <element signature="e#11609#11629#0#HTML" expanded="false" />
             <element signature="e#12021#12129#0#HTML" expanded="false" />
             <element signature="e#12209#14543#0#HTML" expanded="false" />
             <element signature="e#14656#15341#0#HTML" expanded="false" />
@@ -1016,13 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="171" column="17" lean-forward="true" selection-start-line="171" selection-start-column="17" selection-end-line="171" selection-end-column="17" />
-          <folding>
-            <element signature="e#78#1109#0" expanded="false" />
-            <element signature="e#1123#1277#0" expanded="false" />
-            <element signature="e#1290#2055#0" expanded="false" />
-            <element signature="e#2068#2353#0" expanded="false" />
-            <element signature="e#2380#2921#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1030,15 +1030,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hptb/w3apps/scss/reportpage.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="122" column="20" lean-forward="true" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1486623277456" expanded="true" signature="9991:9997" ph=" " />
-            <marker date="1486623277456" expanded="true" signature="10183:10189" ph=" " />
-            <marker date="1486623277456" expanded="true" signature="10396:10402" ph=" " />
-            <marker date="1486623277456" expanded="true" signature="10935:10941" ph=" " />
-            <marker date="1486623277456" expanded="true" signature="11381:11387" ph=" " />
-            <marker date="1486623277456" expanded="true" signature="11594:11600" ph=" " />
-            <marker date="1486623277456" expanded="true" signature="12072:12079" ph="×" />
+            <element signature="e#140#973#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1046,15 +1046,15 @@
     <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportmodules/contents.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="51" lean-forward="true" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
+          <caret line="4" column="51" lean-forward="false" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hptb/w3apps/scripts/report.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="152" column="92" lean-forward="true" selection-start-line="152" selection-start-column="92" selection-end-line="152" selection-end-column="92" />
+        <state relative-caret-position="481">
+          <caret line="341" column="1" lean-forward="true" selection-start-line="341" selection-start-column="1" selection-end-line="341" selection-end-column="1" />
           <folding>
             <element signature="e#0#46#0" expanded="false" />
             <element signature="e#140#443#0" expanded="false" />
@@ -1082,17 +1082,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hptb/w3apps/reportpage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hptb/w3apps/scss/reportpage.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-1806">
+          <caret line="417" column="117" lean-forward="true" selection-start-line="417" selection-start-column="117" selection-end-line="417" selection-end-column="117" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#table#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#table#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#table#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#4477#4483#1#HTML" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#table#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#table#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#8197#8203#1#HTML" expanded="true" />
+            <element signature="n#table#2;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#table#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#table#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#table#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#15221#15227#1#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

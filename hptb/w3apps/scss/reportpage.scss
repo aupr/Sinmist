@@ -6,20 +6,134 @@
 
 body{
   width: 100%;
-  background-color: darkgray;
+  background-color: white;
+}
+.controller{
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  width: 300px;
+  background-color: #ddd;
+  border: 1px solid gray;
+  //padding: 10px;
+  .cheader{
+    height: 30px;
+    width: 100%;
+    background-color: #444;
+    line-height: 30px;
+    vertical-align: middle;
+    color: white;
+    padding-left: 10px;
+    font-family: "calibri", "serif";
+    font-size: 13pt;
+    font-weight: bold;
+  }
+  .cfooter{
+    color: white;
+    background-color: #444;
+    padding: 10px;
+    font-family: "calibri", "serif";
+
+  }
+  .holder{
+    padding: 5px 10px;
+    #print-btn{
+      width: 100%;
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      background-color: #666;
+      cursor: pointer;
+      margin: 5px 0;
+      &:hover{
+        background-color: #555;
+      }
+    }
+    #close-btn{
+      @extend #print-btn;
+    }
+  }
+
 }
 
 .wrapper{
-  width: 670px;
+  width: 712px;//670px;
   margin: 0 auto;
   .masterClass{
     width: 100%;
     margin: 5px 0;
+    border: 1px solid gray;
   }
-  .singlePage{
-    background-color: white;
-    height: 974px;
-    page-break-before: always;
 
+}
+.singlePage{
+  font-family: "calibri", "serif";
+  font-size: 13pt;
+  background-color: white;
+  color: #444;
+  width: 710px;
+  height: 1030px;
+  page-break-before: always;
+  .pheader{
+    width: 100%;
+    height: 60px;
+    background-color: #74a4ff;
+    color: white;
+    .logo{
+      float: left;
+      height: inherit;
+      width: 70px;
+      background-color: white;
+      margin-left: 20px;
+      background-image: url("../../contents/images/logo.png");
+      background-origin: content-box;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+    .name{
+      height: inherit;
+      background-color: inherit;
+      color: white;
+      line-height: 60px;
+      vertical-align: middle;
+      float: left;
+      margin-left: 20px;
+      font-family: "calibri", "serif";
+      font-size: 20pt;
+      font-weight: bold;
+    }
+  }
+  .reportPageHeadText{
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-family: "calibri", "serif";
+    font-size: 18pt;
+    font-weight: bold;
+  }
+  .vendorMsg{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 150px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 18pt;
+  }
+  .reportDataTable{
+    border-collapse: collapse;
+    width: 90%;
+    margin-left: 30px;
+    th, td {
+      border: 1px solid gray;
+      text-align: center;
+    }
+  }
+  #reportGraph{
+    width: 95%;
+    margin-left: 30px;
+    height: 400px;
   }
 }
