@@ -35,6 +35,7 @@ $userName = "Administrator"
             <li><button id="btn-origin">Origin</button>
                 <ul class="corner_ul">
                     <li><button id="btn-settings">Settings</button></li>
+                    <li><button id="btn-set-formula">Set Formula</button></li>
                     <li><button id="btn-toggle-fscr">Toggle Full-Screen</button></li>
                 </ul>
             </li>

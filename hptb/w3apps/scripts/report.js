@@ -14,6 +14,22 @@ $(document).ready(function () {
             it_modal_open();
         });
 
+        $("#btn-set-formula").click(function () {
+            $.post("reportmodules/ui/takeformula.php",{}, function (ret) {
+                it_modal_open("Set Formula ...",ret,"dodgerblue","800px","Set, Cancel", function (bc) {
+                    if (bc == "Cancel"){
+                        it_modal_close();
+                    }
+                    else if(bc == "Set"){
+                        it_modal_loading();
+                        setFormula(function () {
+                            it_modal_close();
+                        });
+                    }
+                });
+            });
+        });
+
         $("#btn-toggle-fscr").click(function () {
             it_fullscreen_toggle();
         });
@@ -150,7 +166,7 @@ $(document).ready(function () {
         $("#ac-btn-make-report-page").click(function () {
             if(selected.type === "report"){
                 if(isSelected()){
-                    var win = window.open('reportpage.php?id='+selected.objectId, '_blank');
+                    var win = window.open('reportpage.php?id='+selected.objectId+'&sensor=U', '_blank');
                     win.focus();
                 }
             } else {

@@ -136,7 +136,7 @@ $editReportDnT = explode('@',$res['data']['tDtTm']);
                 <th>Discharge P.</th>
                 <th>Flow Rate M</th>
                 <th>Flow Rate U</th>
-                <th>Motor Energy</th>
+                <th>Active Power</th>
                 <th>Motor Freq.</th>
             </tr>
             </thead>
@@ -158,7 +158,7 @@ $editReportDnT = explode('@',$res['data']['tDtTm']);
                     $c_flow_rate_u = '<td><div class="input-group"><input class="form-control no-radius" id="edt-flow-rate-u-'.$lastIncr.'" value="'.$dt->fru.'">
                     <label for="edt-flow-rate-u-'.$lastIncr.'" class="input-group-addon no-radius">m<sup>3</sup>/hr</label></div></td>';
                     $c_motor_energy = '<td><div class="input-group"><input class="form-control no-radius" id="edt-motor-energy-'.$lastIncr.'" value="'.$dt->men.'">
-                    <label for="edt-motor-energy-'.$lastIncr.'" class="input-group-addon no-radius">kWh</label></div></td>';
+                    <label for="edt-motor-energy-'.$lastIncr.'" class="input-group-addon no-radius">kW</label></div></td>';
                     $c_motor_freq = '<td><div class="input-group"><input class="form-control no-radius" id="edt-motor-freq-'.$lastIncr.'" value="'.$dt->mfq.'">
                     <label for="edt-motor-freq-'.$lastIncr.'" class="input-group-addon no-radius">Hz</label></div></td>';
 

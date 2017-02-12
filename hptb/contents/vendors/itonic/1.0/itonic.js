@@ -259,7 +259,7 @@ function it_modal_execute(obj) {
     }
     // Making Draggable the modal section
     if (obj.draggable == true){
-        if(typeof $.fn.draggable == 'function') n_.draggable();
+        if(typeof $.fn.draggable == 'function') n_.draggable({cancel : '#iM_-body'});
         else console.log('Error: Required jquery-ui with draggable function!');
     } 
     

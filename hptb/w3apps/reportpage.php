@@ -1,4 +1,10 @@
 <?php
+require 'reportmodules/formula/formula.php';
+require 'dbcom/connect.php';
+require 'dbcom/dbread.php';
+$dbRedObj = new dbread();
+$dbData = $dbRedObj->getReport($_GET['id']);
+$sensor = isset($_GET['sensor'])?$_GET['sensor']:"M";
 $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hydraulic Pump Testing Bench - MIST</div></div>';
 
 ?>
@@ -30,18 +36,18 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
         <div id="rPage_1" class="masterClass">
             <!--Real content for print page 1-->
             <div class="singlePage"><?=$pageHeader?>
-                <div class="reportPageHeadText">Test report of Submersible Pump</div>
+                <div class="reportPageHeadText">Test report of <?=$dbData['data']['pumpType']?></div>
                 <table style='float: right; margin: 20px 40px;'>
                     <tbody>
                     <tr>
                         <td>Received Date</td>
                         <td> : </td>
-                        <td>12-Feb-2017</td>
+                        <td><?=$dbData['data']['rDt']?></td>
                     </tr>
                     <tr>
                         <td>Test Date & Time</td>
                         <td> : </td>
-                        <td>15-Feb-2017</td>
+                        <td><?=$dbData['data']['tDtTm']?></td>
                     </tr>
                     </tbody>
                 </table>
@@ -50,7 +56,7 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                     <tr>
                         <td>Client</td>
                         <td> : </td>
-                        <td>Sincos Automation Technologies Limited.</td>
+                        <td><?=$dbData['data']['client']?></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -59,16 +65,16 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                     <tr>
                         <td>Client's Ref.</td>
                         <td> : </td>
-                        <td>BD3455KC2017</td>
+                        <td><?=$dbData['data']['clientRef']?></td>
                         <td></td>
                         <td>Date</td>
                         <td> : </td>
-                        <td>23-Feb-2017</td>
+                        <td><?=$dbData['data']['crDt']?></td>
                     </tr>
                     <tr>
                         <td>Supplier</td>
                         <td> : </td>
-                        <td>Siemens Bangladesh Limited.</td>
+                        <td><?=$dbData['data']['supplier']?></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -77,11 +83,11 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                     <tr>
                         <td>ME Ref.</td>
                         <td> : </td>
-                        <td>ME44766582018</td>
+                        <td><?=$dbData['data']['meRef']?></td>
                         <td></td>
                         <td>Date</td>
                         <td> : </td>
-                        <td>25-Feb-2017</td>
+                        <td><?=$dbData['data']['mrDt']?></td>
                     </tr>
                     </tbody>
                 </table>
@@ -89,7 +95,7 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                     <tbody>
                     <tr>
                         <td>Pump Type</td>
-                        <td> : Submersible Pump</td>
+                        <td> : <?=$dbData['data']['pumpType']?></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -99,12 +105,12 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                                 <tr>
                                     <td>Discharge</td>
                                     <td> : </td>
-                                    <td>45 m<sup>3</sup>/hr</td>
+                                    <td><?=$dbData['data']['discharge']?> m<sup>3</sup>/hr</td>
                                 </tr>
                                 <tr>
                                     <td>Head</td>
                                     <td> : </td>
-                                    <td>100 m</td>
+                                    <td><?=$dbData['data']['head']?> m</td>
                                 </tr>
                                 <tr>
                                     <td>&nbsp;</td>
@@ -114,12 +120,12 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                                 <tr>
                                     <td>Pump SN</td>
                                     <td> : </td>
-                                    <td>BM876465HKL2017 </td>
+                                    <td><?=$dbData['data']['pumpSn']?></td>
                                 </tr>
                                 <tr>
                                     <td>Motor SN</td>
                                     <td> : </td>
-                                    <td>S79987PKJ88RT34</td>
+                                    <td><?=$dbData['data']['motorSn']?></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -136,13 +142,13 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
         <div id="rPage_2" class="masterClass">
             <!--Real content for print page 2-->
             <div class="singlePage"><?=$pageHeader?>
-                <div class="reportPageHeadText">Test report of Submersible Pump</div>
+                <div class="reportPageHeadText">Test report of <?=$dbData['data']['pumpType']?></div>
                 <table style="width: 100%; padding: 10px 30px">
                     <tbody>
                     <tr>
                         <td>Client</td>
                         <td> : </td>
-                        <td>Sincos Automation Technologies Limited.</td>
+                        <td><?=$dbData['data']['client']?></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -151,16 +157,16 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                     <tr>
                         <td>Client's Ref.</td>
                         <td> : </td>
-                        <td>BD3455KC2017</td>
+                        <td><?=$dbData['data']['clientRef']?></td>
                         <td></td>
                         <td>Date</td>
                         <td> : </td>
-                        <td>23-Feb-2017</td>
+                        <td><?=$dbData['data']['crDt']?></td>
                     </tr>
                     <tr>
                         <td>Supplier</td>
                         <td> : </td>
-                        <td>Siemens Bangladesh Limited.</td>
+                        <td><?=$dbData['data']['supplier']?></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -169,11 +175,11 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                     <tr>
                         <td>ME Ref.</td>
                         <td> : </td>
-                        <td>ME44766582018</td>
+                        <td><?=$dbData['data']['meRef']?></td>
                         <td></td>
                         <td>Date</td>
                         <td> : </td>
-                        <td>25-Feb-2017</td>
+                        <td><?=$dbData['data']['mrDt']?></td>
                     </tr>
                     </tbody>
                 </table>
@@ -181,7 +187,7 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                     <tbody>
                     <tr>
                         <td>Pump Type</td>
-                        <td> : Submersible Pump</td>
+                        <td> : <?=$dbData['data']['pumpType']?></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -191,27 +197,22 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                                 <tr>
                                     <td>Discharge</td>
                                     <td> : </td>
-                                    <td>45 m<sup>3</sup>/hr</td>
+                                    <td><?=$dbData['data']['discharge']?> m<sup>3</sup>/hr</td>
                                 </tr>
                                 <tr>
                                     <td>Head</td>
                                     <td> : </td>
-                                    <td>100 m</td>
-                                </tr>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><?=$dbData['data']['head']?> m</td>
                                 </tr>
                                 <tr>
                                     <td>Pump SN</td>
                                     <td> : </td>
-                                    <td>BM876465HKL2017 </td>
+                                    <td><?=$dbData['data']['pumpSn']?></td>
                                 </tr>
                                 <tr>
                                     <td>Motor SN</td>
                                     <td> : </td>
-                                    <td>S79987PKJ88RT34</td>
+                                    <td><?=$dbData['data']['motorSn']?></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -230,69 +231,24 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                     </tr>
                     </thead>
                     <tbody>
+                    <?php
+                    $sl = 0;
+                    $testData = json_decode($dbData['data']['testData']);
+                    foreach ($testData as $dt){
+                        $sl++;
+                        $fdt = calculateFinalData($dt->vo, $dt->sp, $dt->dp, $sensor=="U"?$dt->fru:$dt->frm, $dt->men, $dt->mfq);
+                    ?>
                     <tr>
-                        <td>01</td>
-                        <td>50</td>
-                        <td>100</td>
-                        <td>500</td>
-                        <td>40</td>
+                        <td><?=$sl?></td>
+                        <td><?=number_format($fdt['D'], 2, ".", "")?></td>
+                        <td><?=number_format($fdt['H'], 2, ".", "")?></td>
+                        <td><?=number_format($fdt['P'], 2, ".", "")?></td>
+                        <td><?=number_format($fdt['E'], 2, ".", "")?></td>
                     </tr>
-                    <tr>
-                        <td>01</td>
-                        <td>50</td>
-                        <td>100</td>
-                        <td>500</td>
-                        <td>40</td>
-                    </tr>
-                    <tr>
-                        <td>01</td>
-                        <td>50</td>
-                        <td>100</td>
-                        <td>500</td>
-                        <td>40</td>
-                    </tr>
-                    <tr>
-                        <td>01</td>
-                        <td>50</td>
-                        <td>100</td>
-                        <td>500</td>
-                        <td>40</td>
-                    </tr>
-                    <tr>
-                        <td>01</td>
-                        <td>50</td>
-                        <td>100</td>
-                        <td>500</td>
-                        <td>40</td>
-                    </tr>
-                    <tr>
-                        <td>01</td>
-                        <td>50</td>
-                        <td>100</td>
-                        <td>500</td>
-                        <td>40</td>
-                    </tr>
-                    <tr>
-                        <td>01</td>
-                        <td>50</td>
-                        <td>100</td>
-                        <td>500</td>
-                        <td>40</td>
-                    </tr>
-                    <tr>
-                        <td>01</td>
-                        <td>50</td>
-                        <td>100</td>
-                        <td>500</td>
-                        <td>40</td>
-                    </tr>
-                    <tr>
-                        <td>01</td>
-                        <td>50</td>
-                        <td>100</td>
-                        <td>500</td>
-                        <td>40</td>
-                    </tr>
+
+                    <?php
+                    }
+                    ?>
                     </tbody>
                 </table>
                 <ul style="width: 90%; margin: 20px 0 0 50px; list-style-type: disc;">
@@ -305,18 +261,18 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
         <div id="rPage_3" class="masterClass">
             <!--Real content for print page 3-->
             <div class="singlePage"><?=$pageHeader?>
-                <div class="reportPageHeadText">Performance Curve For Submersible Pump</div>
+                <div class="reportPageHeadText">Performance Curve For <?=$dbData['data']['pumpType']?></div>
                 <table style='float: right; margin: 20px 40px;'>
                     <tbody>
                     <tr>
                         <td>Received Date</td>
                         <td> : </td>
-                        <td>12-Feb-2017</td>
+                        <td><?=$dbData['data']['rDt']?></td>
                     </tr>
                     <tr>
                         <td>Test Date & Time</td>
                         <td> : </td>
-                        <td>15-Feb-2017</td>
+                        <td><?=$dbData['data']['tDtTm']?></td>
                     </tr>
                     </tbody>
                 </table>
@@ -325,7 +281,7 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                     <tr>
                         <td>Client</td>
                         <td> : </td>
-                        <td>Sincos Automation Technologies Limited.</td>
+                        <td><?=$dbData['data']['client']?></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -334,16 +290,16 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                     <tr>
                         <td>Client's Ref.</td>
                         <td> : </td>
-                        <td>BD3455KC2017</td>
+                        <td><?=$dbData['data']['clientRef']?></td>
                         <td></td>
                         <td>Date</td>
                         <td> : </td>
-                        <td>23-Feb-2017</td>
+                        <td><?=$dbData['data']['crDt']?></td>
                     </tr>
                     <tr>
                         <td>Supplier</td>
                         <td> : </td>
-                        <td>Siemens Bangladesh Limited.</td>
+                        <td><?=$dbData['data']['supplier']?></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -352,11 +308,11 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                     <tr>
                         <td>ME Ref.</td>
                         <td> : </td>
-                        <td>ME44766582018</td>
+                        <td><?=$dbData['data']['meRef']?></td>
                         <td></td>
                         <td>Date</td>
                         <td> : </td>
-                        <td>25-Feb-2017</td>
+                        <td><?=$dbData['data']['mrDt']?></td>
                     </tr>
                     </tbody>
                 </table>
@@ -364,7 +320,7 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                     <tbody>
                     <tr>
                         <td>Pump Type</td>
-                        <td> : Submersible Pump</td>
+                        <td> : <?=$dbData['data']['pumpType']?></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -374,12 +330,12 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                                 <tr>
                                     <td>Discharge</td>
                                     <td> : </td>
-                                    <td>45 m<sup>3</sup>/hr</td>
+                                    <td><?=$dbData['data']['discharge']?> m<sup>3</sup>/hr</td>
                                 </tr>
                                 <tr>
                                     <td>Head</td>
                                     <td> : </td>
-                                    <td>100 m</td>
+                                    <td><?=$dbData['data']['head']?> m</td>
                                 </tr>
                                 <tr>
                                     <td>&nbsp;</td>
@@ -389,12 +345,12 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                                 <tr>
                                     <td>Pump SN</td>
                                     <td> : </td>
-                                    <td>BM876465HKL2017 </td>
+                                    <td><?=$dbData['data']['pumpSn']?></td>
                                 </tr>
                                 <tr>
                                     <td>Motor SN</td>
                                     <td> : </td>
-                                    <td>S79987PKJ88RT34</td>
+                                    <td><?=$dbData['data']['motorSn']?></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -426,54 +382,23 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
         ////////////////////////////////////////////////////////////////////////////////
 
         var chartData = [
+            <?php
+            $sl = 0;
+            $testData = json_decode($dbData['data']['testData']);
+            foreach ($testData as $dt) {
+                if($sl != 0) echo ",\n";
+                $sl++;
+                $fdt = calculateFinalData($dt->vo, $dt->sp, $dt->dp, $sensor=="U"?$dt->fru:$dt->frm, $dt->men, $dt->mfq);
+            ?>
             {
-                discharge: 35.00,
-                power_data: 56.00,
-                efficiency_data: 17.37,
-                head_data: 10.20
-            },
-            {
-                discharge: 36.00,
-                power_data: 56.00,
-                efficiency_data: 17.86,
-                head_data: 10.20
-            },
-            {
-                discharge: 37.00,
-                power_data: 56.00,
-                efficiency_data: 18.36,
-                head_data: 10.20
-            },
-            {
-                discharge: 38.00,
-                power_data: 56.00,
-                efficiency_data: 18.85,
-                head_data: 10.20
-            },
-            {
-                discharge: 39.00,
-                power_data: 56.00,
-                efficiency_data: 19.35,
-                head_data: 10.20
-            },
-            {
-                discharge: 40.00,
-                power_data: 56.00,
-                efficiency_data: 19.85,
-                head_data: 10.20
-            },
-            {
-                discharge: 41.00,
-                power_data: 56.00,
-                efficiency_data: 20.34,
-                head_data: 10.20
-            },
-            {
-                discharge: 42.00,
-                power_data: 56.00,
-                efficiency_data: 20.84,
-                head_data: 10.20
+                discharge: <?=number_format($fdt['D'], 2, ".", "")?>,
+                power_data: <?=number_format($fdt['P'], 2, ".", "")?>,
+                efficiency_data: <?=number_format($fdt['E'], 2, ".", "")?>,
+                head_data: <?=number_format($fdt['H'], 2, ".", "")?>
             }
+            <?php
+            }
+            ?>
         ];
 
         var chart = AmCharts.makeChart("reportGraph", {
