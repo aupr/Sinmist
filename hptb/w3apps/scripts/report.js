@@ -166,8 +166,17 @@ $(document).ready(function () {
         $("#ac-btn-make-report-page").click(function () {
             if(selected.type === "report"){
                 if(isSelected()){
-                    var win = window.open('reportpage.php?id='+selected.objectId+'&sensor=U', '_blank');
-                    win.focus();
+                    var body = '<label for="selectSensor">Select Sensor Type:</label><select class="form-control no-radius" id="selectSensor"><option value="M">Magnetic</option><option value="U">Ultrasonic</option></select>';
+                    it_modal_open("Choose Sensor ...",body,"dodgerblue","300px","Continue, Cancel", function (cbr) {
+                        if (cbr == "Continue"){
+                            var win = window.open('reportpage.php?id='+selected.objectId+'&sensor='+$("#selectSensor").val(), '_blank');
+                            win.focus();
+                            it_modal_close();
+                        }
+                        else if(cbr == "Cancel"){
+                            it_modal_close();
+                        }
+                    });
                 }
             } else {
                 it_modal_error("It's not applicable for uncompleted report !");
