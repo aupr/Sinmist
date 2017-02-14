@@ -14,6 +14,8 @@ $userName = "Administrator"
     <link rel="stylesheet" href="styles/report.css">
     <script src="../contents/vendors/jquery/3.1.0/jquery-3.1.0.min.js"></script>
     <script src="../contents/vendors/jquery-ui/1.12.1/custom.sq/jquery-ui.min.js"></script>
+    <script src="../contents/vendors/amcharts/amcharts.js"></script>
+    <script src="../contents/vendors/amcharts/serial.js"></script>
     <script src="../contents/vendors/itonic/1.0/itonic.min.js"></script>
     <script src="../contents/vendors/bootstrap-timepicker.js"></script>
     <script src="scripts/report.js"></script>

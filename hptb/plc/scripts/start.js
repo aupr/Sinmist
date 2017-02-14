@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         xhr.onload = function() {
             if (xhr.status === 200) {
                 setTimeout(function(){
-                    window.location.replace("system.html");
+                    window.location.replace("system.html?"+location.href.split("?")[1]);
                 }, afterLoadingTime);
             }
         };

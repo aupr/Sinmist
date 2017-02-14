@@ -442,6 +442,7 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                 "hideBulletsCount": 30,
                 "title": "Power",
                 "valueField": "power_data",
+                "type": "smoothedLine",
                 "fillAlphas": 0
             }, {
                 "valueAxis": "v2",
@@ -451,6 +452,7 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                 "hideBulletsCount": 30,
                 "title": "Efficiency",
                 "valueField": "efficiency_data",
+                "type": "smoothedLine",
                 "fillAlphas": 0
             }, {
                 "valueAxis": "v3",
@@ -460,6 +462,7 @@ $pageHeader = '<div class="pheader"><div class="logo"></div><div class="name">Hy
                 "hideBulletsCount": 30,
                 "title": "Head",
                 "valueField": "head_data",
+                "type": "smoothedLine",
                 "fillAlphas": 0
             }],
             "chartScrollbar": {

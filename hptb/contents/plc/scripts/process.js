@@ -15,10 +15,17 @@ var preprocess = function () {
     $("nav .logo").css({
         "background-image": "url('"+server+"contents/images/logo.png')"
     });
+    isProcess = 1;
+    window.onbeforeunload = function (){
+        if (isProcess > 0) return true;
+        else
+        {
+            //do something
+        }
+    };
 };
 var process = function () {
 
 
 
-    //it_modal_open();
 };

@@ -1,6 +1,8 @@
 /**
  * Created by Aman Ullah on 1/29/2017.
  */
+$server1200 = "http://localhost/mist/hptb/plc/start.html";
+
 var reportLimit = 50;
 $(document).ready(function () {
 
@@ -132,9 +134,25 @@ $(document).ready(function () {
         // Take Data into report model
         $("#ac-btn-take-data-into-report").click(function () {
             if(isSelected()){
-                it_modal_open("Confirm !","Do you want to take data onto ths report?","#007E33",0,"Yes, No",function (res) {
+                it_modal_open("Confirm !","Do you want to take data into ths report?","#007E33",0,"Yes, No",function (res) {
                     if(res == 'Yes'){
-                        alert("Transfer to data taking window");
+                        it_modal_close();
+                        if (selected.type == "report"){
+                            it_modal_open("Confirm again !...","<b>All of the previous data will be lost!</b><br>Do you want to continue?","#d2b521","500px","Yes, No", function (hk) {
+                                if (hk == "Yes"){
+                                    it_modal_close();
+                                    var win = window.open($server1200+'?id='+selected.objectId+'&type='+selected.type, '_blank');
+                                    win.focus();
+                                }
+                                else{
+                                    it_modal_close();
+                                }
+                            });
+                        }
+                        else {
+                            var win = window.open($server1200+'?id='+selected.objectId+'&type='+selected.type, '_blank');
+                            win.focus();
+                        }
                     } else if (res == 'No'){
                         it_modal_close();
                     }
@@ -144,30 +162,65 @@ $(document).ready(function () {
         // View report into Modal
         $("#ac-btn-view-report-modal").click(function () {
             if(isSelected()){
-                $.post("reportmodules/ui/viewreport.php",{"id":selected.objectId}, function (res) {
-                    it_modal_open("Report View Form . . .",res,"#0099CC","1100px","Cancel",function (ret) {
-                        if(ret == 'Save'){
-                            it_modal_loading();
-                            onSave(selected.objectId,function (ack, stat) {
-                                it_modal_close();
-                                if (stat) $("#btn-view-reports").click();
-                                else $("#btn-view-models").click();
+                var body = '<div class="input-group" style="width: 340px; margin: 20px 20px;">' +
+                    '<label class="input-group-addon no-radius" for="selectSensor">Select Sensor Type:</label>' +
+                    '<select class="form-control no-radius" id="selectSensor"><option value="M">Magnetic</option>' +
+                    '<option value="U">Ultrasonic</option></select></div>';
+                if (selected.type == "report"){
+                    it_modal_open("Choose Sensor ...",body,"dodgerblue","400px","Continue, Cancel", function (cbr) {
+                        if (cbr == "Continue"){
+                            $.post("reportmodules/ui/viewreport.php",{"id":selected.objectId, "sensor":$("#selectSensor").val(), "type":selected.type}, function (res) {
+                                it_modal_open("Report View Form . . .",res,"#0099CC","1100px","Cancel",function (ret) {
+                                    if(ret == 'Save'){
+                                        it_modal_loading();
+                                        onSave(selected.objectId,function (ack, stat) {
+                                            it_modal_close();
+                                            if (stat) $("#btn-view-reports").click();
+                                            else $("#btn-view-models").click();
+                                        });
+                                    } else if (ret == 'Cancel'){
+                                        it_modal_close();
+                                    }
+                                });
+                            }).fail(function () {
+                                alert("failed to load view report ui")
                             });
-                        } else if (ret == 'Cancel'){
+                        }
+                        else if(cbr == "Cancel"){
                             it_modal_close();
                         }
                     });
-                }).fail(function () {
-                    alert("failed to load view report ui")
-                });
+                }
+                else {
+                    $.post("reportmodules/ui/viewreport.php",{"id":selected.objectId, "sensor":$("#selectSensor").val(), "type":selected.type}, function (res) {
+                        it_modal_open("Report View Form . . .",res,"#0099CC","1100px","Cancel",function (ret) {
+                            if(ret == 'Save'){
+                                it_modal_loading();
+                                onSave(selected.objectId,function (ack, stat) {
+                                    it_modal_close();
+                                    if (stat) $("#btn-view-reports").click();
+                                    else $("#btn-view-models").click();
+                                });
+                            } else if (ret == 'Cancel'){
+                                it_modal_close();
+                            }
+                        });
+                    }).fail(function () {
+                        alert("failed to load view report ui")
+                    });
+                }
+
             }
         });
         // Make report page
         $("#ac-btn-make-report-page").click(function () {
             if(selected.type === "report"){
                 if(isSelected()){
-                    var body = '<label for="selectSensor">Select Sensor Type:</label><select class="form-control no-radius" id="selectSensor"><option value="M">Magnetic</option><option value="U">Ultrasonic</option></select>';
-                    it_modal_open("Choose Sensor ...",body,"dodgerblue","300px","Continue, Cancel", function (cbr) {
+                    var body = '<div class="input-group" style="width: 340px; margin: 20px 20px;">' +
+                        '<label class="input-group-addon no-radius" for="selectSensor">Select Sensor Type:</label>' +
+                        '<select class="form-control no-radius" id="selectSensor"><option value="M">Magnetic</option>' +
+                        '<option value="U">Ultrasonic</option></select></div>';
+                    it_modal_open("Choose Sensor ...",body,"dodgerblue","400px","Continue, Cancel", function (cbr) {
                         if (cbr == "Continue"){
                             var win = window.open('reportpage.php?id='+selected.objectId+'&sensor='+$("#selectSensor").val(), '_blank');
                             win.focus();
