@@ -100,12 +100,80 @@ nav {
           border: 0;
           cursor: pointer; }
 
-.inputPanel {
+.reportInfoPanel, .motorDataPanel {
   position: absolute;
   left: 10px;
   top: 80px;
-  width: 350px; }
-  .inputPanel td {
+  width: 350px;
+  height: 560px; }
+  .reportInfoPanel td, .motorDataPanel td {
     line-height: 30px !important; }
+
+.motorDataPanel {
+  top: 645px;
+  height: 278px; }
+
+#pnidPanel {
+  position: absolute;
+  left: 365px;
+  top: 80px;
+  height: 560px;
+  width: 768px;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url("http://192.168.10.195:80/mist/hptb/contents/images/mist_ptp_pnid.png"); }
+
+#alarmPanel {
+  position: absolute;
+  left: 365px;
+  top: 645px;
+  height: 278px;
+  width: 768px; }
+
+#controlPanel {
+  position: absolute;
+  top: 80px;
+  left: 1138px;
+  width: 350px;
+  height: 390px; }
+
+#statusPanel {
+  position: absolute;
+  top: 80px;
+  left: 1493px;
+  width: 348px;
+  height: 290px; }
+
+#progressBar {
+  position: absolute;
+  top: 375px;
+  left: 1493px;
+  width: 348px;
+  height: 95px;
+  border-left: 40px solid green;
+  padding: 10px 0 0 10px; }
+  #progressBar .progrs {
+    height: 20px;
+    width: 288px;
+    background-color: #bababa;
+    margin-top: 5px; }
+    #progressBar .progrs .bar {
+      height: inherit;
+      background-color: #449b4b; }
+
+#reportDataPanel {
+  position: absolute;
+  left: 1138px;
+  top: 475px;
+  width: 702px;
+  height: 448px; }
+  #reportDataPanel .panel-body {
+    height: 408px;
+    overflow-x: auto; }
+    #reportDataPanel .panel-body th {
+      text-align: center; }
+    #reportDataPanel .panel-body td {
+      text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

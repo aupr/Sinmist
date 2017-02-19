@@ -15,7 +15,7 @@ var preprocess = function () {
     $("nav .logo").css({
         "background-image": "url('"+server+"contents/images/logo.png')"
     });
-    isProcess = 1;
+    isProcess = 0;
     window.onbeforeunload = function (){
         if (isProcess > 0) return true;
         else

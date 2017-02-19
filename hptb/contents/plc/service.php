@@ -23,42 +23,294 @@
     </ul>
 </nav>
 
-<div class="panel panel-primary no-radius inputPanel">
+<div class="panel panel-primary no-radius reportInfoPanel" style="border: 1px solid #1b6d85">
+    <div class="panel-heading no-radius" style="background-color: #1b6d85">
+        <h3 class="panel-title">Report Info.</h3>
+    </div>
+    <div class="panel-body" style="overflow-x: auto; height: 520px;">
+        <table class="table table-hover">
+            <tbody>
+            <tr>
+                <td>Received Date</td>
+                <td>:</td>
+                <td><?=$_REQUEST['request']['id']?></td>
+            </tr>
+            <tr>
+                <td>Client</td>
+                <td>:</td>
+                <td><?=$_REQUEST['request']['type']?></td>
+            </tr>
+            <tr>
+                <td>Client's Ref.</td>
+                <td>:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ME Ref.</td>
+                <td>:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Supplier</td>
+                <td>:</td>
+                <td>Sincos Automation Technologies Limited.</td>
+            </tr>
+            <tr>
+                <td>Pump Type</td>
+                <td>:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Pump SN</td>
+                <td>:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Pipe Diameter</td>
+                <td>:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Discharge</td>
+                <td>:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Head</td>
+                <td>:</td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="panel panel-primary no-radius motorDataPanel">
     <div class="panel-heading no-radius">
-        <h3 class="panel-title">Input Fields</h3>
+        <h3 class="panel-title">Motor Status</h3>
     </div>
     <div class="panel-body">
         <table class="table table-hover">
-            <!--<thead>
-                <tr>
-                    <th>Field</th>
-                    <th> </th>
-                    <th>Value</th>
-                </tr>
-            </thead>-->
             <tbody>
-                <tr>
-                    <td><label for="pumpType">Pump Type</label></td>
-                    <td>:</td>
-                    <td>
-                        <select id="pumpType" class="form-control no-radius">
-                            <option value="1">Centrifugal Pump</option>
-                            <option value="2">Submersible Pump</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="pipeDiameter">Pipe Diameter</label></td>
-                    <td>:</td>
-                    <td>
-                        <select id="pipeDiameter" class="form-control no-radius">
-                            <option value="3">3 - Inch</option>
-                            <option value="4">4 - Inch</option>
-                            <option value="6">6 - Inch</option>
-                            <option value="8">8 - Inch</option>
-                        </select>
-                    </td>
-                </tr>
+            <tr>
+                <td>Frequency</td>
+                <td>:</td>
+                <td>50 Hz</td>
+            </tr>
+            <tr>
+                <td>RPM</td>
+                <td>:</td>
+                <td>1300</td>
+            </tr>
+            <tr>
+                <td>Power</td>
+                <td>:</td>
+                <td>85 kW</td>
+            </tr>
+            <tr>
+                <td>Current</td>
+                <td>:</td>
+                <td>200 A</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="pnidPanel" class="panel panel-primary no-radius">
+
+</div>
+
+<div id="alarmPanel" class="panel panel-primary no-radius">
+    <div class="panel-heading no-radius">
+        <h3 class="panel-title">System Alarm !!</h3>
+    </div>
+    <div class="panel-body">
+
+    </div>
+</div>
+
+<div id="controlPanel" class="panel panel-primary no-radius">
+    <div class="panel-heading no-radius">
+        <h3 class="panel-title">Control Box</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover">
+            <tbody>
+            <tr>
+                <td><b>Process Mode :</b><br>
+                   <table class="table table-hover">
+                       <tbody>
+                       <tr>
+                           <td><label style="cursor: pointer;"><input type="radio" name="pm" value="automatic" checked> Automatic</label></td>
+                           <td><label style="cursor: pointer;"><input type="radio" name="pm" value="manual"> Manual</label></td>
+                       </tr>
+                       </tbody>
+                   </table>
+               </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="table table-hover">
+                        <tbody>
+                        <tr>
+                            <td><label for="valveOpenBy">Valve Open By</label></td>
+                            <td>:</td>
+                            <td>
+                                <select id="valveOpenBy" class="form-control no-radius">
+                                    <option>5%</option>
+                                    <option>6%</option>
+                                    <option>7%</option>
+                                    <option>8%</option>
+                                    <option>9%</option>
+                                </select>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table">
+            <tbody>
+            <tr>
+                <td><button type="button" class="btn btn-warning btn-md btn-block no-radius" style="display: block;">Start Process</button></td>
+                <td><button type="button" class="btn btn-success btn-block btn-md no-radius" style="display:none;">Take Data</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="button" class="btn btn-danger btn-md btn-block no-radius" style="display: none;">Emergency</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="statusPanel" class="panel panel-primary no-radius">
+    <div class="panel-heading no-radius">
+        <h3 class="panel-title">Machine Status</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover">
+            <tbody>
+            <tr>
+                <td>Mode</td>
+                <td>:</td>
+                <td>Auto</td>
+            </tr>
+            <tr>
+                <td>Process</td>
+                <td>:</td>
+                <td>Stopped</td>
+            </tr>
+            <tr>
+                <td>Motor</td>
+                <td>:</td>
+                <td>Stopped</td>
+            </tr>
+            <tr>
+                <td>Valve Position</td>
+                <td>:</td>
+                <td>78%</td>
+            </tr>
+            <tr>
+                <td>Next Valve Position</td>
+                <td>:</td>
+                <td>81%</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="progressBar" class="panel panel-primary no-radius">
+    <b>Operation Stopped</b>
+    <div class="progrs">
+        <div class="bar" style="width: 40%;"></div>
+    </div>
+</div>
+
+<div id="reportDataPanel" class="panel panel-primary no-radius">
+    <div class="panel-heading no-radius">
+        <h3 class="panel-title">Report Data View</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>SL</th>
+                <th>Valve Open (%)</th>
+                <th>Suction pressure (Bar)</th>
+                <th>Discharge Pressure (Bar)</th>
+                <th>Flow Rate M (m<sup>3</sup>/hr)</th>
+                <th>Flow Rate U (m<sup>3</sup>/hr)</th>
+                <th>Active Power (kW)</th>
+                <th>Motor Freq. (Hz)</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+                <td>01</td>
+                <td>40%</td>
+                <td>30</td>
+                <td>40</td>
+                <td>55</td>
+                <td>55</td>
+                <td>100</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>40%</td>
+                <td>30</td>
+                <td>40</td>
+                <td>55</td>
+                <td>55</td>
+                <td>100</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>40%</td>
+                <td>30</td>
+                <td>40</td>
+                <td>55</td>
+                <td>55</td>
+                <td>100</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>40%</td>
+                <td>30</td>
+                <td>40</td>
+                <td>55</td>
+                <td>55</td>
+                <td>100</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>40%</td>
+                <td>30</td>
+                <td>40</td>
+                <td>55</td>
+                <td>55</td>
+                <td>100</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>40%</td>
+                <td>30</td>
+                <td>40</td>
+                <td>55</td>
+                <td>55</td>
+                <td>100</td>
+                <td>50</td>
+            </tr>
             </tbody>
         </table>
     </div>

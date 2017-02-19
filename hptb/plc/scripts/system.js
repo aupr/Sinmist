@@ -24,7 +24,7 @@ function loadScript(url, callback)
 }
 
 var mainCode = function(){
-    $.post(server + "contents/plc/service.php",{},function (res) {
+    $.post(server + "contents/plc/service.php",{"request":it_hold_request()},function (res) {
         var srv = $("#service");
         srv.html(res);
         preprocess();
