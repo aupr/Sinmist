@@ -15,7 +15,7 @@
   height: 278px;
 }
 
-#pnidPanel{
+/*#pnidPanel{
   position: absolute;
   left: 365px;
   top: 80px;
@@ -24,8 +24,8 @@
   background-origin: content-box;
   background-repeat: no-repeat;
   background-size: 100%;
-  background-image: url("http://192.168.10.195:80/mist/hptb/contents/images/mist_ptp_pnid.png");
-}
+  //background-image: url("http://192.168.10.195:80/mist/hptb/contents/images/mist_ptp_pnid.png");
+}*/
 
 #alarmPanel{
   position: absolute;
@@ -73,12 +73,12 @@
 
 #reportDataPanel{
   position: absolute;
-  left: 1138px;
-  top: 475px;
-  width: 702px;
-  height: 448px;
+  left: 365px;
+  top: 80px;
+  width: 768px;
+  height: 560px;
   .panel-body{
-    height: 408px;
+    height: 520px;
     overflow-x: auto;
     th{
       text-align: center;
@@ -86,5 +86,17 @@
     td{
       text-align: center;
     }
+  }
+}
+
+#systemLogPanel{
+  position: absolute;
+  left: 1138px;
+  top: 475px;
+  width: 703px;
+  height: 448px;
+  .panel-body{
+    //height: 408px;
+    overflow-x: auto;
   }
 }

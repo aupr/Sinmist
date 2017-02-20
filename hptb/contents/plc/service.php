@@ -2,7 +2,15 @@
     if(isset($_SERVER['HTTP_ORIGIN'])){
         header('Access-Control-Allow-Origin: '.$_SERVER['HTTP_ORIGIN']);
     }
+    require '../../w3apps/dbcom/connect.php';
+    require '../../w3apps/dbcom/dbread.php';
+    $dbr = new dbread();
+
+    $reportObj = $dbr->getReport($_REQUEST['request']['id']);
+
+    $conn->close();
     $userName = "Administrator";
+
 ?>
 <nav>
     <div class="bsps_1"></div>
@@ -33,52 +41,52 @@
             <tr>
                 <td>Received Date</td>
                 <td>:</td>
-                <td><?=$_REQUEST['request']['id']?></td>
+                <td><?=$reportObj['data']['rDt']?></td>
             </tr>
             <tr>
                 <td>Client</td>
                 <td>:</td>
-                <td><?=$_REQUEST['request']['type']?></td>
+                <td><?=$reportObj['data']['client']?></td>
             </tr>
             <tr>
                 <td>Client's Ref.</td>
                 <td>:</td>
-                <td></td>
+                <td><?=$reportObj['data']['clientRef']?></td>
             </tr>
             <tr>
                 <td>ME Ref.</td>
                 <td>:</td>
-                <td></td>
+                <td><?=$reportObj['data']['meRef']?></td>
             </tr>
             <tr>
                 <td>Supplier</td>
                 <td>:</td>
-                <td>Sincos Automation Technologies Limited.</td>
+                <td><?=$reportObj['data']['supplier']?></td>
             </tr>
             <tr>
                 <td>Pump Type</td>
                 <td>:</td>
-                <td></td>
+                <td><?=$reportObj['data']['pumpType']?></td>
             </tr>
             <tr>
                 <td>Pump SN</td>
                 <td>:</td>
-                <td></td>
+                <td><?=$reportObj['data']['pumpSn']?></td>
             </tr>
             <tr>
                 <td>Pipe Diameter</td>
                 <td>:</td>
-                <td></td>
+                <td><?=$reportObj['data']['pipeDia']?></td>
             </tr>
             <tr>
                 <td>Discharge</td>
                 <td>:</td>
-                <td></td>
+                <td><?=$reportObj['data']['discharge']?></td>
             </tr>
             <tr>
                 <td>Head</td>
                 <td>:</td>
-                <td></td>
+                <td><?=$reportObj['data']['head']?></td>
             </tr>
             </tbody>
         </table>
@@ -117,9 +125,13 @@
     </div>
 </div>
 
-<div id="pnidPanel" class="panel panel-primary no-radius">
+<!--<div id="pnidPanel" class="panel panel-primary no-radius">
+    <span style="position: absolute; top: 135px; left: 265px; background-color: black; color:white; padding:3px;">Ultrasonic Flow Meter</span>
+    <span style="position: absolute; top: 135px; left: 440px; background-color: black; color:white; padding:3px;">Magnetic Flow Meter</span>
+    <span style="background-color: greenyellow; position: absolute; top:170px;left: 270px; border: 1px solid black; padding: 5px;">US Flow Rate: 45 </span>
+</div>-->
 
-</div>
+
 
 <div id="alarmPanel" class="panel panel-primary no-radius">
     <div class="panel-heading no-radius">
@@ -233,7 +245,7 @@
 
 <div id="reportDataPanel" class="panel panel-primary no-radius">
     <div class="panel-heading no-radius">
-        <h3 class="panel-title">Report Data View</h3>
+        <h3 class="panel-title">Collected Data View</h3>
     </div>
     <div class="panel-body">
         <table class="table table-bordered">
@@ -316,4 +328,24 @@
     </div>
 </div>
 
+<div id="systemLogPanel" class="panel panel-primary no-radius">
+    <div class="panel-heading no-radius">
+        <h3 class="panel-title">System Log !!</h3>
+    </div>
+    <div class="panel-body">
+        >> 20-02-2017 2:29 - System started button has been clicked<br>
+        >> 20-02-2017 2:29 - Attemped to machine start<br>
+        >> 20-02-2017 2:29 - Ultra sonic sensor is not ready<br>
+        >> 20-02-2017 2:29 - First data has been recorded<br>
+    </div>
+</div>
+
 <div class="fixedFooter"><p>Powered by Sincos Automation Technologies Limited.</p></div>
+<script>
+    pumpInfo = {
+        pumpType : "<?=$reportObj['data']['pumpType']?>",
+        pipeDia: <?=$reportObj['data']['pipeDia']?>,
+        discharge: <?=$reportObj['data']['discharge']?>,
+        head: <?=$reportObj['data']['head']?>
+    };
+</script>

@@ -15,6 +15,19 @@ var preprocess = function () {
     $("nav .logo").css({
         "background-image": "url('"+server+"contents/images/logo.png')"
     });
+
+    //background-image: url("http://192.168.10.195:80/mist/hptb/contents/images/mist_ptp_pnid.png");
+    if (pumpInfo.pumpType === "Submersible Pump"){
+        $("#pnidPanel").css({
+            "background-image": 'url("'+server+'contents/images/pnid_proto_submersible.png")'
+        });
+    } else {
+        $("#pnidPanel").css({
+            "background-image": 'url("'+server+'contents/images/pnid_proto_centrifugal.png")'
+        });
+    }
+
+
     isProcess = 0;
     window.onbeforeunload = function (){
         if (isProcess > 0) return true;
