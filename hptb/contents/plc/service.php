@@ -35,7 +35,7 @@
     <div class="panel-heading no-radius" style="background-color: #1b6d85">
         <h3 class="panel-title">Report Info.</h3>
     </div>
-    <div class="panel-body" style="overflow-x: auto; height: 520px;">
+    <div class="panel-body">
         <table class="table table-hover">
             <tbody>
             <tr>
@@ -93,7 +93,7 @@
     </div>
 </div>
 
-<div class="panel panel-primary no-radius motorDataPanel">
+<!--<div class="panel panel-primary no-radius motorDataPanel" hidden>
     <div class="panel-heading no-radius">
         <h3 class="panel-title">Motor Status</h3>
     </div>
@@ -123,7 +123,7 @@
             </tbody>
         </table>
     </div>
-</div>
+</div>-->
 
 <!--<div id="pnidPanel" class="panel panel-primary no-radius">
     <span style="position: absolute; top: 135px; left: 265px; background-color: black; color:white; padding:3px;">Ultrasonic Flow Meter</span>
@@ -135,10 +135,10 @@
 
 <div id="alarmPanel" class="panel panel-primary no-radius">
     <div class="panel-heading no-radius">
-        <h3 class="panel-title">System Alarm !!</h3>
+        <h3 class="panel-title">System Alarm & Activities !!</h3>
     </div>
     <div class="panel-body">
-
+        <textarea id='system-log' style="height: 100%; width: 100%; resize: none; font-family: 'serif', 'Courier New';" readonly></textarea>
     </div>
 </div>
 
@@ -153,9 +153,9 @@
                 <td><b>Process Mode :</b><br>
                    <table class="table table-hover">
                        <tbody>
-                       <tr>
-                           <td><label style="cursor: pointer;"><input type="radio" name="pm" value="automatic" checked> Automatic</label></td>
-                           <td><label style="cursor: pointer;"><input type="radio" name="pm" value="manual"> Manual</label></td>
+                       <tr id="processMode">
+                           <td><label style="cursor: pointer;"><input type="radio" name="pmode" value="automatic" checked> Automatic</label></td>
+                           <td><label style="cursor: pointer;"><input type="radio" name="pmode" value="manual"> Manual</label></td>
                        </tr>
                        </tbody>
                    </table>
@@ -187,12 +187,12 @@
         <table class="table">
             <tbody>
             <tr>
-                <td><button type="button" class="btn btn-warning btn-md btn-block no-radius" style="display: block;">Start Process</button></td>
-                <td><button type="button" class="btn btn-success btn-block btn-md no-radius" style="display:none;">Take Data</button></td>
+                <td><button type="button" id="cb-start-process" class="btn btn-warning btn-md btn-block no-radius" style="display: block;">Start Process</button></td>
+                <td><button type="button" id="cb-take-data" class="btn btn-success btn-block btn-md no-radius" style="display:none;">Take Data</button></td>
             </tr>
             <tr>
                 <td></td>
-                <td><button type="button" class="btn btn-danger btn-md btn-block no-radius" style="display: none;">Emergency</button></td>
+                <td><button type="button" id="cb-emergency" class="btn btn-danger btn-md btn-block no-radius" style="display: none;">Emergency</button></td>
             </tr>
             </tbody>
         </table>
@@ -201,7 +201,7 @@
 
 <div id="statusPanel" class="panel panel-primary no-radius">
     <div class="panel-heading no-radius">
-        <h3 class="panel-title">Machine Status</h3>
+        <h3 class="panel-title">System Status</h3>
     </div>
     <div class="panel-body">
         <table class="table table-hover">
@@ -209,39 +209,74 @@
             <tr>
                 <td>Mode</td>
                 <td>:</td>
-                <td>Auto</td>
+                <td><span id="status-mode">####</span></td>
             </tr>
             <tr>
                 <td>Process</td>
                 <td>:</td>
-                <td>Stopped</td>
+                <td><span id="status-process">####</span></td>
             </tr>
             <tr>
-                <td>Motor</td>
+                <td>Active Pipe Dia</td>
                 <td>:</td>
-                <td>Stopped</td>
+                <td><span id="status-pipe-dia">####</span> Inch</td>
             </tr>
             <tr>
                 <td>Valve Position</td>
                 <td>:</td>
-                <td>78%</td>
+                <td><span id="status-valve-position">####</span> %</td>
+            </tr>
+            <tr>
+                <td>Flow Rate M</td>
+                <td>:</td>
+                <td><span id="status-flow-rate-m">####</span> m<sup>3</sup>/hr</td>
+            </tr>
+            <tr>
+                <td>Flow Rate U</td>
+                <td>:</td>
+                <td><span id="status-flow-rate-u">####</span> m<sup>3</sup>/hr</td>
             </tr>
             <tr>
                 <td>Next Valve Position</td>
                 <td>:</td>
-                <td>81%</td>
+                <td><span id="status-next-vp">####</span> %</td>
+            </tr>
+            <tr>
+                <td>Motor</td>
+                <td>:</td>
+                <td><span id="status-motor">####</span></td>
+            </tr>
+            <tr>
+                <td>Frequency</td>
+                <td>:</td>
+                <td><span id="status-freq">####</span> Hz</td>
+            </tr>
+            <tr>
+                <td>RPM</td>
+                <td>:</td>
+                <td><span id="status-rpm">####</span></td>
+            </tr>
+            <tr>
+                <td>Power</td>
+                <td>:</td>
+                <td><span id="status-power">####</span> kW</td>
+            </tr>
+            <tr>
+                <td>Current</td>
+                <td>:</td>
+                <td><span id="status-current">####</span> A</td>
             </tr>
             </tbody>
         </table>
     </div>
 </div>
 
-<div id="progressBar" class="panel panel-primary no-radius">
+<!--<div id="progressBar" class="panel panel-primary no-radius" hidden>
     <b>Operation Stopped</b>
     <div class="progrs">
         <div class="bar" style="width: 40%;"></div>
     </div>
-</div>
+</div>-->
 
 <div id="reportDataPanel" class="panel panel-primary no-radius">
     <div class="panel-heading no-radius">
@@ -261,74 +296,12 @@
                 <th>Motor Freq. (Hz)</th>
             </tr>
             </thead>
-            <tbody>
-
-            <tr>
-                <td>01</td>
-                <td>40%</td>
-                <td>30</td>
-                <td>40</td>
-                <td>55</td>
-                <td>55</td>
-                <td>100</td>
-                <td>50</td>
-            </tr>
-            <tr>
-                <td>01</td>
-                <td>40%</td>
-                <td>30</td>
-                <td>40</td>
-                <td>55</td>
-                <td>55</td>
-                <td>100</td>
-                <td>50</td>
-            </tr>
-            <tr>
-                <td>01</td>
-                <td>40%</td>
-                <td>30</td>
-                <td>40</td>
-                <td>55</td>
-                <td>55</td>
-                <td>100</td>
-                <td>50</td>
-            </tr>
-            <tr>
-                <td>01</td>
-                <td>40%</td>
-                <td>30</td>
-                <td>40</td>
-                <td>55</td>
-                <td>55</td>
-                <td>100</td>
-                <td>50</td>
-            </tr>
-            <tr>
-                <td>01</td>
-                <td>40%</td>
-                <td>30</td>
-                <td>40</td>
-                <td>55</td>
-                <td>55</td>
-                <td>100</td>
-                <td>50</td>
-            </tr>
-            <tr>
-                <td>01</td>
-                <td>40%</td>
-                <td>30</td>
-                <td>40</td>
-                <td>55</td>
-                <td>55</td>
-                <td>100</td>
-                <td>50</td>
-            </tr>
-            </tbody>
+            <tbody id="dataViewTable"></tbody>
         </table>
     </div>
 </div>
 
-<div id="systemLogPanel" class="panel panel-primary no-radius">
+<!--<div id="systemLogPanel" class="panel panel-primary no-radius" hidden>
     <div class="panel-heading no-radius">
         <h3 class="panel-title">System Log !!</h3>
     </div>
@@ -338,7 +311,7 @@
         >> 20-02-2017 2:29 - Ultra sonic sensor is not ready<br>
         >> 20-02-2017 2:29 - First data has been recorded<br>
     </div>
-</div>
+</div>-->
 
 <div class="fixedFooter"><p>Powered by Sincos Automation Technologies Limited.</p></div>
 <script>

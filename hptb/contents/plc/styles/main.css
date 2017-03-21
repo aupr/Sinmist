@@ -100,19 +100,23 @@ nav {
           border: 0;
           cursor: pointer; }
 
-.reportInfoPanel, .motorDataPanel {
+.reportInfoPanel {
   position: absolute;
   left: 10px;
   top: 80px;
   width: 350px;
-  height: 560px; }
-  .reportInfoPanel td, .motorDataPanel td {
+  height: 842px; }
+  .reportInfoPanel td {
     line-height: 30px !important; }
+  .reportInfoPanel .panel-body {
+    overflow-x: auto;
+    height: 802px; }
 
-.motorDataPanel {
+/*.motorDataPanel{
+  @extend .reportInfoPanel;
   top: 645px;
-  height: 278px; }
-
+  height: 278px;
+}*/
 /*#pnidPanel{
   position: absolute;
   left: 365px;
@@ -130,6 +134,8 @@ nav {
   top: 645px;
   height: 278px;
   width: 768px; }
+  #alarmPanel .panel-body {
+    height: 238px; }
 
 #controlPanel {
   position: absolute;
@@ -143,7 +149,12 @@ nav {
   top: 80px;
   left: 1493px;
   width: 348px;
-  height: 290px; }
+  height: 842px; }
+  #statusPanel .panel-body {
+    overflow-x: auto;
+    height: 802px; }
+  #statusPanel td {
+    line-height: 30px; }
 
 #progressBar {
   position: absolute;
@@ -176,13 +187,16 @@ nav {
     #reportDataPanel .panel-body td {
       text-align: center; }
 
-#systemLogPanel {
+/*#systemLogPanel{
   position: absolute;
   left: 1138px;
   top: 475px;
   width: 703px;
-  height: 448px; }
-  #systemLogPanel .panel-body {
-    overflow-x: auto; }
+  height: 448px;
+  .panel-body{
+    //height: 408px;
+    overflow-x: auto;
+  }
+}*/
 
 /*# sourceMappingURL=main.css.map */

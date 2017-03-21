@@ -1,7 +1,7 @@
 /**
  * Created by Aman Ullah on 1/29/2017.
  */
-$server1200 = "http://localhost/mist/hptb/plc/start.html";
+$server1200 = "http://192.168.10.5/awp/MIST/start.html"; //"http://localhost/mist/hptb/plc/start.html";
 
 var reportLimit = 50;
 $(document).ready(function () {
@@ -62,12 +62,23 @@ $(document).ready(function () {
         $("#btn-view-models").click(function () {
             pagination('model', 1, reportLimit);
             $("#report-list-title").text("Uncompleted Report List");
-        }).click();
+        });
 
         // View completed report button
         $("#btn-view-reports").click(function () {
             pagination('report', 1, reportLimit);
             $("#report-list-title").text("Completed Report List");
+        });
+        
+        //load report list at first time
+        $.post("reportmodules/contents.php",{'type':"model", 'limitStart':1, 'limit':2},function (res) {
+            if (res.data.length){
+                $("#btn-view-models").click();
+            } else {
+                $("#btn-view-reports").click();
+            }
+        },"json").fail(function () {
+            alert("Failed to data communicate!");
         });
 
         // Find button

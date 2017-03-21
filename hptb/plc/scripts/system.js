@@ -28,14 +28,14 @@ var mainCode = function(){
         var srv = $("#service");
         srv.html(res);
         preprocess();
-        $("#loading-scr").css({
+        $("#loading").css({
             "display":"none"
         });
         srv.css({
             "display":"block"
         });
+        process();
     });
-    process();
 };
 
 // Load prerequisite library from remote server
