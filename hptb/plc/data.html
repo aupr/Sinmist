@@ -1,8 +1,32 @@
 <!-- AWP_In_Variable Name='"Control".VFD_Control.Write_To_G120.Start' -->
-<!-- AWP_In_Variable Name='"Control".VFD_Control.Read_From_G120.Power.Actual' -->
-<!-- AWP_In_Variable Name='"VFD_Control_Profibus_DB".RPM.Actual' -->
 <!-- AWP_In_Variable Name='"Control".VFD_Control.Write_To_G120.Stop' -->
-<!-- AWP_In_Variable Name='"Control".VFD_Control.Read_From_G120.Current.Actual' -->
-{"start":":="Control".VFD_Control.Write_To_G120.Start:","stop":":="Control".VFD_Control.Write_To_G120.Stop:","rpm":":="VFD_Control_Profibus_DB".RPM.Actual:","power":":="Control".VFD_Control.Read_From_G120.Power.Actual:","current":":="Control".VFD_Control.Read_From_G120.Current.Actual:"}
+<!-- AWP_In_Variable Name='"Control".VFD_Control.Write_To_G120."Set Frequency"' -->
+<!-- AWP_In_Variable Name='"Control".Knife_Gate_Valve."1".Input' -->
+<!-- AWP_In_Variable Name='"Control".Knife_Gate_Valve."2".Input' -->
+<!-- AWP_In_Variable Name='"Control".Knife_Gate_Valve."3".Input' -->
+<!-- AWP_In_Variable Name='"Control".Knife_Gate_Valve."4".Input' -->
 
-
+{
+    "vfd_frequency":":="Control".VFD_Control.Write_To_G120."Set Frequency":",
+    "vfd_power":":="Control".VFD_Control.Read_From_G120.Power.Actual:",
+    "vfd_rpm":":="VFD_Control_Profibus_DB".RPM.Actual:",
+    "vfd_current":":="Control".VFD_Control.Read_From_G120.Current.Actual:",
+    "emfm_1_output":":="Control".Flow_Meters.Electro_Magnetic."1"."Analog Scale Out":",
+    "emfm_2_output":":="Control".Flow_Meters.Electro_Magnetic."2"."Analog Scale Out":",
+    "emfm_3_output":":="Control".Flow_Meters.Electro_Magnetic."3"."Analog Scale Out":",
+    "emfm_4_output":":="Control".Flow_Meters.Electro_Magnetic."4"."Analog Scale Out":",
+    "kgv_1_position":":="Control".Knife_Gate_Valve."1".Input:",
+    "kgv_2_position":":="Control".Knife_Gate_Valve."2".Input:",
+    "kgv_3_position":":="Control".Knife_Gate_Valve."3".Input:",
+    "kgv_4_position":":="Control".Knife_Gate_Valve."4".Input:",
+    "pt_1_output":":="Control".PressureTransmitters."1"."Analog Scale Out":",
+    "pt_2_output":":="Control".PressureTransmitters."2"."Analog Scale Out":",
+    "pt_3_output":":="Control".PressureTransmitters."3"."Analog Scale Out":",
+    "pt_4_output":":="Control".PressureTransmitters."4"."Analog Scale Out":",
+    "pt_5_output":":="Control".PressureTransmitters."5"."Analog Scale Out":",
+    "pt_6_output":":="Control".PressureTransmitters."6"."Analog Scale Out":",
+    "pt_7_output":":="Control".PressureTransmitters."7"."Analog Scale Out":",
+    "pt_8_output":":="Control".PressureTransmitters."8"."Analog Scale Out":",
+    "pt_9_output":":="Control".PressureTransmitters."9"."Analog Scale Out":",
+    "pt_10_output":":="Control".PressureTransmitters."10"."Analog Scale Out":"
+}

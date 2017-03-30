@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98f59330-82ae-4847-83af-73ca3370f64a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Atik.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Atik.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hptb/plc/limit.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/contents/plc/scripts/process.js" afterPath="$PROJECT_DIR$/hptb/contents/plc/scripts/process.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/contents/plc/scripts/process.min.js" afterPath="$PROJECT_DIR$/hptb/contents/plc/scripts/process.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/contents/plc/scss/_panels.scss" afterPath="$PROJECT_DIR$/hptb/contents/plc/scss/_panels.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/contents/plc/service.php" afterPath="$PROJECT_DIR$/hptb/contents/plc/service.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/contents/plc/styles/main.css" afterPath="$PROJECT_DIR$/hptb/contents/plc/styles/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/contents/plc/styles/main.css.map" afterPath="$PROJECT_DIR$/hptb/contents/plc/styles/main.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/contents/plc/styles/main.min.css" afterPath="$PROJECT_DIR$/hptb/contents/plc/styles/main.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/plc/data.html" afterPath="$PROJECT_DIR$/hptb/plc/data.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/plc/scripts/system.js" afterPath="$PROJECT_DIR$/hptb/plc/scripts/system.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/plc/scripts/system.min.js" afterPath="$PROJECT_DIR$/hptb/plc/scripts/system.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hptb/w3apps/scripts/report.js" afterPath="$PROJECT_DIR$/hptb/w3apps/scripts/report.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -65,16 +56,36 @@
       <file leaf-file-name="process.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hptb/contents/plc/scripts/process.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="64" column="24" lean-forward="true" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+            <state relative-caret-position="1581">
+              <caret line="212" column="2" lean-forward="true" selection-start-line="212" selection-start-column="2" selection-end-line="212" selection-end-column="2" />
               <folding>
-                <element signature="e#1795#2309#0" expanded="false" />
+                <element signature="e#4405#4919#0" expanded="false" />
                 <element signature="n#!!block;n#updateDataTable#0" expanded="false" />
                 <element signature="n#!!block;n#bindControlBoxButtons#0" expanded="false" />
                 <element signature="n#!!block;n#cbOptionsDisabled#0" expanded="false" />
-                <element signature="e#3308#3467#0" expanded="false" />
+                <element signature="e#5918#6077#0" expanded="false" />
                 <element signature="n#!!block;n#viewSystemStatus#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hptb/plc/data.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="87" lean-forward="false" selection-start-line="15" selection-start-column="87" selection-end-line="15" selection-end-column="87" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="limit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hptb/plc/limit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,7 +121,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/hptb/plc/scripts/custom.js" />
         <option value="$PROJECT_DIR$/hptb/contents/plc/styles/main.css" />
         <option value="$PROJECT_DIR$/hptb/contents/plc/scss/_navigation.scss" />
         <option value="$PROJECT_DIR$/hptb/w3apps/scripts/main.js" />
@@ -158,8 +168,9 @@
         <option value="$PROJECT_DIR$/hptb/contents/plc/scss/_panels.scss" />
         <option value="$PROJECT_DIR$/hptb/plc/scripts/system.js" />
         <option value="$PROJECT_DIR$/hptb/plc/system.html" />
-        <option value="$PROJECT_DIR$/hptb/plc/data.html" />
         <option value="$PROJECT_DIR$/hptb/w3apps/scripts/report.js" />
+        <option value="$PROJECT_DIR$/hptb/plc/data.html" />
+        <option value="$PROJECT_DIR$/hptb/plc/limit.html" />
         <option value="$PROJECT_DIR$/hptb/contents/plc/scripts/process.js" />
       </list>
     </option>
@@ -211,7 +222,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -252,64 +262,13 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="contents" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mist" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hptb" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="contents" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="plc" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mist" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hptb" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="contents" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="process.js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -427,18 +386,21 @@
       <workItem from="1488254122974" duration="3379000" />
       <workItem from="1488427548057" duration="2071000" />
       <workItem from="1489991677277" duration="65000" />
-      <workItem from="1490084861808" duration="6827000" />
+      <workItem from="1490084861808" duration="7039000" />
+      <workItem from="1490094818418" duration="12000" />
+      <workItem from="1490854851102" duration="9293000" />
+      <workItem from="1490870223299" duration="395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="390155000" />
+    <option name="totallyTimeSpent" value="400067000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2193646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22844176" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -474,13 +436,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hptb/w3apps/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="16" column="65" lean-forward="true" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hptb/w3apps/scss/_navigation.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -535,13 +490,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hptb/w3apps/styles/report.css.map">
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
         </state>
-      </provider>
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hptb/w3apps/scss/report.scss">
@@ -711,9 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2380">
           <caret line="140" column="32" lean-forward="false" selection-start-line="140" selection-start-column="22" selection-end-line="140" selection-end-column="32" />
-          <folding>
-            <marker date="1488256370712" expanded="false" signature="9388:9399" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -721,7 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -729,15 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hptb/plc/data.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -745,7 +687,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="63" lean-forward="true" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -753,7 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="49" lean-forward="true" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -761,7 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -769,10 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-          <folding>
-            <marker date="1490090071619" expanded="true" signature="7278:7310" ph="..." />
-            <marker date="1490090071619" expanded="true" signature="10422:10454" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -780,7 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -788,7 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="47" lean-forward="true" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -796,7 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -804,20 +736,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hptb/plc/data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="87" lean-forward="false" selection-start-line="15" selection-start-column="87" selection-end-line="15" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hptb/plc/limit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hptb/contents/plc/scripts/process.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="64" column="24" lean-forward="true" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+        <state relative-caret-position="1581">
+          <caret line="212" column="2" lean-forward="true" selection-start-line="212" selection-start-column="2" selection-end-line="212" selection-end-column="2" />
           <folding>
-            <element signature="e#1795#2309#0" expanded="false" />
+            <element signature="e#4405#4919#0" expanded="false" />
             <element signature="n#!!block;n#updateDataTable#0" expanded="false" />
             <element signature="n#!!block;n#bindControlBoxButtons#0" expanded="false" />
             <element signature="n#!!block;n#cbOptionsDisabled#0" expanded="false" />
-            <element signature="e#3308#3467#0" expanded="false" />
+            <element signature="e#5918#6077#0" expanded="false" />
             <element signature="n#!!block;n#viewSystemStatus#0" expanded="false" />
           </folding>
         </state>
