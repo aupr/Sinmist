@@ -20,12 +20,12 @@
     <ul>
         <li><button><?=$userName?></button>
             <ul>
-                <li><button>Logout</button></li>
+                <li><button id="btn-quit">Quit</button></li>
             </ul>
         </li>
         <li><button>ORIGIN</button>
             <ul class="corner_ul">
-                <li><button>Settings</button></li>
+                <li><button id="btn-settings">Settings</button></li>
             </ul>
         </li>
     </ul>
@@ -76,17 +76,17 @@
             <tr>
                 <td>Pipe Diameter</td>
                 <td>:</td>
-                <td><?=$reportObj['data']['pipeDia']?></td>
+                <td><?=$reportObj['data']['pipeDia']?> Inch</td>
             </tr>
             <tr>
                 <td>Discharge</td>
                 <td>:</td>
-                <td><?=$reportObj['data']['discharge']?></td>
+                <td><?=$reportObj['data']['discharge']?> m<sup>3</sup>/hr</td>
             </tr>
             <tr>
                 <td>Head</td>
                 <td>:</td>
-                <td><?=$reportObj['data']['head']?></td>
+                <td><?=$reportObj['data']['head']?> m</td>
             </tr>
             </tbody>
         </table>
@@ -166,15 +166,60 @@
                     <table class="table table-hover">
                         <tbody>
                         <tr>
-                            <td><label for="valveOpenBy">Valve Open By</label></td>
+                            <td><label for="valveOpenBy">Valve Lower Limit</label></td>
                             <td>:</td>
                             <td>
                                 <select id="valveOpenBy" class="form-control no-radius">
-                                    <option>5%</option>
-                                    <option>6%</option>
-                                    <option>7%</option>
-                                    <option>8%</option>
-                                    <option>9%</option>
+                                    <option>30%</option>
+                                    <option>35%</option>
+                                    <option>40%</option>
+                                    <option>45%</option>
+                                    <option>50%</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="valveOpenBy">Valve Upper Limit</label></td>
+                            <td>:</td>
+                            <td>
+                                <select id="valveOpenBy" class="form-control no-radius">
+                                    <option>60%</option>
+                                    <option>65%</option>
+                                    <option>70%</option>
+                                    <option>75%</option>
+                                    <option selected>80%</option>
+                                    <option>85%</option>
+                                    <option>90%</option>
+                                    <option>95%</option>
+                                    <option>100%</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="valveOpenBy">Number of observation</label></td>
+                            <td>:</td>
+                            <td>
+                                <select id="valveOpenBy" class="form-control no-radius">
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option selected>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                    <option>13</option>
+                                    <option>14</option>
+                                    <option>15</option>
+                                    <option>16</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="valveOpenBy">Ultrasonic Sensor</label></td>
+                            <td>:</td>
+                            <td>
+                                <select id="valveOpenBy" class="form-control no-radius">
+                                    <option>CH 1</option>
+                                    <option>CH 2</option>
                                 </select>
                             </td>
                         </tr>
@@ -192,7 +237,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td><button type="button" id="cb-emergency" class="btn btn-danger btn-md btn-block no-radius" style="display: none;">Emergency</button></td>
+                <td><button type="button" id="cb-emergency" class="btn btn-danger btn-md btn-block no-radius" style="display: none;">Stop process / Emergency</button></td>
             </tr>
             </tbody>
         </table>

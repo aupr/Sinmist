@@ -18,6 +18,10 @@ var preprocess = function () {
         emfm_3_maxLimit: '"Control".Flow_Meters.Electro_Magnetic."3"."Max Limit"',
         emfm_4_minLimit: '"Control".Flow_Meters.Electro_Magnetic."4"."Min Limit"',
         emfm_4_maxLimit: '"Control".Flow_Meters.Electro_Magnetic."4"."Max Limit"',
+        usfm_1_minLimit: '"Control".Flow_Meters.Ultrasonic."1"."Min Limit"',
+        usfm_1_maxLimit: '"Control".Flow_Meters.Ultrasonic."1"."Max Limit"',
+        usfm_2_minLimit: '"Control".Flow_Meters.Ultrasonic."2"."Min Limit"',
+        usfm_2_maxLimit: '"Control".Flow_Meters.Ultrasonic."2"."Max Limit"',
         kgv_1_position: '"Control".Knife_Gate_Valve."1".Input',
         kgv_2_position: '"Control".Knife_Gate_Valve."2".Input',
         kgv_3_position: '"Control".Knife_Gate_Valve."3".Input',
@@ -81,6 +85,7 @@ var preprocess = function () {
         }
     };
 };
+
 var process = function () {
 
     var statusVal = {
@@ -100,7 +105,7 @@ var process = function () {
 
 viewSystemStatus(statusVal);
 
-bindControlBoxButtons();
+bindButtons();
 
 };
 ////////////////////////////////// External Function
@@ -173,7 +178,8 @@ function updateDataTable(rdata) {
     });
 }
 
-function bindControlBoxButtons() {
+function bindButtons() {
+    $("#btn-settings").click(plcSettings);
     $("#cb-start-process").click(startProcessHit);
     $("#cb-take-data").click(takeDataHit);
     $("#cb-emergency").click(emergencyHit);
@@ -185,6 +191,107 @@ function cbOptionsDisabled(tf) {
     //var fff = $("input[name=pmode]:checked", "#processMode").val();
     //alert(fff);
 }
+
+var plcSettings = function () {
+    it_modal_loading();
+    $.get('limit.html', function (res) {
+        var bodyHtml = '<table style="width: 100%;"><tbody>'+
+        '<tr><td><label for="emfm-1-ll">EMFM-1 Lower Limit </label></td><td>:</td><td><input type="number" id="emfm-1-ll" value="'+res.emfm_1_minLimit+'"></td>'+
+        '<td><label for="emfm-1-ul">EMFM-1 Upper Limit </label></td><td>:</td><td><input type="number" id="emfm-1-ul" value="'+res.emfm_1_maxLimit+'"></td></tr>'+
+        '<tr><td><label for="emfm-2-ll">EMFM-2 Lower Limit </label></td><td>:</td><td><input type="number" id="emfm-2-ll" value="'+res.emfm_2_minLimit+'"></td>'+
+        '<td><label for="emfm-2-ul">EMFM-2 Upper Limit </label></td><td>:</td><td><input type="number" id="emfm-2-ul" value="'+res.emfm_2_maxLimit+'"></td></tr>'+
+        '<tr><td><label for="emfm-3-ll">EMFM-3 Lower Limit </label></td><td>:</td><td><input type="number" id="emfm-3-ll" value="'+res.emfm_3_minLimit+'"></td>'+
+        '<td><label for="emfm-3-ul">EMFM-3 Upper Limit </label></td><td>:</td><td><input type="number" id="emfm-3-ul" value="'+res.emfm_3_maxLimit+'"></td></tr>'+
+        '<tr><td><label for="emfm-4-ll">EMFM-4 Lower Limit </label></td><td>:</td><td><input type="number" id="emfm-4-ll" value="'+res.emfm_4_minLimit+'"></td>'+
+        '<td><label for="emfm-4-ul">EMFM-4 Upper Limit </label></td><td>:</td><td><input type="number" id="emfm-4-ul" value="'+res.emfm_4_maxLimit+'"></td></tr>'+
+        '<tr><td><label for="usfm-1-ll">USFM-1 Lower Limit </label></td><td>:</td><td><input type="number" id="usfm-1-ll" value="'+res.usfm_1_minLimit+'"></td>'+
+        '<td><label for="usfm-1-ul">USFM-1 Upper Limit </label></td><td>:</td><td><input type="number" id="usfm-1-ul" value="'+res.usfm_1_maxLimit+'"></td></tr>'+
+        '<tr><td><label for="usfm-2-ll">USFM-2 Lower Limit </label></td><td>:</td><td><input type="number" id="usfm-2-ll" value="'+res.usfm_2_minLimit+'"></td>'+
+        '<td><label for="usfm-2-ul">USFM-2 Upper Limit </label></td><td>:</td><td><input type="number" id="usfm-2-ul" value="'+res.usfm_2_maxLimit+'"></td></tr>'+
+        '<tr><td><label for="pt-1-ll">PT-1 Lower Limit </label></td><td>:</td><td><input type="number" id="pt-1-ll" value="'+res.pt_1_minLimit+'"></td>'+
+        '<td><label for="pt-1-ul">PT-1 Upper Limit </label></td><td>:</td><td><input type="number" id="pt-1-ul" value="'+res.pt_1_maxLimit+'"></td></tr>'+
+        '<tr><td><label for="pt-2-ll">PT-2 Lower Limit </label></td><td>:</td><td><input type="number" id="pt-2-ll" value="'+res.pt_2_minLimit+'"></td>'+
+        '<td><label for="pt-2-ul">PT-2 Upper Limit </label></td><td>:</td><td><input type="number" id="pt-2-ul" value="'+res.pt_2_maxLimit+'"></td></tr>'+
+        '<tr><td><label for="pt-3-ll">PT-3 Lower Limit </label></td><td>:</td><td><input type="number" id="pt-3-ll" value="'+res.pt_3_minLimit+'"></td>'+
+        '<td><label for="pt-3-ul">PT-3 Upper Limit </label></td><td>:</td><td><input type="number" id="pt-3-ul" value="'+res.pt_3_maxLimit+'"></td></tr>'+
+        '<tr><td><label for="pt-4-ll">PT-4 Lower Limit </label></td><td>:</td><td><input type="number" id="pt-4-ll" value="'+res.pt_4_minLimit+'"></td>'+
+        '<td><label for="pt-4-ul">PT-4 Upper Limit </label></td><td>:</td><td><input type="number" id="pt-4-ul" value="'+res.pt_4_maxLimit+'"></td></tr>'+
+        '<tr><td><label for="pt-5-ll">PT-5 Lower Limit </label></td><td>:</td><td><input type="number" id="pt-5-ll" value="'+res.pt_5_minLimit+'"></td>'+
+        '<td><label for="pt-5-ul">PT-5 Upper Limit </label></td><td>:</td><td><input type="number" id="pt-5-ul" value="'+res.pt_5_maxLimit+'"></td></tr>'+
+        '<tr><td><label for="pt-6-ll">PT-6 Lower Limit </label></td><td>:</td><td><input type="number" id="pt-6-ll" value="'+res.pt_6_minLimit+'"></td>'+
+        '<td><label for="pt-6-ul">PT-6 Upper Limit </label></td><td>:</td><td><input type="number" id="pt-6-ul" value="'+res.pt_6_maxLimit+'"></td></tr>'+
+        '<tr><td><label for="pt-7-ll">PT-7 Lower Limit </label></td><td>:</td><td><input type="number" id="pt-7-ll" value="'+res.pt_7_minLimit+'"></td>'+
+        '<td><label for="pt-7-ul">PT-7 Upper Limit </label></td><td>:</td><td><input type="number" id="pt-7-ul" value="'+res.pt_7_maxLimit+'"></td></tr>'+
+        '<tr><td><label for="pt-8-ll">PT-8 Lower Limit </label></td><td>:</td><td><input type="number" id="pt-8-ll" value="'+res.pt_8_minLimit+'"></td>'+
+        '<td><label for="pt-8-ul">PT-8 Upper Limit </label></td><td>:</td><td><input type="number" id="pt-8-ul" value="'+res.pt_8_maxLimit+'"></td></tr>'+
+        '<tr><td><label for="pt-9-ll">PT-9 Lower Limit </label></td><td>:</td><td><input type="number" id="pt-9-ll" value="'+res.pt_9_minLimit+'"></td>'+
+        '<td><label for="pt-9-ul">PT-9 Upper Limit </label></td><td>:</td><td><input type="number" id="pt-9-ul" value="'+res.pt_9_maxLimit+'"></td></tr>'+
+        '<tr><td><label for="pt-10-ll">PT-10 Lower Limit </label></td><td>:</td><td><input type="number" id="pt-10-ll" value="'+res.pt_10_minLimit+'"></td>'+
+        '<td><label for="pt-10-ul">PT-10 Upper Limit </label></td><td>:</td><td><input type="number" id="pt-10-ul" value="'+res.pt_10_maxLimit+'"></td></tr>'+
+        '</tbody></table>';
+
+        it_modal_open("Sensors Data Limit Setup!", bodyHtml, 'dodgerblue', '800px', 'Close, Save', function (br) {
+            if (br == 'Save') {
+
+                var plcRequest =
+                    plcTag.emfm_1_minLimit+'='+$("#emfm-1-ll").val()+'&'+
+                    plcTag.emfm_1_maxLimit+'='+$("#emfm-1-ul").val()+'&'+
+                    plcTag.emfm_2_minLimit+'='+$("#emfm-2-ll").val()+'&'+
+                    plcTag.emfm_2_maxLimit+'='+$("#emfm-2-ul").val()+'&'+
+                    plcTag.emfm_3_minLimit+'='+$("#emfm-3-ll").val()+'&'+
+                    plcTag.emfm_3_maxLimit+'='+$("#emfm-3-ul").val()+'&'+
+                    plcTag.emfm_4_minLimit+'='+$("#emfm-4-ll").val()+'&'+
+                    plcTag.emfm_4_maxLimit+'='+$("#emfm-4-ul").val()+'&'+
+                    plcTag.usfm_1_minLimit+'='+$("#usfm-1-ll").val()+'&'+
+                    plcTag.usfm_1_maxLimit+'='+$("#usfm-1-ul").val()+'&'+
+                    plcTag.usfm_2_minLimit+'='+$("#usfm-2-ll").val()+'&'+
+                    plcTag.usfm_2_maxLimit+'='+$("#usfm-2-ul").val()+'&'+
+                    plcTag.pt_1_minLimit+'='+$("#pt-1-ll").val()+'&'+
+                    plcTag.pt_1_maxLimit+'='+$("#pt-1-ul").val()+'&'+
+                    plcTag.pt_2_minLimit+'='+$("#pt-2-ll").val()+'&'+
+                    plcTag.pt_2_maxLimit+'='+$("#pt-2-ul").val();
+
+                it_modal_loading();
+
+                $.get('limit.html?'+plcRequest, function () {
+
+                    plcRequest =
+                        plcTag.pt_3_minLimit+'='+$("#pt-3-ll").val()+'&'+
+                        plcTag.pt_3_maxLimit+'='+$("#pt-3-ul").val()+'&'+
+                        plcTag.pt_4_minLimit+'='+$("#pt-4-ll").val()+'&'+
+                        plcTag.pt_4_maxLimit+'='+$("#pt-4-ul").val()+'&'+
+                        plcTag.pt_5_minLimit+'='+$("#pt-5-ll").val()+'&'+
+                        plcTag.pt_5_maxLimit+'='+$("#pt-5-ul").val()+'&'+
+                        plcTag.pt_6_minLimit+'='+$("#pt-6-ll").val()+'&'+
+                        plcTag.pt_6_maxLimit+'='+$("#pt-6-ul").val()+'&'+
+                        plcTag.pt_7_minLimit+'='+$("#pt-7-ll").val()+'&'+
+                        plcTag.pt_7_maxLimit+'='+$("#pt-7-ul").val()+'&'+
+                        plcTag.pt_8_minLimit+'='+$("#pt-8-ll").val()+'&'+
+                        plcTag.pt_8_maxLimit+'='+$("#pt-8-ul").val()+'&'+
+                        plcTag.pt_9_minLimit+'='+$("#pt-9-ll").val()+'&'+
+                        plcTag.pt_9_maxLimit+'='+$("#pt-9-ul").val()+'&'+
+                        plcTag.pt_10_minLimit+'='+$("#pt-10-ll").val()+'&'+
+                        plcTag.pt_10_maxLimit+'='+$("#pt-10-ul").val();
+
+                    $.get('limit.html?'+plcRequest, function () {
+                        it_modal_close();
+                    }).fail(function () {
+                        alert('PLC server is not responding at secondary step.')
+                    });
+
+                }).fail(function () {
+                    alert('PLC server is not responding at primary step.');
+                });
+
+            } else if (br == 'Close') {
+                it_modal_close();
+            }
+        });
+
+    }, 'json').fail(function () {
+        alert('PLC communication failure.');
+    });
+};
 
 var startProcessHit = function () {
     $("#cb-start-process").css({
