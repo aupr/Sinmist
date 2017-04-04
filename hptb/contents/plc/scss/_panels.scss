@@ -48,7 +48,15 @@
   top: 80px;
   left: 1138px;
   width: 350px;
-  height: 590px;
+  height: 560px;
+}
+
+#manualInteraction{
+  position: absolute;
+  top: 645px;
+  left: 1138px;
+  width: 350px;
+  height: 278px;
 }
 
 #statusPanel{
@@ -66,7 +74,7 @@
   }
 }
 
-#progressBar{
+/*#progressBar{
   position: absolute;
   top: 375px;
   left: 1493px;
@@ -84,7 +92,7 @@
       background-color: #449b4b;
     }
   }
-}
+}*/
 
 #reportDataPanel{
   position: absolute;

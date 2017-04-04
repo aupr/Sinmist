@@ -103,9 +103,11 @@ var process = function () {
         current: 100
     };
 
-viewSystemStatus(statusVal);
+updateCurrentSystemStatus(statusVal);
 
 bindButtons();
+
+   // disableManualElements(true);
 
 };
 ////////////////////////////////// External Function
@@ -179,20 +181,52 @@ function updateDataTable(rdata) {
 }
 
 function bindButtons() {
-    $("#btn-settings").click(plcSettings);
+    $("#btn-settings").click(plcLimitSettings);
     $("#cb-start-process").click(startProcessHit);
     $("#cb-take-data").click(takeDataHit);
     $("#cb-emergency").click(emergencyHit);
+    $("#setManualValvePosition").click(setManualValvePosition);
+    $("#mib-motor-on").click(manualMotorOn);
+    $("#mib-motor-off").click(manualMotorOff);
 }
 
-function cbOptionsDisabled(tf) {
+function disableControllerElements(tf) {
     $("input","#processMode").prop('disabled', tf);
-    $("#valveOpenBy").prop('disabled', tf);
-    //var fff = $("input[name=pmode]:checked", "#processMode").val();
-    //alert(fff);
+    $("#valveLowerLimit").prop('disabled', tf);
+    $("#valveUpperLimit").prop('disabled', tf);
+    $("#numberOfObs").prop('disabled', tf);
+    $("#ultrasonicSensorChannel").prop('disabled', tf);
 }
 
-var plcSettings = function () {
+function disableManualElements(tf) {
+    var vRange = $('#manualValvePosition');
+    vRange.prop('disabled', tf);
+    hideElementById('setManualValvePosition', tf);
+    hideElementById('mib-motor-on', tf);
+    hideElementById('mib-motor-off', tf);
+
+    if (!tf){
+        vRange.prop('min', $('#valveLowerLimit').val());
+        vRange.prop('max', $('#valveUpperLimit').val());
+        manualValvePosition = vRange.val();
+        $('#setManualValvePosition span').text(manualValvePosition+'%');
+        hideElementById('mib-motor-off', !tf);
+    }
+}
+
+function hideElementById(id,tf) {
+    if (tf) {
+        $("#"+id).css({
+            display: "none"
+        });
+    } else {
+        $("#"+id).css({
+            display: "block"
+        });
+    }
+}
+
+var plcLimitSettings = function () {
     it_modal_loading();
     $.get('limit.html', function (res) {
         var bodyHtml = '<table style="width: 100%;"><tbody>'+
@@ -294,53 +328,246 @@ var plcSettings = function () {
 };
 
 var startProcessHit = function () {
-    $("#cb-start-process").css({
-        display: "none"
-    });
-    $("#cb-take-data").css({
-        display: "block"
-    });
-    cbOptionsDisabled(true);
+    processInfo.status = 'Running';
+
+    if ($('input[name="pmode"]:checked').val() == 'manual') {
+        disableManualElements(false);
+        processInfo.mode = 'Manual';
+    } else {
+        processInfo.mode = 'Automatic';
+    }
+
+    hideElementById('cb-start-process', true);
+    hideElementById('cb-take-data', false);
+    hideElementById('cb-emergency', false);
+    disableControllerElements(true);
 };
 
 var takeDataHit = function () {
-    /*$("#cb-take-data").css({
-        display: "none"
-    });*/
-    $("#cb-emergency").css({
-        display: "block"
-    });
+    hideElementById('cb-take-data', true);
+
     updateDataTable(dummyData);
     systemLog("Data hit pressed ... ","#system-log");
+
     var startTag = plcTag.pt_1_maxLimit+'=10';
+
     $.post('limit.html',startTag, function (result) {
         console.log(result);
+        hideElementById('cb-take-data', false);
     }, 'json');
-
 };
 
 var emergencyHit = function () {
-    $("#cb-emergency").css({
-        display: "none"
-    });
-    $("#cb-start-process").css({
-        display: "block"
-    });
-    cbOptionsDisabled(false);
+    processInfo.status = 'Stopped';
+
+    hideElementById('cb-emergency', true);
+    hideElementById('cb-take-data', true);
+
+    disableManualElements(true);
 
     $.get('data.html?'+plcTag.vfd_stop+'=1', function (result) {
         console.log(result);
+        hideElementById('cb-start-process', false);
+        disableControllerElements(false);
+        updateCurrentSystemStatus(result);
     }, 'json');
 };
 
-function viewSystemStatus (sv) {
+var setManualValvePosition = function () {
+    hideElementById('setManualValvePosition', true);
+
+    var progress = 0;
+
+    ptimer = setInterval(function () {
+        vpProgressBar(progress++);
+        if (progress>=90) {
+            clearInterval(ptimer);
+        }
+    }, 300);
+
+    var reqData = '';
+
+    if (pumpInfo.pipeDia == 3) {
+        reqData = plcTag.kgv_1_position+'='+manualValvePosition;
+    } else if (pumpInfo.pipeDia == 4) {
+        reqData = plcTag.kgv_2_position+'='+manualValvePosition;
+    } else if (pumpInfo.pipeDia == 6) {
+        reqData = plcTag.kgv_3_position+'='+manualValvePosition;
+    } else if (pumpInfo.pipeDia == 8) {
+        reqData = plcTag.kgv_4_position+'='+manualValvePosition;
+    }
+
+    $.get('data.html?'+reqData, function (res) {
+        hideElementById('setManualValvePosition', false);
+        clearInterval(ptimer);
+        vpProgressBar(100);
+        updateCurrentSystemStatus(res);
+    }, 'json').fail(function () {
+        clearInterval(ptimer);
+        hideElementById('setManualValvePosition', false);
+        alert('PLC is not responding the request!');
+    });
+};
+
+var manualMotorOn = function () {
+    hideElementById('mib-motor-on', true);
+
+    var progress = 0;
+
+    ptimer = setInterval(function () {
+        vpProgressBar(progress++);
+        if (progress>=90) {
+            clearInterval(ptimer);
+        }
+    }, 300);
+
+    var reqData = plcTag.vfd_start+'=1';
+
+    $.get('data.html?'+reqData, function (res) {
+        processInfo.motorStatus = 'Running';
+        hideElementById('mib-motor-off', false);
+        clearInterval(ptimer);
+        vpProgressBar(100);
+        updateCurrentSystemStatus(res);
+    }, 'json').fail(function () {
+        clearInterval(ptimer);
+        hideElementById('mib-motor-on', false);
+        alert('PLC is not responding the request!');
+    });
+};
+
+var manualMotorOff = function () {
+    hideElementById('mib-motor-off', true);
+
+    var progress = 0;
+
+    ptimer = setInterval(function () {
+        vpProgressBar(progress++);
+        if (progress>=90) {
+            clearInterval(ptimer);
+        }
+    }, 300);
+
+    var reqData = plcTag.vfd_stop+'=1';
+
+    $.get('data.html?'+reqData, function (res) {
+        processInfo.motorStatus = 'Stopped';
+        hideElementById('mib-motor-on', false);
+        clearInterval(ptimer);
+        vpProgressBar(100);
+        updateCurrentSystemStatus(res);
+    }, 'json').fail(function () {
+        clearInterval(ptimer);
+        hideElementById('mib-motor-off', false);
+        alert('PLC is not responding the request!');
+    });
+};
+
+function targetSuctionPressureOnTypeDia(rd, pumpType, Dia) {
+    if (pumpType === 'Submersible Pump') {
+        return 0;
+    } else {
+        if (Dia === 3) {
+            return rd.pt_1_output;
+        } else if (Dia === 4) {
+            return rd.pt_3_output;
+        } else if (Dia === 6) {
+            return rd.pt_5_output;
+        } else if (Dia === 8) {
+            return rd.pt_7_output;
+        }
+    }
+}
+
+function targetDischargePressureOnTypeDia(rd, pumpType, Dia) {
+    if (pumpType === 'Submersible Pump') {
+        if (Dia === 4) {
+            return rd.pt_9_output;
+        } else if (Dia === 6) {
+            return rd.pt_10_output;
+        }
+    } else {
+        if (Dia === 3) {
+            return rd.pt_2_output;
+        } else if (Dia === 4) {
+            return rd.pt_4_output;
+        } else if (Dia === 6) {
+            return rd.pt_6_output;
+        } else if (Dia === 8) {
+            return rd.pt_8_output;
+        }
+    }
+}
+
+function targetValvePositionOnDia(rd, pipeDia) {
+    if (pipeDia === 3) {
+        return rd.kgv_1_position;
+    } else if (pipeDia === 4) {
+        return rd.kgv_2_position;
+    } else if (pipeDia === 6) {
+        return rd.kgv_3_position;
+    } else if (pipeDia === 8) {
+        return rd.kgv_4_position;
+    }
+}
+function targetMFlowRateOnDia(rd, pipeDia) {
+    if (pipeDia === 3) {
+        return rd.emfm_1_output;
+    } else if (pipeDia === 4) {
+        return rd.emfm_2_output;
+    } else if (pipeDia === 6) {
+        return rd.emfm_3_output;
+    } else if (pipeDia === 8) {
+        return rd.emfm_4_output;
+    }
+}
+
+function targetUFlowRateOnDia(rd, pipeDia) {
+    if (pipeDia === 3) {
+        return rd.usfm_1_output;
+    } else if (pipeDia === 4) {
+        return rd.usfm_2_output;
+    } else if (pipeDia === 6) {
+        return rd.usfm_3_output;
+    } else if (pipeDia === 8) {
+        return rd.usfm_4_output;
+    }
+}
+
+function vpProgressBar(per) {
+    $('#vpProgress').css({
+        width: per+'%'
+    });
+}
+
+function updateCurrentSystemStatus (res) {
+    //console.log(res);
+    var sv = {
+        mode: processInfo.mode,
+        process: processInfo.status,
+        pipeDia: pumpInfo.pipeDia,
+        vp: targetValvePositionOnDia(res, pumpInfo.pipeDia),
+        frm: targetMFlowRateOnDia(res, pumpInfo.pipeDia),
+        fru: targetUFlowRateOnDia(res, pumpInfo.pipeDia),
+        sp: targetSuctionPressureOnTypeDia(res, pumpInfo.pumpType, pumpInfo.pipeDia),
+        dp: targetDischargePressureOnTypeDia(res, pumpInfo.pumpType, pumpInfo.pipeDia),
+        motor: processInfo.motorStatus,
+        freq: res.vfd_frequency,
+        rpm: res.vfd_rpm,
+        power: res.vfd_power,
+        current: res.vfd_current
+    };
+
     $("#status-mode").html(sv.mode);
     $("#status-process").html(sv.process);
     $("#status-pipe-dia").html(sv.pipeDia);
     $("#status-valve-position").html(sv.vp);
+    $("#mibCvp").html(sv.vp);
     $("#status-flow-rate-m").html(sv.frm);
     $("#status-flow-rate-u").html(sv.fru);
     $("#status-next-vp").html(sv.nvp);
+    $("#status-suction-pressure").html(sv.sp);
+    $("#status-discharge-pressure").html(sv.dp);
     $("#status-motor").html(sv.motor);
     $("#status-freq").html(sv.freq);
     $("#status-rpm").html(sv.rpm);

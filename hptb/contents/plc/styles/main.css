@@ -142,7 +142,14 @@ nav {
   top: 80px;
   left: 1138px;
   width: 350px;
-  height: 590px; }
+  height: 560px; }
+
+#manualInteraction {
+  position: absolute;
+  top: 645px;
+  left: 1138px;
+  width: 350px;
+  height: 278px; }
 
 #statusPanel {
   position: absolute;
@@ -156,23 +163,25 @@ nav {
   #statusPanel td {
     line-height: 30px; }
 
-#progressBar {
+/*#progressBar{
   position: absolute;
   top: 375px;
   left: 1493px;
   width: 348px;
   height: 95px;
   border-left: 40px solid green;
-  padding: 10px 0 0 10px; }
-  #progressBar .progrs {
+  padding: 10px 0 0 10px;
+  .progrs{
     height: 20px;
     width: 288px;
     background-color: #bababa;
-    margin-top: 5px; }
-    #progressBar .progrs .bar {
+    margin-top: 5px;
+    .bar{
       height: inherit;
-      background-color: #449b4b; }
-
+      background-color: #449b4b;
+    }
+  }
+}*/
 #reportDataPanel {
   position: absolute;
   left: 365px;

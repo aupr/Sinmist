@@ -9,7 +9,9 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
+      <introspection-schemas>*:mist_hptb</introspection-schemas>
       <resolve-scope>mist_hptb:</resolve-scope>
+      <unqualified-resolve-schemas>mist_hptb:</unqualified-resolve-schemas>
     </data-source>
   </component>
 </project>
