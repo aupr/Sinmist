@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (isset($_SESSION['userFullName'])) {
+    $userName = $_SESSION['userFullName'];
+} else {
+    header('Location: logout.php');
+}
+
 require 'reportmodules/formula/formula.php';
 require 'dbcom/connect.php';
 require 'dbcom/dbread.php';

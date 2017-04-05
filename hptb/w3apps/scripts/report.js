@@ -12,6 +12,10 @@ $(document).ready(function () {
             window.location.replace("origin.php");
         });
 
+        $("#btn-logout-report").click(function () {
+            window.location.replace("logout.php");
+        });
+
         $("#btn-settings").click(function () {
             it_modal_open();
         });

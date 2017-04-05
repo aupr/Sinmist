@@ -1,5 +1,10 @@
 <?php
-$userName = "Administrator"
+session_start();
+if (isset($_SESSION['userFullName'])) {
+    $userName = $_SESSION['userFullName'];
+} else {
+    header('Location: logout.php');
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -31,7 +36,7 @@ $userName = "Administrator"
         <ul>
             <li><button><?=$userName?></button>
                 <ul>
-                    <li><button>Logout</button></li>
+                    <li><button id="btn-logout-report">Logout</button></li>
                 </ul>
             </li>
             <li><button id="btn-origin">Origin</button>

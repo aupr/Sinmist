@@ -1,5 +1,10 @@
 <?php
-$userName = "Administrator"
+session_start();
+if (isset($_SESSION['userFullName'])) {
+    $userName = $_SESSION['userFullName'];
+} else {
+    header('Location: logout.php');
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -26,7 +31,7 @@ $userName = "Administrator"
         <ul>
             <li><button><?=$userName?></button>
                 <ul class="corner_ul">
-                    <li><button>Logout</button></li>
+                    <li><button id="btn-logout-origin">Logout</button></li>
                 </ul>
             </li>
         </ul>
@@ -38,7 +43,7 @@ $userName = "Administrator"
         </div>
         <div class="panel-body">
             <button type="button" id="btn-acc-report" class="btn btn-info btn-lg btn-block no-radius">Access to Report Section</button>
-            <button type="button" id="btn-mntn-user" class="btn btn-info btn-lg btn-block no-radius">Maintain Users</button>
+            <button type="button" id="btn-mntn-user" class="btn btn-info btn-lg btn-block no-radius">Change User Password</button>
             <button type="button" id="btn-set-netp" class="btn btn-info btn-lg btn-block no-radius">Set Network Parameters</button>
             <button type="button" id="btn-toggle-fscr" class="btn btn-info btn-lg btn-block no-radius">Toggle Full-Screen</button>
         </div>

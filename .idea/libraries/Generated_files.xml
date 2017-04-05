@@ -4,12 +4,14 @@
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/hptb/plc/scripts/system.min.js" />
         <item url="file://$PROJECT_DIR$/hptb/w3apps/scripts/report.min.js" />
+        <item url="file://$PROJECT_DIR$/hptb/w3apps/scripts/origin.min.js" />
         <item url="file://$PROJECT_DIR$/hptb/contents/plc/scripts/process.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/hptb/plc/scripts/system.min.js" />
       <root url="file://$PROJECT_DIR$/hptb/w3apps/scripts/report.min.js" />
+      <root url="file://$PROJECT_DIR$/hptb/w3apps/scripts/origin.min.js" />
       <root url="file://$PROJECT_DIR$/hptb/contents/plc/scripts/process.min.js" />
     </CLASSES>
     <SOURCES />
