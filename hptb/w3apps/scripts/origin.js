@@ -32,6 +32,7 @@ $(document).ready(function () {
                                 if (r==='Close') {
                                     it_modal_close();
                                 }
+                                window.location.replace('logout.php');
                             });
                         } else {
                             it_modal_open('Fault on Password Change!', res, '#a80000', 0, 'Try Again, Close', function (r) {

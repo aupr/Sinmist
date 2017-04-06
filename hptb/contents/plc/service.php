@@ -218,8 +218,8 @@
                             <td>:</td>
                             <td>
                                 <select id="ultrasonicSensorChannel" class="form-control no-radius">
-                                    <option>CH 1</option>
-                                    <option>CH 2</option>
+                                    <option value="1">CH 1</option>
+                                    <option value="2">CH 2</option>
                                 </select>
                             </td>
                         </tr>
@@ -262,9 +262,8 @@
         <button id="mib-motor-on" class="btn btn-warning no-radius" style="position: absolute; bottom: 70px; left: 15px; display: none;">MOTOR ON</button>
         <button id="mib-motor-off" class="btn btn-danger no-radius" style="position: absolute; bottom: 70px; left: 15px; display: none;">MOTOR OFF</button>
 
-        <div class="progress no-radius" style="position: absolute; bottom: 10px; width: 320px;">
-            <div id="vpProgress" class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" style="width: 100%"></div>
-        </div>
+        <button id="mib-take-status" class="btn btn-info no-radius" style="position: absolute; bottom: 20px; right: 15px; display: none;">TAKE STATUS</button>
+
     </div>
 </div>
 
@@ -347,6 +346,9 @@
             </tr>
             </tbody>
         </table>
+        <div class="progress no-radius" style="width: 100%; background-color: gray;">
+            <div id="vpProgress" class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" style="width: 100%"></div>
+        </div>
     </div>
 </div>
 
@@ -404,7 +406,8 @@
     processInfo = {
         mode: 'undefined',
         status: 'undefined',
-        motorStatus: 'undefined'
+        motorStatus: 'undefined',
+        usfmChannel: 'undefined'
     };
 
     pumpInfo = {
