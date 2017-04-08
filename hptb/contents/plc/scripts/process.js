@@ -170,6 +170,10 @@ function bindButtons() {
     $("#mib-motor-on").click(manualMotorOn);
     $("#mib-motor-off").click(manualMotorOff);
     $("#mib-take-status").click(manualUpdateStatus);
+    $("#btn-motor-freq").click(setMotorFrequency);
+    $("#btn-quit").click(function () {
+        window.close();
+    });
 }
 
 function disableControllerElements(tf) {
@@ -208,6 +212,10 @@ function hideElementById(id,tf) {
         });
     }
 }
+
+var setMotorFrequency = function () {
+    it_modal_open();
+};
 
 var plcLimitSettings = function () {
     it_modal_loading();
@@ -378,12 +386,13 @@ var emergencyHit = function () {
 
     hideElementById('cb-emergency', true);
     hideElementById('cb-take-data', true);
+    disableManualElements(true);
 
     $.get('data.html?'+plcTag.vfd_stop+'=1', function (result) {
         requestProgress('end');
         processInfo.status = 'Stopped';
         processInfo.motorStatus = 'Stopped';
-        disableManualElements(true);
+
         hideElementById('cb-start-process', false);
         disableControllerElements(false);
         updateCurrentSystemStatus(result);
@@ -392,6 +401,7 @@ var emergencyHit = function () {
         requestProgress('stop');
         hideElementById('cb-emergency', false);
         hideElementById('cb-take-data', false);
+        disableManualElements(false);
     });
 };
 
@@ -629,11 +639,40 @@ function updateDataAndView(res) {
 
 function handleData() {
     if (mainData.length > 0) {
-        var htmlData = '<b>What do you want with the data?</b>';
+        var htmlData = '<b>What do you want to do with the data?</b>';
 
         it_modal_open('Observation Complete!', htmlData, '#008800', 0, 'Save, Erase, Cancel', function (br) {
             if (br === 'Save') {
-                alert('save');
+                it_modal_close();
+
+                var authorHtml = '<label for="author-text-1">Author 1</label><br><textarea id="author-text-1" rows="6" style="width: 100%; resize: vertical;"></textarea>'+
+                '<hr><label for="author-text-2">Author 2</label><br><textarea id="author-text-2" rows="6" style="width: 100%; resize: vertical;"></textarea>';
+
+
+                it_modal_open('Author Info!', authorHtml, '#6358ff', '500px', 'Save', function (abtnr) {
+                    if (abtnr === 'Save') {
+                        it_modal_loading();
+                        $.post(server+'w3apps/reportmodules/action.php', {
+                            'for': 'report',
+                            'command': 'update',
+                            "atd": 'yes',
+                            'data': {
+                                'author': $('#author-text-1').val()+String.fromCharCode(13)+'<&>'+String.fromCharCode(13)+$('#author-text-2').val(),
+                                'testData': JSON.stringify(mainData)
+                            },
+                            'request': it_hold_request()
+                        }, function (ret) {
+                            it_modal_close();
+                            if (ret === '1') {
+                                it_modal_open('Data save status!', "data Saved Successfully!", '#00ff00', 0, 'Okay', function () {
+                                    window.close();
+                                });
+                            } else {
+                                it_modal_open('Error!', "Something going wrong!");
+                            }
+                        });
+                    }
+                });
             } else if (br === 'Erase') {
                 mainData = [];
                 updateDataTable(mainData);

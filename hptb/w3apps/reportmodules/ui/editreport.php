@@ -266,7 +266,7 @@ $editReportDnT = explode('@',$res['data']['tDtTm']);
     $( "#edit_tabs" ).tabs();
 
     $("#edt-report-dtntm-dt").datepicker({
-        dateFormat:"dd-M-yy",
+        dateFormat:"dd-MM-yy",
         showButtonPanel: true,
         changeMonth: true,
         changeYear: true,
@@ -277,7 +277,7 @@ $editReportDnT = explode('@',$res['data']['tDtTm']);
     $("#edt-report-dtntm-tm").timepicker();
 
     $("#nm-rcvd-dt").datepicker({
-        dateFormat:"dd-M-yy",
+        dateFormat:"dd-MM-yy",
         showButtonPanel: true,
         changeMonth: true,
         changeYear: true,
@@ -285,7 +285,7 @@ $editReportDnT = explode('@',$res['data']['tDtTm']);
         dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
     });
     $("#nm-clients-ref-date").datepicker({
-        dateFormat:"dd-M-yy",
+        dateFormat:"dd-MM-yy",
         showButtonPanel: true,
         changeMonth: true,
         changeYear: true,
@@ -293,7 +293,7 @@ $editReportDnT = explode('@',$res['data']['tDtTm']);
         dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
     });
     $("#nm-me-ref-date").datepicker({
-        dateFormat:"dd-M-yy",
+        dateFormat:"dd-MM-yy",
         showButtonPanel: true,
         changeMonth: true,
         changeYear: true,

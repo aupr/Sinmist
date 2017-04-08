@@ -26,6 +26,7 @@
         <li><button>ORIGIN</button>
             <ul class="corner_ul">
                 <li><button id="btn-settings">Settings</button></li>
+                <li><button id="btn-motor-freq">Motor Freq.</button></li>
             </ul>
         </li>
     </ul>
