@@ -4,52 +4,54 @@
 var preprocess = function () {
     // Global primary variables
     plcUserId = 'admin';
-    plcPassword = "";
+    plcPassword = "1234";
 
     plcTag = {
         vfd_start: '"Control".VFD_Control.Write_To_G120.Start',
         vfd_stop: '"Control".VFD_Control.Write_To_G120.Stop',
-        vfd_frequency: '"Control".VFD_Control.Write_To_G120."Set Frequency"',
-        emfm_1_minLimit: '"Control".Flow_Meters.Electro_Magnetic."1"."Min Limit"',
-        emfm_1_maxLimit: '"Control".Flow_Meters.Electro_Magnetic."1"."Max Limit"',
-        emfm_2_minLimit: '"Control".Flow_Meters.Electro_Magnetic."2"."Min Limit"',
-        emfm_2_maxLimit: '"Control".Flow_Meters.Electro_Magnetic."2"."Max Limit"',
-        emfm_3_minLimit: '"Control".Flow_Meters.Electro_Magnetic."3"."Min Limit"',
-        emfm_3_maxLimit: '"Control".Flow_Meters.Electro_Magnetic."3"."Max Limit"',
-        emfm_4_minLimit: '"Control".Flow_Meters.Electro_Magnetic."4"."Min Limit"',
-        emfm_4_maxLimit: '"Control".Flow_Meters.Electro_Magnetic."4"."Max Limit"',
-        usfm_1_minLimit: '"Control".Flow_Meters.Ultrasonic."1"."Min Limit"',
-        usfm_1_maxLimit: '"Control".Flow_Meters.Ultrasonic."1"."Max Limit"',
-        usfm_2_minLimit: '"Control".Flow_Meters.Ultrasonic."2"."Min Limit"',
-        usfm_2_maxLimit: '"Control".Flow_Meters.Ultrasonic."2"."Max Limit"',
+        vfd_frequency: '"Control".VFD_Control.Write_To_G120.SetFrequency',
+        vfd_power_max: '"Control".VFD_Control.Read_From_G120.Power.MaxRange',
+        vfd_current_max: '"Control".VFD_Control.Read_From_G120.Current.MaxRange',
+        emfm_1_minLimit: '"Control".Flow_Meters.Electro_Magnetic."1".MinLimit',
+        emfm_1_maxLimit: '"Control".Flow_Meters.Electro_Magnetic."1".MaxLimit',
+        emfm_2_minLimit: '"Control".Flow_Meters.Electro_Magnetic."2".MinLimit',
+        emfm_2_maxLimit: '"Control".Flow_Meters.Electro_Magnetic."2".MaxLimit',
+        emfm_3_minLimit: '"Control".Flow_Meters.Electro_Magnetic."3".MinLimit',
+        emfm_3_maxLimit: '"Control".Flow_Meters.Electro_Magnetic."3".MaxLimit',
+        emfm_4_minLimit: '"Control".Flow_Meters.Electro_Magnetic."4".MinLimit',
+        emfm_4_maxLimit: '"Control".Flow_Meters.Electro_Magnetic."4".MaxLimit',
+        usfm_1_minLimit: '"Control".Flow_Meters.Ultrasonic."1".MinLimit',
+        usfm_1_maxLimit: '"Control".Flow_Meters.Ultrasonic."1".MaxLimit',
+        usfm_2_minLimit: '"Control".Flow_Meters.Ultrasonic."2".MinLimit',
+        usfm_2_maxLimit: '"Control".Flow_Meters.Ultrasonic."2".MaxLimit',
         kgv_1_position: '"Control".Knife_Gate_Valve."1".Input',
         kgv_2_position: '"Control".Knife_Gate_Valve."2".Input',
         kgv_3_position: '"Control".Knife_Gate_Valve."3".Input',
         kgv_4_position: '"Control".Knife_Gate_Valve."4".Input',
-        pt_1_minLimit: '"Control".PressureTransmitters."1"."Min Limit"',
-        pt_1_maxLimit: '"Control".PressureTransmitters."1"."Max Limit"',
-        pt_2_minLimit: '"Control".PressureTransmitters."2"."Min Limit"',
-        pt_2_maxLimit: '"Control".PressureTransmitters."2"."Max Limit"',
-        pt_3_minLimit: '"Control".PressureTransmitters."3"."Min Limit"',
-        pt_3_maxLimit: '"Control".PressureTransmitters."3"."Max Limit"',
-        pt_4_minLimit: '"Control".PressureTransmitters."4"."Min Limit"',
-        pt_4_maxLimit: '"Control".PressureTransmitters."4"."Max Limit"',
-        pt_5_minLimit: '"Control".PressureTransmitters."5"."Min Limit"',
-        pt_5_maxLimit: '"Control".PressureTransmitters."5"."Max Limit"',
-        pt_6_minLimit: '"Control".PressureTransmitters."6"."Min Limit"',
-        pt_6_maxLimit: '"Control".PressureTransmitters."6"."Max Limit"',
-        pt_7_minLimit: '"Control".PressureTransmitters."7"."Min Limit"',
-        pt_7_maxLimit: '"Control".PressureTransmitters."7"."Max Limit"',
-        pt_8_minLimit: '"Control".PressureTransmitters."8"."Min Limit"',
-        pt_8_maxLimit: '"Control".PressureTransmitters."8"."Max Limit"',
-        pt_9_minLimit: '"Control".PressureTransmitters."9"."Min Limit"',
-        pt_9_maxLimit: '"Control".PressureTransmitters."9"."Max Limit"',
-        pt_10_minLimit: '"Control".PressureTransmitters."10"."Min Limit"',
-        pt_10_maxLimit: '"Control".PressureTransmitters."10"."Max Limit"'
+        pt_1_minLimit: '"Control".PressureTransmitters."1".MinLimit',
+        pt_1_maxLimit: '"Control".PressureTransmitters."1".MaxLimit',
+        pt_2_minLimit: '"Control".PressureTransmitters."2".MinLimit',
+        pt_2_maxLimit: '"Control".PressureTransmitters."2".MaxLimit',
+        pt_3_minLimit: '"Control".PressureTransmitters."3".MinLimit',
+        pt_3_maxLimit: '"Control".PressureTransmitters."3".MaxLimit',
+        pt_4_minLimit: '"Control".PressureTransmitters."4".MinLimit',
+        pt_4_maxLimit: '"Control".PressureTransmitters."4".MaxLimit',
+        pt_5_minLimit: '"Control".PressureTransmitters."5".MinLimit',
+        pt_5_maxLimit: '"Control".PressureTransmitters."5".MaxLimit',
+        pt_6_minLimit: '"Control".PressureTransmitters."6".MinLimit',
+        pt_6_maxLimit: '"Control".PressureTransmitters."6".MaxLimit',
+        pt_7_minLimit: '"Control".PressureTransmitters."7".MinLimit',
+        pt_7_maxLimit: '"Control".PressureTransmitters."7".MaxLimit',
+        pt_8_minLimit: '"Control".PressureTransmitters."8".MinLimit',
+        pt_8_maxLimit: '"Control".PressureTransmitters."8".MaxLimit',
+        pt_9_minLimit: '"Control".PressureTransmitters."9".MinLimit',
+        pt_9_maxLimit: '"Control".PressureTransmitters."9".MaxLimit',
+        pt_10_minLimit: '"Control".PressureTransmitters."10".MinLimit',
+        pt_10_maxLimit: '"Control".PressureTransmitters."10".MaxLimit'
     };
 
     //Auto login
-    var spost = 'Login='+plcUserId+'&Password='+plcPassword;
+    var spost = 'Redirection='+'&Login='+plcUserId+'&Password='+plcPassword;
     $.post("/FormLogin", spost, function(result) {
         console.log("Access & Login PLC: Success");
     }).fail(function () {
@@ -76,11 +78,14 @@ var preprocess = function () {
     }*/
 
 
-    isProcess = 0;
+    isProcess = false;
     window.onbeforeunload = function (){
-        if (isProcess > 0) return true;
-        else
-        {
+        if (isProcess) {
+            systemLog('Tab close button clicked! Requested to process stop!');
+            emergencyHit();
+            return true;
+        }
+        else {
             //do something
         }
     };
@@ -103,7 +108,7 @@ var process = function () {
         current: 100
     };
 
-updateCurrentSystemStatus(statusVal);
+//updateCurrentSystemStatus(statusVal);
 
 bindButtons();
 
@@ -111,6 +116,11 @@ bindButtons();
 
 };
 ////////////////////////////////// External Function
+
+
+function gTest() {
+    alert();
+}
 
 var mainData = [];
 
@@ -171,6 +181,7 @@ function bindButtons() {
     $("#mib-motor-off").click(manualMotorOff);
     $("#mib-take-status").click(manualUpdateStatus);
     $("#btn-motor-freq").click(setMotorFrequency);
+    $("#btn-motor-param").click(setMotorParameter);
     $("#btn-quit").click(function () {
         window.close();
     });
@@ -214,12 +225,70 @@ function hideElementById(id,tf) {
 }
 
 var setMotorFrequency = function () {
-    it_modal_open();
+    systemLog('Execution started to set motor frequency!');
+    it_modal_loading();
+    $.get('data.html', function (response) {
+        systemLog('Motor frequency setup dialog opened!');
+        var body = '<input type="number" class="form-control no-radius" id="set-vsd-freq" min="10" max="50" value="'+response.vfd_frequency+'">';
+        it_modal_open('Set VFD Frequency!', body, 'red', '300px', 'Set, Cancel', function (res) {
+            if (res === 'Cancel') {
+                systemLog('Motor frequency setup dialog closed!');
+                it_modal_close();
+            } else if (res === 'Set') {
+                systemLog('Requested to set motor frequency!');
+                it_modal_loading();
+                $.get('data.html?'+plcTag.vfd_frequency+'='+$('#set-vsd-freq').val(), function (ret) {
+                    updateCurrentSystemStatus(ret);
+                    systemLog('Motor frequency setup successful!');
+                    it_modal_close();
+                }, 'json').fail(function () {
+                    systemLog('Motor frequency setup failed! PLC is not responding...');
+                    alert('Action Failed!');
+                });
+            }
+        });
+    }, 'json').fail(function () {
+        systemLog('Failed to open motor frequency setup Dialog! PLC is not responding!');
+        alert('Request failed!')
+    });
+};
+
+var setMotorParameter = function () {
+    systemLog('Set motor parameter execution started!');
+    it_modal_loading();
+    $.get('data.html', function (response) {
+        systemLog('Set motor parameter dialog opened!');
+        var body = '<label for="set-motor-current">Motor Current (A):</label><br><input type="number" class="form-control no-radius" id="set-motor-current" value="'+response.vfd_current_max/1.5+'">'+
+        '<label for="set-motor-power">Motor Power (Kw):</label><br><input type="number" class="form-control no-radius" id="set-motor-power" value="'+response.vfd_power_max/2+'">';
+
+        it_modal_open('Set Motor Parameter!', body, 'dodgerblue', '400px', 'Set, Cancel', function (res) {
+            if (res === 'Cancel') {
+                systemLog('Motor parameter dialog closed!');
+                it_modal_close();
+            } else if (res === 'Set') {
+                systemLog('Requested to save motor parameter!');
+                it_modal_loading();
+                $.get('data.html?'+plcTag.vfd_power_max+'='+$('#set-motor-power').val()*2+'&'+plcTag.vfd_current_max+'='+$('#set-motor-current').val()*1.5, function (ret) {
+                    updateCurrentSystemStatus(ret);
+                    systemLog('Motor parameter saved successfully!');
+                    it_modal_close();
+                }, 'json').fail(function () {
+                    systemLog('Saving motor parameter failed! PLC is not responding!');
+                    alert('Action Failed!');
+                });
+            }
+        });
+    }, 'json').fail(function () {
+        alert('Request failed!')
+    });
 };
 
 var plcLimitSettings = function () {
     it_modal_loading();
+    systemLog('Execution progress started to view limit settings dialog!');
     $.get('limit.html', function (res) {
+        systemLog('Limit settings window has been opened!');
+
         var bodyHtml = '<table style="width: 100%;"><tbody>'+
         '<tr><td><label for="emfm-1-ll">EMFM-1 Lower Limit </label></td><td>:</td><td><input type="number" id="emfm-1-ll" value="'+res.emfm_1_minLimit+'"></td>'+
         '<td><label for="emfm-1-ul">EMFM-1 Upper Limit </label></td><td>:</td><td><input type="number" id="emfm-1-ul" value="'+res.emfm_1_maxLimit+'"></td></tr>'+
@@ -258,6 +327,8 @@ var plcLimitSettings = function () {
         it_modal_open("Sensors Data Limit Setup!", bodyHtml, 'dodgerblue', '800px', 'Close, Save', function (br) {
             if (br == 'Save') {
 
+                systemLog('In limit settings dialog "Save" button clicked!');
+
                 var plcRequest =
                     plcTag.emfm_1_minLimit+'='+$("#emfm-1-ll").val()+'&'+
                     plcTag.emfm_1_maxLimit+'='+$("#emfm-1-ul").val()+'&'+
@@ -278,8 +349,8 @@ var plcLimitSettings = function () {
 
                 it_modal_loading();
 
-                $.get('limit.html?'+plcRequest, function () {
-
+                $.post('limit.html',encodeURI(plcRequest), function (r) {
+                    systemLog('Limit saved 50%!');
                     plcRequest =
                         plcTag.pt_3_minLimit+'='+$("#pt-3-ll").val()+'&'+
                         plcTag.pt_3_maxLimit+'='+$("#pt-3-ul").val()+'&'+
@@ -298,58 +369,71 @@ var plcLimitSettings = function () {
                         plcTag.pt_10_minLimit+'='+$("#pt-10-ll").val()+'&'+
                         plcTag.pt_10_maxLimit+'='+$("#pt-10-ul").val();
 
-                    $.get('limit.html?'+plcRequest, function () {
+                    $.post('limit.html', encodeURI(plcRequest), function (rs) {
+                        systemLog('Limit saved 100%!');
                         it_modal_close();
-                    }).fail(function () {
+                    },'json').fail(function () {
+                        systemLog('Limit value saving failed at secondary step!');
                         alert('PLC server is not responding at secondary step.')
                     });
 
-                }).fail(function () {
+                },'json').fail(function () {
+                    systemLog('Limit value saving failed at primary step!');
                     alert('PLC server is not responding at primary step.');
                 });
 
             } else if (br == 'Close') {
+                systemLog('Limit settings dialog closed!');
                 it_modal_close();
             }
         });
 
     }, 'json').fail(function () {
+        systemLog('Failed to open limit settings dialog!');
         alert('PLC communication failure.');
     });
 };
 
 var startProcessHit = function () {
-    requestProgress('start');
+    if ($("#valveLowerLimit").val() < $("#valveUpperLimit").val() - 9) {
+        requestProgress('start');
+        systemLog('"Start process" button clicked!');
 
-    hideElementById('cb-start-process', true);
-    disableControllerElements(true);
+        hideElementById('cb-start-process', true);
+        disableControllerElements(true);
 
-    var requestData = '';
+        var requestData = '';
 
-    $.get('data.html?'+requestData, function (res) {
-        requestProgress('end');
+        $.get('data.html?'+requestData, function (res) {
+            requestProgress('end');
+            systemLog('Process has been started!');
+            isProcess = true;
 
-        processInfo.motorStatus = 'Stopped';
-        processInfo.status = 'Running';
-        processInfo.usfmChannel = $('#ultrasonicSensorChannel').val();
+            processInfo.motorStatus = 'Stopped';
+            processInfo.status = 'Running';
+            processInfo.usfmChannel = $('#ultrasonicSensorChannel').val();
 
-        if ($('input[name="pmode"]:checked').val() === 'manual') {
-            disableManualElements(false);
-            processInfo.mode = 'Manual';
-        } else {
-            processInfo.mode = 'Automatic';
-        }
+            if ($('input[name="pmode"]:checked').val() === 'manual') {
+                disableManualElements(false);
+                processInfo.mode = 'Manual';
+            } else {
+                processInfo.mode = 'Automatic';
+            }
 
-        hideElementById('cb-take-data', false);
-        hideElementById('cb-emergency', false);
+            hideElementById('cb-take-data', false);
+            hideElementById('cb-emergency', false);
 
-        updateCurrentSystemStatus(res);
-    }, 'json').fail(function () {
-        requestProgress('stop');
-        hideElementById('cb-start-process', false);
-        disableControllerElements(false);
-        alert('PLC is not responding!');
-    });
+            updateCurrentSystemStatus(res);
+        }, 'json').fail(function () {
+            systemLog('Process startup failure! PLC is not responding...')
+            requestProgress('stop');
+            hideElementById('cb-start-process', false);
+            disableControllerElements(false);
+            alert('PLC is not responding!');
+        });
+    } else {
+        it_modal_warning("Valve lower limit should be less then valve upper limit<br>with the minimum difference of 10%");
+    }
 };
 
 var takeDataHit = function () {
@@ -358,46 +442,95 @@ var takeDataHit = function () {
         if (dataTakePermission) {
             dataTakePermission = false;
             updateDataAndView(statusHold);
+            systemLog('Data taken manually!');
         } else {
             it_modal_info('Already taken this data!');
+            systemLog('Attempted to take data but already exists!');
         }
 
     } else if (processInfo.mode === 'Automatic') {
+        // Auto process start
+        hideElementById('cb-take-data', true);
+        autoMotorOn(function () {
+            //alert('motor');
+            var autoValveLowerLimit = parseInt($('#valveLowerLimit').val());
+            var autoValveUpperLimit = parseInt($('#valveUpperLimit').val());
+            var dataTobeTaken = parseInt($('#numberOfObs').val());
+            var effectivePosition = autoValveUpperLimit;
 
+
+
+            autoValvePositions = [];
+            autoValvePositions.push(autoValveUpperLimit);
+
+            var segmentsValue = (effectivePosition-autoValveLowerLimit)/(dataTobeTaken-1);
+            console.log(segmentsValue);
+            //var i = 0;
+            for (var i=autoValveLowerLimit; i<effectivePosition; i=i+segmentsValue) {
+                autoValvePositions.push(i);
+            }
+            //autoValvePositions.push(100);
+
+            autoValvePositions = arrayToFixed(autoValvePositions, 2);
+
+            console.log(autoValvePositions);
+
+            runAutoProcess();
+        });
+
+        // Auto process end
     } else {
         it_modal_info('Something going absurd!');
+        systemLog('Process is not either automatic or manual selected!');
     }
 
-   /* hideElementById('cb-take-data', true);
-
-    systemLog("Data hit pressed ... ","#system-log");
-
-    var startTag = plcTag.pt_1_maxLimit+'=10';
-
-    $.get('data.html',startTag, function (result) {
-        console.log(result);
-        updateDataAndView(result);
-        hideElementById('cb-take-data', false);
-    }, 'json');*/
 };
 
 var emergencyHit = function () {
     requestProgress('start');
+    systemLog('"Stop precess" triggered!');
 
     hideElementById('cb-emergency', true);
     hideElementById('cb-take-data', true);
     disableManualElements(true);
 
+    autoValvePositionIndex = 0;
+    autoProcessTimeCounter = 0;
+    if (typeof autoProcessTimeout !== 'undefined'){
+        clearTimeout(autoProcessTimeout);
+    }
+    if (typeof autoUpdateTimeout !== 'undefined'){
+        clearTimeout(autoUpdateTimeout);
+    }
+    if (typeof autoProcessStarterTimeout !== 'undefined'){
+        clearTimeout(autoProcessStarterTimeout);
+    }
+
     $.get('data.html?'+plcTag.vfd_stop+'=1', function (result) {
         requestProgress('end');
+        systemLog('Precess has been stopped!');
+        isProcess = false;
+
         processInfo.status = 'Stopped';
         processInfo.motorStatus = 'Stopped';
+        processInfo.mode = 'undefined';
 
         hideElementById('cb-start-process', false);
         disableControllerElements(false);
         updateCurrentSystemStatus(result);
         handleData();
+        // second request
+        requestProgress('start');
+        systemLog('Secondary "Stop precess" triggered!');
+        $.get('data.html?'+plcTag.vfd_stop+'=1', function (ret) {
+            requestProgress('end');
+            systemLog('Secondary Emergency request has been delivered to PLC!');
+        }, 'json').fail(function () {
+            systemLog('PLC is not responding! Secondary "Stop process" failure!');
+            requestProgress('stop');
+        });
     }, 'json').fail(function () {
+        systemLog('PLC is not responding! "Stop process" failure!');
         requestProgress('stop');
         hideElementById('cb-emergency', false);
         hideElementById('cb-take-data', false);
@@ -409,6 +542,7 @@ var setManualValvePosition = function () {
     hideElementById('setManualValvePosition', true);
 
     requestProgress('start');
+    systemLog('Set valve position button pressed!');
 
     var reqData = '';
 
@@ -426,12 +560,14 @@ var setManualValvePosition = function () {
         .get('data.html?'+reqData, function (res) {
             hideElementById('setManualValvePosition', false);
             requestProgress('end');
+            systemLog('Valve position set to '+manualValvePosition+'% by manual action!');
             updateCurrentSystemStatus(res);
         }, 'json')
         .fail(function () {
             requestProgress('stop');
+            systemLog('Valve position setup failure! PLC is not responding!');
             hideElementById('setManualValvePosition', false);
-            alert('PLC is not responding the request!');
+            //alert('PLC is not responding the request!');
         });
 };
 
@@ -439,6 +575,7 @@ var manualMotorOn = function () {
     hideElementById('mib-motor-on', true);
 
     requestProgress('start');
+    systemLog('"Motor On" button clicked!');
 
     var reqData = plcTag.vfd_start+'=1';
 
@@ -446,9 +583,11 @@ var manualMotorOn = function () {
         processInfo.motorStatus = 'Running';
         hideElementById('mib-motor-off', false);
         requestProgress('end');
+        systemLog('"Motor On" success! Request delivered to PLC...');
         updateCurrentSystemStatus(res);
     }, 'json').fail(function () {
         requestProgress('stop');
+        systemLog('"Motor On" Failed! PLC is not responding...');
         hideElementById('mib-motor-on', false);
         alert('PLC is not responding the request!');
     });
@@ -458,6 +597,7 @@ var manualMotorOff = function () {
     hideElementById('mib-motor-off', true);
 
     requestProgress('start');
+    systemLog('"Motor Off" button clicked!');
 
     var reqData = plcTag.vfd_stop+'=1';
 
@@ -465,9 +605,11 @@ var manualMotorOff = function () {
         processInfo.motorStatus = 'Stopped';
         hideElementById('mib-motor-on', false);
         requestProgress('end');
+        systemLog('"Motor Off" Success! Request delivered to PLC...');
         updateCurrentSystemStatus(res);
     }, 'json').fail(function () {
         requestProgress('stop');
+        systemLog('"Motor Off" Failed! PLC is not responding...');
         hideElementById('mib-motor-off', false);
         alert('PLC is not responding the request!');
     });
@@ -477,18 +619,144 @@ var manualUpdateStatus = function () {
     hideElementById('mib-take-status', true);
 
     requestProgress('start');
+    systemLog('"Update status" requested manually!');
 
     $
         .get('data.html', function (res) {
             hideElementById('mib-take-status', false);
             updateCurrentSystemStatus(res);
             requestProgress('end');
+            systemLog('Status has been updated manually!');
         }, 'json')
         .fail(function () {
             hideElementById('mib-take-status', false);
             requestProgress('stop');
+            systemLog('Update status failure! PLC is not responding...');
         });
 };
+
+function arrayToFixed(array, fixedPlaces) {
+    var newArray = [];
+    array.forEach(function (val) {
+        newArray.push(val.toFixed(fixedPlaces));
+    });
+
+    return newArray;
+}
+
+function autoMotorOn(callback) {
+    requestProgress('start');
+    systemLog('"Motor On" by auto process!');
+
+    var reqData = plcTag.vfd_start+'=1';
+
+    $.get('data.html?'+reqData, function (res) {
+        processInfo.motorStatus = 'Running';
+        requestProgress('end');
+        systemLog('"Motor On" success! Request delivered to PLC...');
+        updateCurrentSystemStatus(res);
+        requestProgress('start');
+        $.get('data.html?'+reqData, function (rt) {
+            requestProgress('end');
+            updateCurrentSystemStatus(rt);
+            callback();
+        }, 'json').fail(function () {
+            requestProgress('stop');
+            systemLog('"Motor On" Failed at secondary state! PLC is not responding...');
+        });
+    }, 'json').fail(function () {
+        requestProgress('stop');
+        systemLog('"Motor On" Failed! PLC is not responding...');
+
+        //alert('PLC is not responding the request!');
+    });
+}
+
+function autoUpdateStatus(callback) {
+    requestProgress('start');
+    systemLog('"Update status" requested automatically!');
+
+    $
+        .get('data.html', function (res) {
+            updateCurrentSystemStatus(res);
+            requestProgress('end');
+            systemLog("Auto Process status updated!");
+            callback();
+        }, 'json')
+        .fail(function () {
+            hideElementById('mib-take-status', false);
+            requestProgress('stop');
+            systemLog('Update status failure! PLC is not responding...');
+        });
+}
+
+function setAutoValvePosition(valvePosition, callBack) {
+    requestProgress('start');
+    systemLog('Set valve position automatic command!');
+
+    var reqData = '';
+
+    if (pumpInfo.pipeDia === 3) {
+        reqData = plcTag.kgv_1_position+'='+valvePosition;
+    } else if (pumpInfo.pipeDia === 4) {
+        reqData = plcTag.kgv_2_position+'='+valvePosition;
+    } else if (pumpInfo.pipeDia === 6) {
+        reqData = plcTag.kgv_3_position+'='+valvePosition;
+    } else if (pumpInfo.pipeDia === 8) {
+        reqData = plcTag.kgv_4_position+'='+valvePosition;
+    }
+
+    $
+        .get('data.html?'+reqData, function (res) {
+            requestProgress('end');
+            systemLog('Valve position set to '+valvePosition+'% by automatic command!');
+            updateCurrentSystemStatus(res);
+            callBack();
+        }, 'json')
+        .fail(function () {
+            requestProgress('stop');
+            systemLog('Valve position setup failure! PLC is not responding!');
+            //alert('PLC is not responding the request!');
+        });
+}
+
+autoProcessUpdateTime = 3000;
+autoProcessDataTakeTime = 40000;
+autoProcessTimeCounter = 0;
+autoValvePositionIndex = 0;
+function runAutoProcess() {
+    autoProcessTimeCounter = autoProcessTimeCounter + autoProcessUpdateTime;
+
+    var limitIndexNumber = parseInt($('#numberOfObs').val());
+
+
+    if (autoProcessTimeCounter >= autoProcessDataTakeTime) {
+        autoProcessTimeCounter = 0;
+        updateDataAndView(statusHold);
+        if (autoValvePositionIndex !== 0) {
+            //alert(autoValvePositionIndex+" !== 0");
+            setAutoValvePosition(autoValvePositions[autoValvePositionIndex], function () {
+                autoValvePositionIndex++;
+                autoProcessTimeout = setTimeout(function () {
+                    runAutoProcess();
+                }, autoProcessUpdateTime);
+            });
+        }
+    } else if (autoValvePositionIndex === 0) {
+        setAutoValvePosition(autoValvePositions[autoValvePositionIndex], function () {
+            autoValvePositionIndex++;
+            autoProcessStarterTimeout = setTimeout(function () {
+                runAutoProcess();
+            }, autoProcessUpdateTime);
+        });
+    } else {
+        autoUpdateStatus(function () {
+            autoUpdateTimeout = setTimeout(function () {
+                runAutoProcess();
+            }, autoProcessUpdateTime);
+        });
+    }
+}
 
 function vpProgressBar(per) {
     $('#vpProgress').css({
@@ -523,11 +791,11 @@ function targetSuctionPressureOnTypeDia(rd, pumpType, Dia) {
         if (Dia === 3) {
             return rd.pt_1_output;
         } else if (Dia === 4) {
-            return rd.pt_3_output;
+            return rd.pt_2_output;
         } else if (Dia === 6) {
-            return rd.pt_5_output;
+            return rd.pt_3_output;
         } else if (Dia === 8) {
-            return rd.pt_7_output;
+            return rd.pt_4_output;
         }
     }
 }
@@ -538,16 +806,18 @@ function targetDischargePressureOnTypeDia(rd, pumpType, Dia) {
             return rd.pt_9_output;
         } else if (Dia === 6) {
             return rd.pt_10_output;
+        } else {
+            return 0;
         }
     } else {
         if (Dia === 3) {
-            return rd.pt_2_output;
+            return rd.pt_8_output;
         } else if (Dia === 4) {
-            return rd.pt_4_output;
+            return rd.pt_7_output;
         } else if (Dia === 6) {
             return rd.pt_6_output;
         } else if (Dia === 8) {
-            return rd.pt_8_output;
+            return rd.pt_5_output;
         }
     }
 }
@@ -586,7 +856,7 @@ function targetUFlowRateOnDia(rd, channel) {
 
 function updateDataTable(rdata) {
     rdata.sort(function (a,b) {
-        return a.frm - b.frm;
+        return a.vo - b.vo;
     });
     $("#dataViewTable").html("");
     rdata.forEach(function (row, ind) {
@@ -688,6 +958,15 @@ statusHold = {};
 dataTakePermission = false;
 
 function updateCurrentSystemStatus (res) {
+    if (res.Emergency === '1' && isProcess === true) {
+        emergencyHit();
+        systemLog('<<< Precess emergency stopped! >>>');
+    }
+    if (res.vfd_fault === '1' && isProcess === true) {
+        emergencyHit();
+        systemLog('<<<<< VFD fault present! >>>>>');
+    }
+
     statusHold = res;
     dataTakePermission = true;
     //console.log(res);
@@ -712,16 +991,16 @@ function updateCurrentSystemStatus (res) {
     $("#status-pipe-dia").html(sv.pipeDia);
     $("#status-valve-position").html(sv.vp);
     $("#mibCvp").html(sv.vp);
-    $("#status-flow-rate-m").html(sv.frm);
-    $("#status-flow-rate-u").html(sv.fru);
+    $("#status-flow-rate-m").html(parseFloat(sv.frm).toFixed(2));
+    $("#status-flow-rate-u").html(parseFloat(sv.fru).toFixed(2));
     $("#status-next-vp").html(sv.nvp);
-    $("#status-suction-pressure").html(sv.sp);
-    $("#status-discharge-pressure").html(sv.dp);
+    $("#status-suction-pressure").html(parseFloat(sv.sp).toFixed(2));
+    $("#status-discharge-pressure").html(parseFloat(sv.dp).toFixed(2));
     $("#status-motor").html(sv.motor);
     $("#status-freq").html(sv.freq);
     $("#status-rpm").html(sv.rpm);
-    $("#status-power").html(sv.power);
-    $("#status-current").html(sv.current);
+    $("#status-power").html(parseFloat(sv.power).toFixed(2));
+    $("#status-current").html(parseFloat(sv.current).toFixed(2));
 }
 
 function scrollUp(selector){

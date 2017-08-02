@@ -129,12 +129,13 @@ nav {
 
 .options {
   position: absolute;
-  top: 80px;
+  top: 77px;
   left: 20px;
-  width: 1810px; }
+  width: 1810px;
+  height: 55px; }
   .options > .search {
-    width: 400px;
-    float: left; }
+    width: 360px;
+    float: right; }
     .options > .search > input {
       width: 250px;
       display: inline-block;
@@ -167,16 +168,22 @@ nav {
       padding-right: 5px; }
       .options > .search #find-btn-config:focus ~ .configWindow {
         display: block; }
-  .options > button {
-    width: 400px;
-    text-transform: capitalize; }
+  .options > .start-panel {
+    background-color: black;
+    padding-left: 100px;
+    padding-top: 4px;
+    width: 1315px;
+    height: 100%; }
+    .options > .start-panel > button {
+      width: 300px;
+      text-transform: capitalize; }
 
 .actionGroup {
   position: absolute;
   top: 140px;
   left: 20px; }
   .actionGroup button {
-    width: 362.9px; }
+    width: 259.4px; }
 
 .reportList {
   position: absolute;

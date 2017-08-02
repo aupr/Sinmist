@@ -3,14 +3,17 @@
 $top_down: 100px;
 $reportlist-panel-bg: #8579bb;
 .options  {
+  //background-color: red;
   position: absolute;
-  top: $top_down - 20px;
+  top: $top_down - 23px;
   left: 20px;
   width: 1810px;
+  height: 55px;
   //border: 1px solid red;
   > .search {
-    width: 400px;
-    float: left;
+    //background-color: black;
+    width: 360px;
+    float: right;
     > input {
       width: 250px;
       display: inline-block;
@@ -54,10 +57,18 @@ $reportlist-panel-bg: #8579bb;
       }
     }
   }
-  > button {
-    width: 400px;
-    text-transform: capitalize;
+  > .start-panel {
+    background-color: black;
+    padding-left: 100px;
+    padding-top: 4px;
+    width: 1315px;
+    height: 100%;
+    > button {
+      width: 300px;
+      text-transform: capitalize;
+    }
   }
+
 }
 .actionGroup {
   position: absolute;
@@ -66,7 +77,7 @@ $reportlist-panel-bg: #8579bb;
   //border: 1px solid red;
   //width: 500px;
   button {
-    width: 362.9px; //290px ;
+    width: 259.4px; //290px ; 362.9
   }
 }
 .reportList {

@@ -39,12 +39,12 @@ if (isset($_SESSION['userFullName'])) {
 
     <div class="panel panel-primary box-shadow-2 no-radius originOptions">
         <div class="panel-heading no-radius">
-            <h3 class="panel-title">Origin Options</h3>
+            <h3 class="panel-title">Options</h3>
         </div>
         <div class="panel-body">
-            <button type="button" id="btn-acc-report" class="btn btn-info btn-lg btn-block no-radius">Access to Report Section</button>
+            <button type="button" id="btn-acc-report" class="btn btn-info btn-lg btn-block no-radius">Job Section</button>
             <button type="button" id="btn-mntn-user" class="btn btn-info btn-lg btn-block no-radius">Change User Password</button>
-            <button type="button" id="btn-set-netp" class="btn btn-info btn-lg btn-block no-radius">Set Network Parameters</button>
+            <button type="button" id="btn-set-netp" class="btn btn-info btn-lg btn-block no-radius" style="display: none;">Set Network Parameters</button>
             <button type="button" id="btn-toggle-fscr" class="btn btn-info btn-lg btn-block no-radius">Toggle Full-Screen</button>
         </div>
     </div>

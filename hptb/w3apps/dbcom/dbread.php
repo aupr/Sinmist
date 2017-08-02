@@ -41,7 +41,7 @@ class dbread
     public function getUncompletedReportList($limitStart, $limit){
         $limitStart -=1;
         global $conn;
-        $sql = "SELECT id, rDt, client, clientRef, crDt, supplier, meRef, mrDt, pumpType, discharge, head, pumpSn, motorSn FROM report WHERE testData='' LIMIT $limitStart, $limit";
+        $sql = "SELECT id, rDt, client, clientRef, crDt, supplier, meRef, mrDt, pumpType, discharge, head, pumpSn, motorSn, pipeDia FROM report WHERE testData='' ORDER BY id DESC LIMIT $limitStart, $limit";
         $result = $conn->query($sql);
         $data_stuck = [];
         for ($i = 0; $i < $result->num_rows; $i++){
@@ -59,7 +59,7 @@ class dbread
     public function getCompletedReportList($limitStart, $limit){
         $limitStart -=1;
         global $conn;
-        $sql = "SELECT id, rDt, tDtTm, client, clientRef, crDt, supplier, meRef, mrDt, pumpType, discharge, head, pumpSn, motorSn FROM report WHERE testData!='' LIMIT $limitStart, $limit";
+        $sql = "SELECT id, rDt, tDtTm, client, clientRef, crDt, supplier, meRef, mrDt, pumpType, discharge, head, pumpSn, motorSn, pipeDia FROM report WHERE testData!='' ORDER BY id DESC LIMIT $limitStart, $limit";
         $result = $conn->query($sql);
         $data_stuck = [];
         for ($i = 0; $i < $result->num_rows; $i++){
@@ -78,7 +78,7 @@ class dbread
     public function searchReportList($limitStart, $limit, $keywords){
         $limitStart -=1;
         global $conn;
-        $sql = "SELECT id, rDt, tDtTm, client, clientRef, crDt, supplier, meRef, mrDt, pumpType, discharge, head, pumpSn, motorSn FROM report WHERE $keywords LIMIT $limitStart, $limit";
+        $sql = "SELECT id, rDt, tDtTm, client, clientRef, crDt, supplier, meRef, mrDt, pumpType, discharge, head, pumpSn, motorSn, pipeDia FROM report WHERE $keywords ORDER BY id DESC LIMIT $limitStart, $limit";
         $result = $conn->query($sql);
         $data_stuck = [];
         for ($i = 0; $i < $result->num_rows; $i++){

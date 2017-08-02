@@ -1,0 +1,172 @@
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  background-color: white;
+}
+.controller{
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  width: 300px;
+  background-color: #ddd;
+  border: 1px solid gray;
+  //padding: 10px;
+  .cheader{
+    height: 30px;
+    width: 100%;
+    background-color: #444;
+    line-height: 30px;
+    vertical-align: middle;
+    color: white;
+    padding-left: 10px;
+    font-family: "calibri", "serif";
+    font-size: 13pt;
+    font-weight: bold;
+  }
+  .cfooter{
+    color: white;
+    background-color: #444;
+    padding: 10px;
+    font-family: "calibri", "serif";
+
+  }
+  .holder{
+    padding: 5px 10px;
+    #print-btn{
+      width: 100%;
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      background-color: #666;
+      cursor: pointer;
+      margin: 5px 0;
+      &:hover{
+        background-color: #555;
+      }
+    }
+    #close-btn{
+      @extend #print-btn;
+    }
+  }
+
+}
+
+.wrapper{
+  width: 712px;//670px;
+  margin: 0 auto;
+  .masterClass{
+    width: 100%;
+    margin: 5px 0;
+    border: 1px solid gray;
+  }
+
+}
+.singlePage{
+  font-family: "calibri", "serif";
+  font-size: 13pt;
+  background-color: white;
+  color: #444;
+  width: 710px;
+  height: 1020px;
+  page-break-before: always;
+  .pheader{
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    border-bottom: 2px solid green;
+    color: black;
+    .logo{
+      float: left;
+      height: 97px;
+      width: 111px;
+      background-color: inherit;
+      margin-left: 20px;
+      background-image: url("../../contents/images/logo.png");
+      background-origin: content-box;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+    .name{
+      height: 97px;
+      background-color: inherit;
+      //color: black;
+      //line-height: 60px;
+      //vertical-align: middle;
+      float: left;
+      margin-left: 5px;
+      font-family: "calibri", "serif";
+      //font-size: 12pt;
+      //font-weight: bold;
+      text-align: center;
+      > h2 {
+        color: green;
+      }
+      > span {
+        //text-align: center;
+        font-size: 13pt;
+        color: black;
+      }
+    }
+  }
+
+  .reportPageHeadText{
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-family: "calibri", "serif";
+    font-size: 18pt;
+    font-weight: bold;
+  }
+  .vendorMsg{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 18pt;
+  }
+  .author {
+    float: right;
+    width: 300px;
+    height: 230px;
+    margin-top: 20px;
+    margin-right: 30px;
+    font-family: "calibri", "serif";
+    font-size: 13pt;
+    span{
+      &:nth-child(1) {
+        font-weight: bold;
+      }
+      &:nth-child(3) {
+        font-size: 14pt;
+      }
+      &:nth-child(5) {
+        font-style: italic;
+        display: inline-block;
+        padding: 2px 0;
+      }
+    }
+  }
+}
+
+.pfooter {
+  height: 25px;
+  line-height: 25px;
+  vertical-align: middle;
+  background-color: green;
+  color: white;
+  border-top: 1px solid black;
+  //padding: 2px;
+  font-family: "calibri", "serif";
+  font-size: 11pt;
+  font-weight: normal;
+  text-align: center;
+}

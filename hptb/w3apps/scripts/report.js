@@ -4,6 +4,9 @@
 $server1200 = "http://192.168.10.5/awp/MIST/start.html"; //"http://localhost/mist/hptb/plc/start.html";
 
 var reportLimit = 50;
+printKeyword = "";
+printType = "";
+rawKey = "";
 $(document).ready(function () {
 
     // Navigation Buttons Actions
@@ -45,7 +48,7 @@ $(document).ready(function () {
         // Create New modal Button
         $("#btn-create-model").click(function () {
             $.post("reportmodules/ui/createreport.php",{},function (res) {
-                it_modal_open('<i class="fa fa-plus-square-o" aria-hidden="true"></i> Create a new report...',res,"blueviolet","1000px","Create, Cancel", function (cr) {
+                it_modal_open('<i class="fa fa-plus-square-o" aria-hidden="true"></i> Create Job',res,"blueviolet","1000px","Create, Cancel", function (cr) {
                     if (cr == 'Create'){
                         it_modal_loading();
                         onClick(function () {
@@ -64,15 +67,23 @@ $(document).ready(function () {
 
         //View report modal button
         $("#btn-view-models").click(function () {
+            printType = "model";
             pagination('model', 1, reportLimit);
-            $("#report-list-title").text("Uncompleted Report List");
+            $("#report-list-title").text("Pending Job List");
+        });
+// View completed report button
+        $("#btn-view-reports").click(function () {
+            printType = "report";
+            pagination('report', 1, reportLimit);
+            $("#report-list-title").text("Complete Job List");
         });
 
-        // View completed report button
-        $("#btn-view-reports").click(function () {
-            pagination('report', 1, reportLimit);
-            $("#report-list-title").text("Completed Report List");
+        // Print job list button
+        $("#btn-print-job-list").click(function () {
+            var win = window.open('printjoblist.php?t='+printType+'&rk='+encodeURIComponent(rawKey)+'&k='+encodeURIComponent(makeKeywords(printKeyword)),'_blank');
+            win.focus();
         });
+
         
         //load report list at first time
         $.post("reportmodules/contents.php",{'type':"model", 'limitStart':1, 'limit':2},function (res) {
@@ -82,13 +93,13 @@ $(document).ready(function () {
                 $("#btn-view-reports").click();
             }
         },"json").fail(function () {
-            alert("Failed to data communicate!");
+            alert("Failed data communication!");
         });
 
         // Find button
         $("#find-btn").click(function () {
-            var keyword = $("#find-keyword").val();
-            keyword = it_input_filter(keyword);
+            var rkeyword = $("#find-keyword").val();
+            keyword = it_input_filter(rkeyword);
             if (keyword.length < 2){
                 it_modal_open("Invalid Key word !","Keyword should be at least two characters...","dodgerblue",0,"Got it !",function (ret) {
                     if (ret){
@@ -98,6 +109,9 @@ $(document).ready(function () {
             }
             else {
                 //console.log(makeKeywords(keyword));
+                printKeyword = keyword;
+                rawKey = rkeyword;
+                printType = 'find';
                 pagination('find', 1, reportLimit, makeKeywords(keyword));
                 $("#report-list-title").text("Report List - Search Result");
             }
@@ -108,7 +122,7 @@ $(document).ready(function () {
         // Delete report button
         $("#ac-btn-delete-report").click(function () {
             if(isSelected()){
-                it_modal_open("Confirm !","Do you want to delete this?","#d9534f",0,"Yes, No",function (res) {
+                it_modal_open("Confirm!","Do you want to delete this job?","#d9534f",0,"Yes, No",function (res) {
                     if(res == 'Yes'){
                         it_modal_loading();
                         $.post("reportmodules/action.php",{"command":"delete","for":"report","id":selected.objectId}, function (res) {
@@ -129,16 +143,28 @@ $(document).ready(function () {
         $("#ac-btn-edit-report").click(function () {
             if(isSelected()){
                 $.post("reportmodules/ui/editreport.php",{"id":selected.objectId}, function (res) {
-                    it_modal_open("Report Edit Form . . .",res,"#FF8800","1100px","Save, Cancel",function (ret) {
+                    it_modal_open("Report Edit Form . . .",res,"#FF8800","1100px","Clone, Save, Cancel",function (ret) {
+
                         if(ret == 'Save'){
-                            it_modal_loading();
-                            onSave(selected.objectId,function (ack, stat) {
-                                it_modal_close();
-                                if (stat) $("#btn-view-reports").click();
-                                else $("#btn-view-models").click();
-                            });
+                            if (confirm("Do you want to save changes!")) {
+                                it_modal_loading();
+                                onSave(selected.objectId,function (ack, stat) {
+                                    it_modal_close();
+                                    if (stat) $("#btn-view-reports").click();
+                                    else $("#btn-view-models").click();
+                                });
+                            }
                         } else if (ret == 'Cancel'){
-                            it_modal_close();
+                            if (confirm("Do you want to discard changes!")) {
+                                it_modal_close();
+                            }
+                        } else if (ret === 'Clone') {
+                            if(confirm("Do you want to clone this data for retest!")) {
+                                onCopy(function () {
+                                    it_modal_close();
+                                    $("#btn-view-models").click();
+                                });
+                            }
                         }
                     });
                 }).fail(function () {
@@ -149,7 +175,7 @@ $(document).ready(function () {
         // Take Data into report model
         $("#ac-btn-take-data-into-report").click(function () {
             if(isSelected()){
-                it_modal_open("Confirm !","Do you want to take data into ths report?","#007E33",0,"Yes, No",function (res) {
+                it_modal_open("Confirm!","Do you want to start test?","#007E33",0,"Yes, No",function (res) {
                     if(res == 'Yes'){
                         it_modal_close();
                         if (selected.type == "report"){
@@ -185,20 +211,15 @@ $(document).ready(function () {
                     it_modal_open("Choose Sensor ...",body,"dodgerblue","400px","Continue, Cancel", function (cbr) {
                         if (cbr == "Continue"){
                             $.post("reportmodules/ui/viewreport.php",{"id":selected.objectId, "sensor":$("#selectSensor").val(), "type":selected.type}, function (res) {
-                                it_modal_open("Report View Form . . .",res,"#0099CC","1100px","Cancel",function (ret) {
-                                    if(ret == 'Save'){
-                                        it_modal_loading();
-                                        onSave(selected.objectId,function (ack, stat) {
-                                            it_modal_close();
-                                            if (stat) $("#btn-view-reports").click();
-                                            else $("#btn-view-models").click();
-                                        });
-                                    } else if (ret == 'Cancel'){
+                                it_modal_open("Report View Form . . .",res,"#141414","1100px","Got it, Cancel",function (ret) {
+                                    if(ret === 'Got it'){
+                                        it_modal_close();
+                                    } else if (ret === 'Cancel'){
                                         it_modal_close();
                                     }
                                 });
                             }).fail(function () {
-                                alert("failed to load view report ui")
+                                alert("failed to load view report ui");
                             });
                         }
                         else if(cbr == "Cancel"){
@@ -221,7 +242,7 @@ $(document).ready(function () {
                             }
                         });
                     }).fail(function () {
-                        alert("failed to load view report ui")
+                        alert("failed to load view report ui");
                     });
                 }
 
@@ -248,6 +269,40 @@ $(document).ready(function () {
                 }
             } else {
                 it_modal_error("It's not applicable for uncompleted report !");
+            }
+        });
+
+        // Make Receipt
+        $("#ac-btn-make-receipt-page").click(function(){
+            if(isSelected()){
+                var body = '<label for="receipt-author">Name:</label><br><input type="text" id="receipt-author" class="form-control no-radius">' +
+                    '<br><label for="author-designation">Rank:</label><br><input type="text" id="author-designation" class="form-control no-radius">';
+                it_modal_open("Received By", body, 'black',"400px", "Ok, Cancel", function (r) {
+                    if (r === 'Ok') {
+                        var win = window.open('receipt.php?id='+selected.objectId+'&n='+$('#receipt-author').val()+'&d='+$('#author-designation').val(), '_blank');
+                        win.focus();
+                        it_modal_close();
+                    } else if (r === 'Cancel') {
+                        it_modal_close();
+                    }
+                });
+            }
+        });
+
+        // Make GatePass
+        $("#ac-btn-make-gatepass-page").click(function(){
+            if(isSelected()){
+                var body = '<label for="receipt-author">Name:</label><br><input type="text" id="receipt-author" class="form-control no-radius">' +
+                    '<br><label for="author-designation">Rank:</label><br><input type="text" id="author-designation" class="form-control no-radius">';
+                it_modal_open("Received By", body, 'black',"400px", "Ok, Cancel", function (r) {
+                    if (r === 'Ok') {
+                        var win = window.open('gatepass.php?id='+selected.objectId+'&n='+$('#receipt-author').val()+'&d='+$('#author-designation').val(), '_blank');
+                        win.focus();
+                        it_modal_close();
+                    } else if (r === 'Cancel') {
+                        it_modal_close();
+                    }
+                });
             }
         });
     }
@@ -288,10 +343,10 @@ function setContentTable(type, limitStart, limit, keywords, callback) {
     if (type == 'model'){
         var fn = $.post("reportmodules/contents.php",{'type':type, 'limitStart':limitStart, 'limit':limit},function (res) {
             var tblPrint = '<table class="table table-bordered"><thead><tr><th>Received dt</th><th>ME Ref.</th>' +
-                '<th>Client</th><th>Supplier</th><th>Pump Type</th><th>Pump-SN</th><th>Motor-SN</th></tr></thead><tbody>';
+                '<th>Client</th><th>Supplier</th><th>Pump Type</th><th>Diameter</th><th>Pump-SN</th><th>Motor-SN</th></tr></thead><tbody>';
             res.data.forEach(function (rv) {
                 tblPrint += '<tr onclick="selectThis(this, '+rv.id+')"><td>'+rv.rDt+'</td><td>'+rv.meRef+'</td><td>'+rv.client+'</td>' +
-                    '<td>'+rv.supplier+'</td><td>'+rv.pumpType+'</td><td>'+rv.pumpSn+'</td><td>'+rv.motorSn+'</td></tr>';
+                    '<td>'+rv.supplier+'</td><td>'+rv.pumpType+'</td><td>'+rv.pipeDia+'</td><td>'+rv.pumpSn+'</td><td>'+rv.motorSn+'</td></tr>';
             });
             tblPrint += '</tbody></table>';
             selected.type = type;
@@ -305,10 +360,10 @@ function setContentTable(type, limitStart, limit, keywords, callback) {
     else if (type == 'report'){
         var fnr = $.post("reportmodules/contents.php",{'type':type, 'limitStart':limitStart, 'limit':limit},function (res) {
             var tblPrint = '<table class="table table-bordered"><thead><tr><th>Received dt</th><th>Test dt & time</th><th>ME Ref.</th>' +
-                '<th>Client</th><th>Supplier</th><th>Pump Type</th><th>Pump-SN</th><th>Motor-SN</th></tr></thead><tbody>';
+                '<th>Client</th><th>Supplier</th><th>Pump Type</th><th>Diameter</th><th>Pump-SN</th><th>Motor-SN</th></tr></thead><tbody>';
             res.data.forEach(function (rv) {
                 tblPrint += '<tr onclick="selectThis(this, '+rv.id+')"><td>'+rv.rDt+'</td><td>'+rv.tDtTm+'</td><td>'+rv.meRef+'</td><td>'+rv.client+'</td>' +
-                    '<td>'+rv.supplier+'</td><td>'+rv.pumpType+'</td><td>'+rv.pumpSn+'</td><td>'+rv.motorSn+'</td></tr>';
+                    '<td>'+rv.supplier+'</td><td>'+rv.pumpType+'</td><td>'+rv.pipeDia+'</td><td>'+rv.pumpSn+'</td><td>'+rv.motorSn+'</td></tr>';
             });
             tblPrint += '</tbody></table>';
             selected.type = type;
@@ -320,12 +375,13 @@ function setContentTable(type, limitStart, limit, keywords, callback) {
         });
     }
     else if (type == 'find') {
+
         var fnf = $.post("reportmodules/contents.php", {'type':type, 'limitStart':limitStart, 'limit':limit, 'keywords':keywords}, function (res) {
             var tblPrint = '<table class="table table-bordered"><thead><tr><th>Received dt</th><th>Test dt & time</th><th>ME Ref.</th>' +
-                '<th>Client</th><th>Supplier</th><th>Pump Type</th><th>Pump-SN</th><th>Motor-SN</th></tr></thead><tbody>';
+                '<th>Client</th><th>Supplier</th><th>Pump Type</th><th>Diameter</th><th>Pump-SN</th><th>Motor-SN</th></tr></thead><tbody>';
             res.data.forEach(function (rv) {
                 tblPrint += '<tr onclick="selectThis(this, '+rv.id+')"><td>'+rv.rDt+'</td><td>'+rv.tDtTm+'</td><td>'+rv.meRef+'</td><td>'+rv.client+'</td>' +
-                    '<td>'+rv.supplier+'</td><td>'+rv.pumpType+'</td><td>'+rv.pumpSn+'</td><td>'+rv.motorSn+'</td></tr>';
+                    '<td>'+rv.supplier+'</td><td>'+rv.pumpType+'</td><td>'+rv.pipeDia+'</td><td>'+rv.pumpSn+'</td><td>'+rv.motorSn+'</td></tr>';
             });
             tblPrint += '</tbody></table>';
             selected.type = type;
@@ -366,62 +422,152 @@ function pagination(type, limitStart, limit, keywords) {
     });
 }
 function makeKeywords(key) {
-    var syntext = " LIKE '%"+key+"%'";
+    keys = key.split("&amp;", 3);
+    //console.log(keys);
+    var syntext0 = " LIKE '%"+keys[0].trim()+"%'";
+    var syntext1 = "";
+    if (typeof keys[1] !== 'undefined') syntext1 = " LIKE '%"+keys[1].trim()+"%'";
+    var syntext2 = "";
+    if (typeof  keys[2] !== 'undefined') syntext2 = " LIKE '%"+keys[2].trim()+"%'";
     var isAnyChecked = false;
-    var keywords = "(";
+    var keywords0 = "(";
+    var keywords1 = "(";
+    var keywords2 = "(";
     if($("#ckbx-rcvd-date").prop( "checked" )){
         if (!isAnyChecked) isAnyChecked = true;
-        else keywords += " or ";
-        keywords += "rDt"+syntext;
+        else {
+            keywords0 += " or ";
+            keywords1 += " or ";
+            keywords2 += " or ";
+        }
+        keywords0 += "rDt"+syntext0;
+        keywords1 += "rDt"+syntext1;
+        keywords2 += "rDt"+syntext2;
     }
     if($("#ckbx-tst-date").prop( "checked" )){
         if (!isAnyChecked) isAnyChecked = true;
-        else keywords += " or ";
-        keywords += "tDtTm"+syntext;
+        else {
+            keywords0 += " or ";
+            keywords1 += " or ";
+            keywords2 += " or ";
+        }
+        keywords0 += "tDtTm"+syntext0;
+        keywords1 += "tDtTm"+syntext1;
+        keywords2 += "tDtTm"+syntext2;
     }
     if($("#ckbx-client").prop( "checked" )){
         if (!isAnyChecked) isAnyChecked = true;
-        else keywords += " or ";
-        keywords += "client"+syntext;
+        else {
+            keywords0 += " or ";
+            keywords1 += " or ";
+            keywords2 += " or ";
+        }
+        keywords0 += "client"+syntext0;
+        keywords1 += "client"+syntext1;
+        keywords2 += "client"+syntext2;
     }
     if($("#ckbx-supplier").prop( "checked" )){
         if (!isAnyChecked) isAnyChecked = true;
-        else keywords += " or ";
-        keywords += "supplier"+syntext;
+        else {
+            keywords0 += " or ";
+            keywords1 += " or ";
+            keywords2 += " or ";
+        }
+        keywords0 += "supplier"+syntext0;
+        keywords1 += "supplier"+syntext1;
+        keywords2 += "supplier"+syntext2;
     }
     if($("#ckbx-me-ref").prop( "checked" )){
         if (!isAnyChecked) isAnyChecked = true;
-        else keywords += " or ";
-        keywords += "meRef"+syntext;
+        else {
+            keywords0 += " or ";
+            keywords1 += " or ";
+            keywords2 += " or ";
+        }
+        keywords0 += "meRef"+syntext0;
+        keywords1 += "meRef"+syntext1;
+        keywords2 += "meRef"+syntext2;
     }
     if($("#ckbx-pump-type").prop( "checked" )){
         if (!isAnyChecked) isAnyChecked = true;
-        else keywords += " or ";
-        keywords += "pumpType"+syntext;
+        else {
+            keywords0 += " or ";
+            keywords1 += " or ";
+            keywords2 += " or ";
+        }
+        keywords0 += "pumpType"+syntext0;
+        keywords1 += "pumpType"+syntext1;
+        keywords2 += "pumpType"+syntext2;
     }
     if($("#ckbx-pump-sn").prop( "checked" )){
         if (!isAnyChecked) isAnyChecked = true;
-        else keywords += " or ";
-        keywords += "pumpSn"+syntext;
+        else {
+            keywords0 += " or ";
+            keywords1 += " or ";
+            keywords2 += " or ";
+        }
+        keywords0 += "pumpSn"+syntext0;
+        keywords1 += "pumpSn"+syntext1;
+        keywords2 += "pumpSn"+syntext2;
     }
     if($("#ckbx-motor-sn").prop( "checked" )){
         if (!isAnyChecked) isAnyChecked = true;
-        else keywords += " or ";
-        keywords += "motorSn"+syntext;
+        else {
+            keywords0 += " or ";
+            keywords1 += " or ";
+            keywords2 += " or ";
+        }
+        keywords0 += "motorSn"+syntext0;
+        keywords1 += "motorSn"+syntext1;
+        keywords2 += "motorSn"+syntext2;
     }
 
     if (isAnyChecked){
-        keywords += ")";
+        keywords0 += ")";
+        keywords1 += ")";
+        keywords2 += ")";
     } else {
-        keywords = "(rDt"+syntext+
-            " or tDtTm"+syntext+
-            " or client"+syntext+
-            " or supplier"+syntext+
-            " or meRef"+syntext+
-            " or pumpType"+syntext+
-            " or pumpSn"+syntext+
-            " or motorSn"+syntext+
+        keywords0 = "(rDt"+syntext0+
+            " or tDtTm"+syntext0+
+            " or client"+syntext0+
+            " or supplier"+syntext0+
+            " or meRef"+syntext0+
+            " or pumpType"+syntext0+
+            " or pumpSn"+syntext0+
+            " or motorSn"+syntext0+
             ")";
+
+        keywords1 = "(rDt"+syntext1+
+            " or tDtTm"+syntext1+
+            " or client"+syntext1+
+            " or supplier"+syntext1+
+            " or meRef"+syntext1+
+            " or pumpType"+syntext1+
+            " or pumpSn"+syntext1+
+            " or motorSn"+syntext1+
+            ")";
+
+        keywords2 = "(rDt"+syntext2+
+            " or tDtTm"+syntext2+
+            " or client"+syntext2+
+            " or supplier"+syntext2+
+            " or meRef"+syntext2+
+            " or pumpType"+syntext2+
+            " or pumpSn"+syntext2+
+            " or motorSn"+syntext2+
+            ")";
+    }
+
+    var keywords = keywords0;
+
+    if (typeof (keys[1]) !== 'undefined') {
+        keywords += " and ";
+        keywords += keywords1;
+    }
+
+    if (typeof (keys[2]) !== 'undefined') {
+        keywords += " and ";
+        keywords += keywords2;
     }
 
     var cbur = $("#ckbx-uncompleted-report").prop( "checked" );

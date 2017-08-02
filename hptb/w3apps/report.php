@@ -39,9 +39,9 @@ if (isset($_SESSION['userFullName'])) {
                     <li><button id="btn-logout-report">Logout</button></li>
                 </ul>
             </li>
-            <li><button id="btn-origin">Origin</button>
+            <li><button id="btn-origin">Home</button>
                 <ul class="corner_ul">
-                    <li><button id="btn-settings">Settings</button></li>
+                    <li style="display: none;"><button id="btn-settings">Settings</button></li>
                     <li><button id="btn-set-formula">Set Formula</button></li>
                     <li><button id="btn-toggle-fscr">Toggle Full-Screen</button></li>
                 </ul>
@@ -66,20 +66,24 @@ if (isset($_SESSION['userFullName'])) {
             </div>
             <input id="find-keyword" type="text" class="form-control no-radius" placeholder="Enter keyword here...">
             <button id="find-btn" class="btn btn-info no-radius">Search</button>
-            </div>
-        <button id="btn-create-model" class="btn btn-primary btn-lg no-radius">create a new report</button>
-        <button id="btn-view-models" class="btn btn-primary btn-lg no-radius">uncompleted reports</button>
-        <button id="btn-view-reports" class="btn btn-primary btn-lg no-radius">completed reports</button>
-
+        </div>
+        <div class="start-panel"><span style="position: absolute; left: 18px; top: 12px; font-weight: 900; font-size: 15pt; color: white;">Panel</span>
+            <button id="btn-create-model" class="btn btn-primary btn-lg no-radius">create job</button>
+            <button id="btn-view-models" class="btn btn-primary btn-lg no-radius">pending job</button>
+            <button id="btn-view-reports" class="btn btn-primary btn-lg no-radius">complete job</button>
+            <button id="btn-print-job-list" class="btn btn-primary btn-lg no-radius">print job list</button>
+        </div>
     </div>
 
     <div class="actionGroup">
         <div class="btn-group btn-group-md" role="group" aria-label="...">
-            <button type="button" id="ac-btn-delete-report" class="btn btn-danger no-radius">Delete</button>
-            <button type="button" id="ac-btn-edit-report" class="btn btn-warning no-radius">Edit</button>
-            <button type="button" id="ac-btn-take-data-into-report" class="btn btn-success no-radius">Take data</button>
+            <button type="button" id="ac-btn-take-data-into-report" class="btn btn-success no-radius">Start Test</button>
             <button type="button" id="ac-btn-view-report-modal" class="btn btn-info no-radius">View</button>
-            <button type="button" id="ac-btn-make-report-page" class="btn btn-success no-radius">Report</button>
+            <button type="button" id="ac-btn-make-receipt-page" class="btn btn-success no-radius">Receipt Copy</button>
+            <button type="button" id="ac-btn-make-report-page" class="btn btn-info no-radius">Report</button>
+            <button type="button" id="ac-btn-make-gatepass-page" class="btn btn-success no-radius">Gate Pass</button>
+            <button type="button" id="ac-btn-edit-report" class="btn btn-warning no-radius">Edit / Clone</button>
+            <button type="button" id="ac-btn-delete-report" class="btn btn-danger no-radius">Delete</button>
         </div>
     </div>
 

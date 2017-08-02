@@ -1,0 +1,74 @@
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.no-radius{
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+}
+
+nav {
+  height: 50px;
+  width: 100%;
+  background-color: #0f0f0f;
+  margin-bottom: 20px;
+  li {
+    display: inline-block;
+    height: 50px;
+
+    line-height: 50px;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.17);
+    }
+    button {
+      background-color: inherit;
+      height: 50px;
+      padding: 0 10px;
+      border: 0;
+      cursor: pointer;
+      color: white;
+      text-decoration: none;
+      font-family: "calibri", "serif";
+      text-transform: capitalize;
+      font-weight:  bold;
+    }
+  }
+}
+
+.printHead {
+  width: 100%;
+  background-color: lightgray;
+  color: black;
+  height: 60px;
+  line-height: 60px;
+  vertical-align: middle;
+  padding: 0 10px;
+  font-weight: bold;
+  font-size:15pt;
+  font-family: "calibri", "serif";
+}
+
+#printContent {
+  width: 100%;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  table, th, td {
+    text-align: center;
+    border: 1px solid #808080;
+  }
+}
+
+@media print{
+  @page {
+    //size: portrait;
+    size: landscape;
+  }
+}

@@ -6,7 +6,7 @@ fclose($nfile);
 ?>
 
 <div style="width: 100%; height: inherit;">
-    <p><b>Input Variables: </b> $VP (Velve Position), $SP (Suction Pressure), $DP (Discharge Pressure), $FR (Flow Rate), $AP (Active Power), $MF (Motor Frequency).</p>
+    <p><b>Input Variables: </b> $VP (Valve Position), $SP (Suction Pressure), $DP (Discharge Pressure), $FR (Flow Rate), $AP (Active Power), $MF (Motor Frequency).</p>
     <p><b>Output Variables: </b> $discharge, $totalHead, $inputPower, $overallEfficiency.</p>
     <label for="formula-txt">Write formula here:</label><br>
     <textarea id="formula-txt" style="width: 100%; height: 200px; resize: vertical; font-family: 'courier', 'serif';"><?=$prevFormula?></textarea>

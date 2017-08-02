@@ -9,7 +9,7 @@ $editReportDnT = explode('@',$res['data']['tDtTm']);
 <div id="edit_tabs">
     <ul>
         <li><a href="#etabs-info">Report Information</a></li>
-        <li><a href="#etabs-data">Data Record</a></li>
+        <li><a href="#etabs-data">Test Data</a></li>
         <li><a href="#etabs-author">Author</a></li>
     </ul>
     <div id="etabs-info">
@@ -37,7 +37,7 @@ $editReportDnT = explode('@',$res['data']['tDtTm']);
                                 <td><input type="text" class="form-control no-radius" id="nm-clients-ref" value="<?=$res['data']['clientRef']?>"></td>
                             </tr>
                             <tr>
-                                <td><label for="nm-me-ref">ME Reference</label></td>
+                                <td><label for="nm-me-ref">Dept. Reference</label></td>
                                 <td>:</td>
                                 <td><input type="text" class="form-control no-radius" id="nm-me-ref" value="<?=$res['data']['meRef']?>"></td>
                             </tr>
@@ -260,6 +260,27 @@ $editReportDnT = explode('@',$res['data']['tDtTm']);
         };
         $.post("reportmodules/action.php",{"for":"report","command":"update","id":id,"data":reportDataFinal},function (ret) {
             callback(ret, test_data!="");
+        });
+    }
+
+    function onCopy(cb) {
+        var data={
+            "rDt": $("#nm-rcvd-dt").val(),
+            "client": $("#nm-client").val(),
+            "clientRef": $("#nm-clients-ref").val(),
+            "crDt": $("#nm-clients-ref-date").val(),
+            "supplier": $("#nm-supplier").val(),
+            "meRef": $("#nm-me-ref").val(),
+            "mrDt": $("#nm-me-ref-date").val(),
+            "pumpType": $("#nm-pump-type").val(),
+            "pipeDia": $("#nm-pipe-dia").val(),
+            "discharge": $("#nm-pump-discharge").val(),
+            "head": $("#nm-pump-head").val(),
+            "pumpSn": $("#nm-pump-sn").val(),
+            "motorSn": $("#nm-motor-sn").val()
+        };
+        $.post("reportmodules/action.php",{"command":"insert","for":"report","data":data}, function (res) {
+            cb();
         });
     }
 

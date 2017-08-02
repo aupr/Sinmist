@@ -25,8 +25,9 @@
         </li>
         <li><button>ORIGIN</button>
             <ul class="corner_ul">
-                <li><button id="btn-settings">Settings</button></li>
+                <li><button id="btn-settings">Limit Settings</button></li>
                 <li><button id="btn-motor-freq">Motor Freq.</button></li>
+                <li><button id="btn-motor-param">Motor Param.</button></li>
             </ul>
         </li>
     </ul>
@@ -184,11 +185,15 @@
                             <td>:</td>
                             <td>
                                 <select id="valveUpperLimit" class="form-control no-radius">
+                                    <option value="40">40%</option>
+                                    <option value="45" selected>45%</option>
+                                    <option value="50">50%</option>
+                                    <option value="55">55%</option>
                                     <option value="60">60%</option>
                                     <option value="65">65%</option>
                                     <option value="70">70%</option>
                                     <option value="75">75%</option>
-                                    <option value="80" selected>80%</option>
+                                    <option value="80">80%</option>
                                     <option value="85">85%</option>
                                     <option value="90">90%</option>
                                     <option value="95">95%</option>
@@ -201,9 +206,11 @@
                             <td>:</td>
                             <td>
                                 <select id="numberOfObs" class="form-control no-radius">
-                                    <option value="7">7</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7" selected>7</option>
                                     <option value="8">8</option>
-                                    <option value="9" selected>9</option>
+                                    <option value="9">9</option>
                                     <option value="10">10</option>
                                     <option value="11">11</option>
                                     <option value="12">12</option>
@@ -275,6 +282,11 @@
     <div class="panel-body">
         <table class="table table-hover">
             <tbody>
+            <tr style="display: none;">
+                <td><button class="btn btn-primary btn-sm" id="g-test" onclick="gTest()">g-test</button></td>
+                <td>:</td>
+                <td></td>
+            </tr>
             <tr>
                 <td>Process Mode</td>
                 <td>:</td>
@@ -330,7 +342,7 @@
                 <td>:</td>
                 <td><span id="status-freq">####</span> Hz</td>
             </tr>
-            <tr>
+            <tr style="display: none;">
                 <td>Motor RPM</td>
                 <td>:</td>
                 <td><span id="status-rpm">####</span></td>

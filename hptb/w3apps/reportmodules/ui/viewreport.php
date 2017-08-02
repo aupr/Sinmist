@@ -13,7 +13,7 @@ $reportType = isset($_POST['type'])?$_POST['type']:"model";
 <div id="edit_tabs">
     <ul>
         <li><a href="#etabs-info">Report Information</a></li>
-        <li><a href="#etabs-data">Data Record</a></li>
+        <li><a href="#etabs-data">Test Data</a></li>
         <li><a href="#etabs-report">Report Data</a></li>
         <li><a href="#etabs-graph">Report Graph</a></li>
         <li><a href="#etabs-author">Author</a></li>
@@ -43,7 +43,7 @@ $reportType = isset($_POST['type'])?$_POST['type']:"model";
                                 <td><input type="text" class="form-control no-radius" id="nm-clients-ref" value="<?=$res['data']['clientRef']?>" disabled></td>
                             </tr>
                             <tr>
-                                <td><label for="nm-me-ref">ME Reference</label></td>
+                                <td><label for="nm-me-ref">Dept. Reference</label></td>
                                 <td>:</td>
                                 <td><input type="text" class="form-control no-radius" id="nm-me-ref" value="<?=$res['data']['meRef']?>" disabled></td>
                             </tr>
@@ -291,6 +291,103 @@ $reportType = isset($_POST['type'])?$_POST['type']:"model";
         }
         ?>
     ];
+
+    // This function is to fix the chart data error for all same discharge data
+    function makeValidChartData(data) {
+
+        data.sort(function (a,b) {
+            return a.discharge - b.discharge;
+        });
+
+        var minVal = data[0].discharge;
+        var maxVal = data[data.length-1].discharge;
+
+        if (minVal === maxVal) {
+            data[0].discharge = minVal-1;
+            return data;
+        } else {
+            return data;
+        }
+    }
+
+    chartData = makeValidChartData(chartData);
+
+    //// Data rearrange function start//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    function solveStraightLine(x0,x1,y1,x2,y2) {
+        var y0;
+        y0 = (((x0-x1)/(x2-x1))*(y2-y1))+y1;
+        return y0;
+    }
+
+    function getValuesAtDischarge(i, data) {
+        var index1=0;
+        var index2=0;
+        var takeData = true;
+        data.forEach(function (val, ind) {
+            //console.log(val);
+            if (takeData) {
+                if (i === val.discharge){
+
+                    if (ind === 0){
+                        index1 = ind;
+                        index2 = ind + 1;
+                    } else {
+                        index1 = ind - 1;
+                        index2 = ind;
+                    }
+                    takeData = false;
+                } else if (i < val.discharge) {
+                    index1 = ind - 1;
+                    index2 = ind;
+                    takeData = false;
+                }
+            }
+        });
+
+        return {
+            discharge: i,
+            power_data: solveStraightLine(i, data[index1].discharge, data[index1].power_data, data[index2].discharge, data[index2].power_data ),
+            efficiency_data: solveStraightLine(i, data[index1].discharge, data[index1].efficiency_data, data[index2].discharge, data[index2].efficiency_data ),
+            head_data: solveStraightLine(i, data[index1].discharge, data[index1].head_data, data[index2].discharge, data[index2].head_data )
+        };
+    }
+
+    function arrangeGraphData(data) {
+        var totalSegment = 19;
+
+        data.sort(function (a,b) {
+            return a.discharge - b.discharge;
+        });
+
+        var minVal = data[0].discharge;
+        var maxVal = data[data.length-1].discharge;
+
+        var totalInterval = maxVal-minVal;
+        var segmentValue = totalInterval/totalSegment;
+
+        var revisedData = [];
+        for (var i=minVal; i<=maxVal; i=i+segmentValue) {
+            revisedData.push(getValuesAtDischarge(i, data));
+        }
+
+
+        return revisedData;
+    }
+
+    function fixDecimalPlaces(data) {
+        for (var i=0; i<data.length; i++) {
+            data[i].discharge = data[i].discharge.toFixed(2);
+            data[i].power_data = data[i].power_data.toFixed(3);
+            data[i].efficiency_data = data[i].efficiency_data.toFixed(3);
+            data[i].head_data = data[i].head_data.toFixed(4);
+        }
+        return data;
+    }
+
+    chartData = fixDecimalPlaces(arrangeGraphData(chartData));
+
+    ////Data rearrange function end/////////////////////////////////////////////////
 
     $(document).ready(function () {
         var chart = AmCharts.makeChart("reportGraph", {
