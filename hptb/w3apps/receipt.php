@@ -44,31 +44,36 @@ $pageFooter = '<div class="pfooter">Mirpur Cantonment, Dhaka - 1216, Phone: +88-
     <div id="rPage_1" class="masterClass">
         <!--Real content for print page 1-->
         <div class="singlePage"><?=$pageHeader?>
-            <div class="reportPageHeadText">receipt for <?=$dbData['data']['pumpType']?></div>
-            <table style='float: right; margin: 20px 40px; display: none;'>
+
+            <div class="reportPageHeadText">receipt voucher</div>
+            <table style='float: right; margin: -50px 40px; display: block;'>
                 <tbody>
                 <tr>
-                    <td>Received Date</td>
+                    <td>Date</td>
                     <td> : </td>
                     <td><?=$dbData['data']['rDt']?></td>
-                </tr>
-                <tr>
-                    <td>Test Date & Time</td>
-                    <td> : </td>
-                    <td><?=$dbData['data']['tDtTm']?></td>
                 </tr>
                 </tbody>
             </table>
             <table style="width: 100%; padding: 30px">
                 <tbody>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Date</td>
+                    <td style="width: 150px;">Item</td>
                     <td> : </td>
-                    <td><?=$dbData['data']['rDt']?></td>
+                    <td><?=$dbData['data']['pumpType']?></td>
+                    <td></td>
+                    <td>Quantity</td>
+                    <td> : </td>
+                    <td>01</td>
+                </tr>
+                <tr>
+                    <td>Additional Item (s)</td>
+                    <td> : </td>
+                    <td><?=isset($_GET['ai'])?$_GET['ai']:"N/A"?></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td><br></td>
@@ -93,9 +98,9 @@ $pageFooter = '<div class="pfooter">Mirpur Cantonment, Dhaka - 1216, Phone: +88-
                     <td> : </td>
                     <td><?=$dbData['data']['clientRef']?></td>
                     <td></td>
-                    <td>Date</td>
-                    <td> : </td>
-                    <td><?=$dbData['data']['crDt']?></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Supplier</td>
@@ -120,9 +125,9 @@ $pageFooter = '<div class="pfooter">Mirpur Cantonment, Dhaka - 1216, Phone: +88-
                     <td> : </td>
                     <td><?=$dbData['data']['meRef']?></td>
                     <td></td>
-                    <td>Date</td>
-                    <td> : </td>
-                    <td><?=$dbData['data']['mrDt']?></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 </tbody>
             </table>
@@ -172,7 +177,7 @@ $pageFooter = '<div class="pfooter">Mirpur Cantonment, Dhaka - 1216, Phone: +88-
                 the above mentioned pump is received with thanks by <br> mechanical engineering department.
             </div>
             <div class="author">
-                <span>Received By:</span><br>
+                <span>Received By:</span><br><br><br>
                 <span style=""><?=isset($_GET['n'])?$_GET['n']:"N/A"?></span><br>
                 <span><?=isset($_GET['d'])?$_GET['d']:"N/A"?>,</span><br>
                 Mechanical Engineering.<br>

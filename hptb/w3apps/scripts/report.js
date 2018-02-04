@@ -275,11 +275,12 @@ $(document).ready(function () {
         // Make Receipt
         $("#ac-btn-make-receipt-page").click(function(){
             if(isSelected()){
-                var body = '<label for="receipt-author">Name:</label><br><input type="text" id="receipt-author" class="form-control no-radius">' +
+                var body = '<label for="receipt-aditm">Additional Item(s):</label><br><input type="text" id="receipt-aditm" class="form-control no-radius">' +
+                    '<br><label for="receipt-author">Received By:</label><br><input type="text" id="receipt-author" class="form-control no-radius">' +
                     '<br><label for="author-designation">Rank:</label><br><input type="text" id="author-designation" class="form-control no-radius">';
-                it_modal_open("Received By", body, 'black',"400px", "Ok, Cancel", function (r) {
+                it_modal_open("Additional Info.", body, 'black',"400px", "Ok, Cancel", function (r) {
                     if (r === 'Ok') {
-                        var win = window.open('receipt.php?id='+selected.objectId+'&n='+$('#receipt-author').val()+'&d='+$('#author-designation').val(), '_blank');
+                        var win = window.open('receipt.php?id='+selected.objectId+'&ai='+$('#receipt-aditm').val()+'&n='+$('#receipt-author').val()+'&d='+$('#author-designation').val(), '_blank');
                         win.focus();
                         it_modal_close();
                     } else if (r === 'Cancel') {
@@ -292,11 +293,12 @@ $(document).ready(function () {
         // Make GatePass
         $("#ac-btn-make-gatepass-page").click(function(){
             if(isSelected()){
-                var body = '<label for="receipt-author">Name:</label><br><input type="text" id="receipt-author" class="form-control no-radius">' +
+                var body = '<label for="receipt-aditm">Additional Item(s):</label><br><input type="text" id="receipt-aditm" class="form-control no-radius">' +
+                    '<br><label for="receipt-author">Authorized By:</label><br><input type="text" id="receipt-author" class="form-control no-radius">' +
                     '<br><label for="author-designation">Rank:</label><br><input type="text" id="author-designation" class="form-control no-radius">';
-                it_modal_open("Received By", body, 'black',"400px", "Ok, Cancel", function (r) {
+                it_modal_open("Additional Info.", body, 'black',"400px", "Ok, Cancel", function (r) {
                     if (r === 'Ok') {
-                        var win = window.open('gatepass.php?id='+selected.objectId+'&n='+$('#receipt-author').val()+'&d='+$('#author-designation').val(), '_blank');
+                        var win = window.open('gatepass.php?id='+selected.objectId+'&ai='+$('#receipt-aditm').val()+'&n='+$('#receipt-author').val()+'&d='+$('#author-designation').val(), '_blank');
                         win.focus();
                         it_modal_close();
                     } else if (r === 'Cancel') {

@@ -99,10 +99,10 @@ body {
   .singlePage .vendorMsg {
     width: 100%;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 50px;
     text-align: center;
     text-transform: uppercase;
-    font-weight: normal;
+    font-weight: 200;
     font-size: 18pt; }
   .singlePage .author {
     float: right;
